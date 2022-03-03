@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Filtro1">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Filtro\VM">
+      <UniqueIdentifier>{10ae6d4e-7e2a-49fe-b4b4-a0439eef3241}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filtro\MFC">
+      <UniqueIdentifier>{0c487d78-f320-49f6-899b-27ab3d9afcb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Filtro2">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Filtro3">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mfcvm\adpcm.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\areaset.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\cpu.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\cpudebug.c">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\crtc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\device.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\disk.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\dmac.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\event.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fdc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fdd.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fdi.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fileio.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\filepath.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fmgen.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\fmtimer.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\gvram.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\iosc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\keyboard.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\log.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\memory.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mercury.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfp.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\midi.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mouse.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\neptune.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\opm.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\opmif.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\ppi.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\printer.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\render.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\rtc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\sasi.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\scc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\schedule.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\scsi.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\sprite.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\sram.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\sync.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\sysport.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\tvram.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\vc.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\vm.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\windrv.cpp">
+      <Filter>ソース ファイル\VM</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_app.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_cfg.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_cmd.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_com.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_cpu.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_dev.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_draw.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_frm.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_host.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_info.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_inp.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_midi.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_port.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_que.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_rend.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_sch.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_snd.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_stat.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_sub.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_sys.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_tkey.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_tool.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_ver.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_vid.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+    <ClCompile Include="mfcvm\mfc_w32.cpp">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mfcvm\mfc_res.rc">
+      <Filter>ソース ファイル\MFC</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mfcvm\resource.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="mfcvm\res\crt.bmp">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="mfcvm\res\x68000.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="mfcvm\res\x68k.bmp">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+    <Image Include="mfcvm\res\xm6.ico">
+      <Filter>リソース ファイル</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mfcvm\core_asm.asm">
+      <Filter>ソース ファイル\VM</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mfcvm\rend_asm.asm">
+      <Filter>ソース ファイル\VM</Filter>
+    </CustomBuild>
+    <CustomBuild Include="cpu\star.asm">
+      <Filter>ソース ファイル\VM</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mfcvm\mfc_asm.asm">
+      <Filter>ソース ファイル\MFC</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

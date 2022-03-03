@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XM6", "XM6.vcproj", "{F21B3E9E-2CAE-40AD-8DF6-B849B96E0EB4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F21B3E9E-2CAE-40AD-8DF6-B849B96E0EB4}.Debug.ActiveCfg = Debug|Win32
+		{F21B3E9E-2CAE-40AD-8DF6-B849B96E0EB4}.Debug.Build.0 = Debug|Win32
+		{F21B3E9E-2CAE-40AD-8DF6-B849B96E0EB4}.Release.ActiveCfg = Release|Win32
+		{F21B3E9E-2CAE-40AD-8DF6-B849B96E0EB4}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

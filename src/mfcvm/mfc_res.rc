@@ -1,0 +1,3975 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "mfc_res.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Spanish (Spain, International Sort) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESN)
+LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MODERN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU
+BEGIN
+    POPUP "ファイル(&F)"
+    BEGIN
+        MENUITEM "開く(&O)...",                 IDM_OPEN
+        MENUITEM "上書き保存(&S)",              IDM_SAVE
+        MENUITEM "名前を付けて保存(&A)...",     IDM_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "リセット(&R)",                IDM_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "インタラプト(&I)",            IDM_INTERRUPT
+        MENUITEM "電源スイッチ(&P)",            IDM_POWER
+        MENUITEM SEPARATOR
+        MENUITEM "終了(&X)\tAlt+F4",            IDM_EXIT
+    END
+    POPUP "フロッピーディスク&0"
+    BEGIN
+        MENUITEM "開く(&O)...",                 IDM_D0OPEN
+        MENUITEM "イジェクト(&E)",              IDM_D0EJECT
+        MENUITEM "書き込み保護(&W)",            IDM_D0WRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "強制イジェクト(&F)",          IDM_D0FORCE
+        MENUITEM "誤挿入(&I)",                  IDM_D0INVALID
+    END
+    POPUP "フロッピーディスク&1"
+    BEGIN
+        MENUITEM "開く(&O)...",                 IDM_D1OPEN
+        MENUITEM "イジェクト(&E)",              IDM_D1EJECT
+        MENUITEM "書き込み保護(&W)",            IDM_D1WRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "強制イジェクト(&F)",          IDM_D1FORCE
+        MENUITEM "誤挿入(&I)",                  IDM_D1INVALID
+    END
+    POPUP "&MOディスク"
+    BEGIN
+        MENUITEM "開く(&O)...",                 IDM_MOOPEN
+        MENUITEM "イジェクト(&E)",              IDM_MOEJECT
+        MENUITEM "書き込み保護(&W)",            IDM_MOWRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "強制イジェクト(&F)",          IDM_MOFORCE
+    END
+    POPUP "&CD-ROM"
+    BEGIN
+        MENUITEM "開く(&O)...",                 IDM_CDOPEN
+        MENUITEM "イジェクト(&E)",              IDM_CDEJECT
+        MENUITEM SEPARATOR
+        MENUITEM "強制イジェクト(&F)",          IDM_CDFORCE
+    END
+    POPUP "表\示(&V)"
+    BEGIN
+        POPUP "システム(&S)"
+        BEGIN
+            MENUITEM "ログ(&L)",                    IDM_LOG
+            MENUITEM "スケジューラ(&S)",            IDM_SCHEDULER
+            MENUITEM "デバイス(&D)",                IDM_DEVICE
+        END
+        POPUP "プロセッサ(&P)"
+        BEGIN
+            MENUITEM "MPUレジスタ(&R)",             IDM_CPUREG
+            MENUITEM "割り込み(&I)",                IDM_INT
+            MENUITEM "逆アセンブル(&D)",            IDM_DISASM
+            MENUITEM "メモリ(&M)",                  IDM_MEMORY
+            MENUITEM "ブレークポイント(&B)",        IDM_BREAKP
+        END
+        POPUP "デバイス(&D)"
+        BEGIN
+            MENUITEM "マルチファンクションペリフェラル(&P)", IDM_MFP
+            MENUITEM "ダイレクトメモリアクセス(&D)", IDM_DMAC
+            MENUITEM "CRTコントローラ(&R)",         IDM_CRTC
+            MENUITEM "ビデオコントローラ(&V)",      IDM_VC
+            MENUITEM "リアルタイムクロック(&T)",    IDM_RTC
+            MENUITEM "FM音源(&O)",                  IDM_OPM
+            MENUITEM "キーボード(&K)",              IDM_KEYBOARD
+            MENUITEM "フロッピーディスクドライブ(&I)", IDM_FDD
+            MENUITEM "フロッピーディスクコントローラ(&F)", IDM_FDC
+            MENUITEM "シリアルコミュニケーションコントローラ(&C)", IDM_SCC
+            MENUITEM "BG/スプライトコントローラ(&B)", IDM_CYNTHIA
+            MENUITEM "SASIハードディスク(&H)",      IDM_SASI
+            MENUITEM "MIDIコントローラ(&M)",        IDM_MIDI
+            MENUITEM "SCSIプロトコルコントローラ(&S)", IDM_SCSI
+        END
+        POPUP "ビデオ(&V)"
+        BEGIN
+            MENUITEM "テキスト(&T)",                IDM_TVRAM
+            MENUITEM SEPARATOR
+            MENUITEM "グラフィック 16色モード・1024×1024(&X)", IDM_G1024
+            MENUITEM "グラフィック 16色モード・ページ0(&0)", IDM_G16P0
+            MENUITEM "グラフィック 16色モード・ページ1(&1)", IDM_G16P1
+            MENUITEM "グラフィック 16色モード・ページ2(&2)", IDM_G16P2
+            MENUITEM "グラフィック 16色モード・ページ3(&3)", IDM_G16P3
+            MENUITEM "グラフィック 256色モード・ページ0(&4)", IDM_G256P0
+            MENUITEM "グラフィック 256色モード・ページ1(&5)", IDM_G256P1
+            MENUITEM "グラフィック 65536色モード(&6)", IDM_G64K
+            MENUITEM SEPARATOR
+            MENUITEM "P&CG",                        IDM_PCG
+            MENUITEM "BG ページ0(&B)",              IDM_BG0
+            MENUITEM "BG ページ1(&G)",              IDM_BG1
+            MENUITEM SEPARATOR
+            MENUITEM "パレット(&P)",                IDM_PALET
+        END
+        POPUP "レンダラ(&R)"
+        BEGIN
+            MENUITEM "テキストバッファ(&T)",        IDM_REND_TEXT
+            MENUITEM SEPARATOR
+            MENUITEM "グラフィックバッファ&0",      IDM_REND_GP0
+            MENUITEM "グラフィックバッファ&1",      IDM_REND_GP1
+            MENUITEM "グラフィックバッファ&2",      IDM_REND_GP2
+            MENUITEM "グラフィックバッファ&3",      IDM_REND_GP3
+            MENUITEM SEPARATOR
+            MENUITEM "PCGバッファ(&C)",             IDM_REND_PCG
+            MENUITEM "BG/スプライトバッファ(&S)",   IDM_REND_BGSPRITE
+            MENUITEM SEPARATOR
+            MENUITEM "パレットバッファ(&P)",        IDM_REND_PALET
+            MENUITEM SEPARATOR
+            MENUITEM "合成バッファ(&M)",            IDM_REND_MIX
+        END
+        POPUP "&Win32"
+        BEGIN
+            MENUITEM "コンポーネント(&C)",          IDM_COMPONENT
+            MENUITEM "OS情報(&O)",                  IDM_OSINFO
+            MENUITEM "サウンド(&S)",                IDM_SOUND
+            MENUITEM "インプット(&I)",              IDM_INPUT
+            MENUITEM "ポート(&P)",                  IDM_PORT
+            MENUITEM "ビットマップ(&B)",            IDM_BITMAP
+            MENUITEM "MIDIドライバ(&M)",            IDM_MIDIDRV
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "キャプション(&C)",            IDM_CAPTION
+        MENUITEM "メニューバー(&M)",            IDM_MENU
+        MENUITEM "ステータスバー(&B)",          IDM_STATUS
+        MENUITEM "最新の情報に更新(&F)",        IDM_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "アスペクト比にあわせて拡大(&A)", IDM_STRETCH
+        MENUITEM "フルスクリーン(&U)\tAlt+Enter", IDM_FULLSCREEN
+    END
+    POPUP "デバッグ(&D)"
+    BEGIN
+        MENUITEM "実行(&X)",                    IDM_EXEC
+        MENUITEM "停止(&B)\tAlt+F12",           IDM_BREAK
+        MENUITEM "トレース(&T)\tShift+F12",     IDM_TRACE
+        MENUITEM SEPARATOR
+        MENUITEM "リセット(&R)",                IDM_RESET
+    END
+    POPUP "ツール(&T)"
+    BEGIN
+        MENUITEM "マウスモード(&M)\tF12",       IDM_MOUSEMODE
+        MENUITEM "ソ\フトウェアキーボード(&K)", IDM_SOFTKEY
+        MENUITEM SEPARATOR
+        MENUITEM "時刻アジャスト(&T)",          IDM_TIMEADJ
+        MENUITEM "trap #0命令(&I)...",          IDM_TRAP0
+        MENUITEM "WAVキャプチャ(&W)...",        IDM_SAVEWAV
+        MENUITEM SEPARATOR
+        MENUITEM "フロッピーディスクイメージの作成(&F)...", IDM_NEWFD
+        MENUITEM "SASI ハードディスクイメージの作成(&A)...", IDM_NEWSASI
+        MENUITEM "SCSI ハードディスクイメージの作成(&C)...", IDM_NEWSCSI
+        MENUITEM "SCSI MOディスクイメージの作成(&D)...", IDM_NEWMO
+        MENUITEM SEPARATOR
+        MENUITEM "オプション(&O)...",           IDM_OPTIONS
+    END
+    POPUP "ウィンドウ(&W)"
+    BEGIN
+        MENUITEM "重ねて表\示(&C)",             IDM_CASCADE
+        MENUITEM "並べて表\示(&T)",             IDM_TILE
+        MENUITEM "全てアイコン化(&I)",          IDM_ICONIC
+        MENUITEM "アイコンの整列(&A)",          IDM_ARRANGEICON
+        MENUITEM "全て隠す(&H)",                IDM_HIDE
+        MENUITEM "全て復元(&R)",                IDM_RESTORE
+    END
+    POPUP "ヘルプ(&H)"
+    BEGIN
+        MENUITEM "バージョン情報(&A)...",       IDM_ABOUT
+    END
+END
+
+IDR_MENUPOPUP MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        POPUP "ファイル(&F)"
+        BEGIN
+            MENUITEM "開く(&O)...",                 IDM_OPEN
+            MENUITEM "上書き保存(&S)",              IDM_SAVE
+            MENUITEM "名前を付けて保存(&A)...",     IDM_SAVEAS
+            MENUITEM SEPARATOR
+            MENUITEM "リセット(&R)",                IDM_RESET
+            MENUITEM SEPARATOR
+            MENUITEM "インタラプト(&I)",            IDM_INTERRUPT
+            MENUITEM "電源スイッチ(&P)",            IDM_POWER
+            MENUITEM SEPARATOR
+            MENUITEM "終了(&X)\tAlt+F4",            IDM_EXIT
+        END
+        POPUP "フロッピーディスク&0"
+        BEGIN
+            MENUITEM "開く(&O)...",                 IDM_D0OPEN
+            MENUITEM "イジェクト(&E)",              IDM_D0EJECT
+            MENUITEM "書き込み保護(&W)",            IDM_D0WRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "強制イジェクト(&F)",          IDM_D0FORCE
+            MENUITEM "誤挿入(&I)",                  IDM_D0INVALID
+        END
+        POPUP "フロッピーディスク&1"
+        BEGIN
+            MENUITEM "開く(&O)...",                 IDM_D1OPEN
+            MENUITEM "イジェクト(&E)",              IDM_D1EJECT
+            MENUITEM "書き込み保護(&W)",            IDM_D1WRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "強制イジェクト(&F)",          IDM_D1FORCE
+            MENUITEM "誤挿入(&I)",                  IDM_D1INVALID
+        END
+        POPUP "&MOディスク"
+        BEGIN
+            MENUITEM "開く(&O)...",                 IDM_MOOPEN
+            MENUITEM "イジェクト(&E)",              IDM_MOEJECT
+            MENUITEM "書き込み保護(&W)",            IDM_MOWRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "強制イジェクト(&F)",          IDM_MOFORCE
+        END
+        POPUP "&CD-ROM"
+        BEGIN
+            MENUITEM "開く(&O)...",                 IDM_CDOPEN
+            MENUITEM "イジェクト(&E)",              IDM_CDEJECT
+            MENUITEM SEPARATOR
+            MENUITEM "強制イジェクト(&F)",          IDM_CDFORCE
+        END
+        POPUP "表\示(&V)"
+        BEGIN
+            POPUP "システム(&S)"
+            BEGIN
+                MENUITEM "ログ(&L)",                    IDM_LOG
+                MENUITEM "スケジューラ(&S)",            IDM_SCHEDULER
+                MENUITEM "デバイス(&D)",                IDM_DEVICE
+            END
+            POPUP "プロセッサ(&P)"
+            BEGIN
+                MENUITEM "MPUレジスタ(&R)",             IDM_CPUREG
+                MENUITEM "割り込み(&I)",                IDM_INT
+                MENUITEM "逆アセンブル(&D)",            IDM_DISASM
+                MENUITEM "メモリ(&M)",                  IDM_MEMORY
+                MENUITEM "ブレークポイント(&B)",        IDM_BREAKP
+            END
+            POPUP "デバイス(&D)"
+            BEGIN
+                MENUITEM "マルチファンクションペリフェラル(&P)", IDM_MFP
+                MENUITEM "ダイレクトメモリアクセス(&D)", IDM_DMAC
+                MENUITEM "CRTコントローラ(&R)",         IDM_CRTC
+                MENUITEM "ビデオコントローラ(&V)",      IDM_VC
+                MENUITEM "リアルタイムクロック(&T)",    IDM_RTC
+                MENUITEM "FM音源(&O)",                  IDM_OPM
+                MENUITEM "キーボード(&K)",              IDM_KEYBOARD
+                MENUITEM "フロッピーディスクドライブ(&I)", IDM_FDD
+                MENUITEM "フロッピーディスクコントローラ(&F)", IDM_FDC
+                MENUITEM "シリアルコミュニケーションコントローラ(&C)", IDM_SCC
+                MENUITEM "BG/スプライトコントローラ(&B)", IDM_CYNTHIA
+                MENUITEM "SASIハードディスク(&H)",      IDM_SASI
+                MENUITEM "MIDIコントローラ(&M)",        IDM_MIDI
+                MENUITEM "SCSIプロトコルコントローラ(&S)", IDM_SCSI
+            END
+            POPUP "ビデオ(&V)"
+            BEGIN
+                MENUITEM "テキスト(&T)",                IDM_TVRAM
+                MENUITEM SEPARATOR
+                MENUITEM "グラフィック 16色モード・1024×1024(&X)", IDM_G1024
+                MENUITEM "グラフィック 16色モード・ページ0(&0)", IDM_G16P0
+                MENUITEM "グラフィック 16色モード・ページ1(&1)", IDM_G16P1
+                MENUITEM "グラフィック 16色モード・ページ2(&2)", IDM_G16P2
+                MENUITEM "グラフィック 16色モード・ページ3(&3)", IDM_G16P3
+                MENUITEM "グラフィック 256色モード・ページ0(&4)", IDM_G256P0
+                MENUITEM "グラフィック 256色モード・ページ1(&5)", IDM_G256P1
+                MENUITEM "グラフィック 65536色モード(&6)", IDM_G64K
+                MENUITEM SEPARATOR
+                MENUITEM "P&CG",                        IDM_PCG
+                MENUITEM "BG ページ0(&B)",              IDM_BG0
+                MENUITEM "BG ページ1(&G)",              IDM_BG1
+                MENUITEM SEPARATOR
+                MENUITEM "パレット(&P)",                IDM_PALET
+            END
+            POPUP "レンダラ(&R)"
+            BEGIN
+                MENUITEM "テキストバッファ(&T)",        IDM_REND_TEXT
+                MENUITEM SEPARATOR
+                MENUITEM "グラフィックバッファ&0",      IDM_REND_GP0
+                MENUITEM "グラフィックバッファ&1",      IDM_REND_GP1
+                MENUITEM "グラフィックバッファ&2",      IDM_REND_GP2
+                MENUITEM "グラフィックバッファ&3",      IDM_REND_GP3
+                MENUITEM SEPARATOR
+                MENUITEM "PCGバッファ(&C)",             IDM_REND_PCG
+                MENUITEM "BG/スプライトバッファ(&S)",   IDM_REND_BGSPRITE
+                MENUITEM SEPARATOR
+                MENUITEM "パレットバッファ(&P)",        IDM_REND_PALET
+                MENUITEM SEPARATOR
+                MENUITEM "合成バッファ(&M)",            IDM_REND_MIX
+            END
+            POPUP "&Win32"
+            BEGIN
+                MENUITEM "コンポーネント(&C)",          IDM_COMPONENT
+                MENUITEM "OS情報(&O)",                  IDM_OSINFO
+                MENUITEM "サウンド(&S)",                IDM_SOUND
+                MENUITEM "インプット(&I)",              IDM_INPUT
+                MENUITEM "ポート(&P)",                  IDM_PORT
+                MENUITEM "ビットマップ(&B)",            IDM_BITMAP
+                MENUITEM "MIDIドライバ(&M)",            IDM_MIDIDRV
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "キャプション(&C)",            IDM_CAPTION
+            MENUITEM "メニューバー(&M)",            IDM_MENU
+            MENUITEM "ステータスバー(&B)",          IDM_STATUS
+            MENUITEM "最新の情報に更新(&F)",        IDM_REFRESH
+            MENUITEM SEPARATOR
+            MENUITEM "アスペクト比にあわせて拡大(&A)", IDM_STRETCH
+            MENUITEM "フルスクリーン(&U)\tAlt+Enter", IDM_FULLSCREEN
+        END
+        POPUP "デバッグ(&D)"
+        BEGIN
+            MENUITEM "実行(&X)",                    IDM_EXEC
+            MENUITEM "停止(&B)\tAlt+F12",           IDM_BREAK
+            MENUITEM "トレース(&T)\tShift+F12",     IDM_TRACE
+            MENUITEM SEPARATOR
+            MENUITEM "リセット(&R)",                IDM_RESET
+        END
+        POPUP "ツール(&T)"
+        BEGIN
+            MENUITEM "マウスモード(&M)\tF12",       IDM_MOUSEMODE
+            MENUITEM "ソ\フトウェアキーボード(&K)", IDM_SOFTKEY
+            MENUITEM SEPARATOR
+            MENUITEM "時刻アジャスト(&T)",          IDM_TIMEADJ
+            MENUITEM "trap #0命令(&I)...",          IDM_TRAP0
+            MENUITEM "WAVキャプチャ(&W)...",        IDM_SAVEWAV
+            MENUITEM SEPARATOR
+            MENUITEM "フロッピーディスクイメージの作成(&F)...", IDM_NEWFD
+            MENUITEM "SASI ハードディスクイメージの作成(&A)...", IDM_NEWSASI
+            MENUITEM "SCSI ハードディスクイメージの作成(&C)...", IDM_NEWSCSI
+            MENUITEM "SCSI MOディスクイメージの作成(&D)...", IDM_NEWMO
+            MENUITEM SEPARATOR
+            MENUITEM "オプション(&O)...",           IDM_OPTIONS
+        END
+        POPUP "ウィンドウ(&W)"
+        BEGIN
+            MENUITEM "重ねて表\示(&C)",             IDM_CASCADE
+            MENUITEM "並べて表\示(&T)",             IDM_TILE
+            MENUITEM "全てアイコン化(&I)",          IDM_ICONIC
+            MENUITEM "アイコンの整列(&A)",          IDM_ARRANGEICON
+            MENUITEM "全て隠す(&H)",                IDM_HIDE
+            MENUITEM "全て復元(&R)",                IDM_RESTORE
+        END
+        POPUP "ヘルプ(&H)"
+        BEGIN
+            MENUITEM "バージョン情報(&A)...",       IDM_ABOUT
+        END
+    END
+END
+
+IDR_US_MENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_OPEN
+        MENUITEM "Carga r疳ida\tF7",            ID_FILE_CARGAR40006
+        MENUITEM "&Save",                       IDM_SAVE
+        MENUITEM "Guardado r疳ido\tF5",         IDM_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "&Reset",                      IDM_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "&Interrupt",                  IDM_INTERRUPT
+        MENUITEM "&Power Switch",               IDM_POWER
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",               IDM_EXIT
+    END
+    POPUP "Floppy Drive #&0"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_D0OPEN
+        MENUITEM "&Eject",                      IDM_D0EJECT
+        MENUITEM "&Write Protect",              IDM_D0WRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "&Force Eject",                IDM_D0FORCE
+        MENUITEM "&Invalid Insert",             IDM_D0INVALID
+    END
+    POPUP "Floppy Drive #&1"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_D1OPEN
+        MENUITEM "&Eject",                      IDM_D1EJECT
+        MENUITEM "&Write Protect",              IDM_D1WRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "&Force Eject",                IDM_D1FORCE
+        MENUITEM "&Invalid Insert",             IDM_D1INVALID
+    END
+    POPUP "&MO Drive"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_MOOPEN
+        MENUITEM "&Eject",                      IDM_MOEJECT
+        MENUITEM "&Write Protect",              IDM_MOWRITEP
+        MENUITEM SEPARATOR
+        MENUITEM "&Force Eject",                IDM_MOFORCE
+    END
+    POPUP "&CD-ROM"
+    BEGIN
+        MENUITEM "&Open...",                    IDM_CDOPEN
+        MENUITEM "&Eject",                      IDM_CDEJECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Force Eject",                IDM_CDFORCE
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "&System"
+        BEGIN
+            MENUITEM "&Log",                        IDM_LOG
+            MENUITEM "&Scheduler",                  IDM_SCHEDULER
+            MENUITEM "&Device",                     IDM_DEVICE
+        END
+        POPUP "&Processor"
+        BEGIN
+            MENUITEM "&Register",                   IDM_CPUREG
+            MENUITEM "&Interrupt",                  IDM_INT
+            MENUITEM "&Disassemble",                IDM_DISASM
+            MENUITEM "&Memory",                     IDM_MEMORY
+            MENUITEM "&Break Point",                IDM_BREAKP
+        END
+        POPUP "&Device"
+        BEGIN
+            MENUITEM "Multi-Function &Peripheral",  IDM_MFP
+            MENUITEM "&Direct Memory Access",       IDM_DMAC
+            MENUITEM "C&RT Control",                IDM_CRTC
+            MENUITEM "&Video Control",              IDM_VC
+            MENUITEM "Real-&Time Clock",            IDM_RTC
+            MENUITEM "FM-Sound Synthesizer (&OPM)", IDM_OPM
+            MENUITEM "&Keyboard",                   IDM_KEYBOARD
+            MENUITEM "Floppy Disk Dr&ive",          IDM_FDD
+            MENUITEM "&Floppy Disk Control",        IDM_FDC
+            MENUITEM "Serial &Communication Control", IDM_SCC
+            MENUITEM "&BG/Sprite Control",          IDM_CYNTHIA
+            MENUITEM "SASI &Hard Disk",             IDM_SASI
+            MENUITEM "&MIDI Control",               IDM_MIDI
+            MENUITEM "&SCSI Protocol Control",      IDM_SCSI
+        END
+        POPUP "&Video"
+        BEGIN
+            MENUITEM "&Text",                       IDM_TVRAM
+            MENUITEM "Graphic 16Color 1024&x1024",  IDM_G1024
+            MENUITEM "Graphic 16Color Page&0",      IDM_G16P0
+            MENUITEM "Graphic 16Color Page&1",      IDM_G16P1
+            MENUITEM "Graphic 16Color Page&2",      IDM_G16P2
+            MENUITEM "Graphic 16Color Page&3",      IDM_G16P3
+            MENUITEM "Graphic 256Color Page0(&4)",  IDM_G256P0
+            MENUITEM "Graphic 256Color Page2(&5)",  IDM_G256P1
+            MENUITEM "Graphic &65536Color",         IDM_G64K
+            MENUITEM SEPARATOR
+            MENUITEM "P&CG",                        IDM_PCG
+            MENUITEM "&BG Page0",                   IDM_BG0
+            MENUITEM "B&G Page1",                   IDM_BG1
+            MENUITEM SEPARATOR
+            MENUITEM "&Palette",                    IDM_PALET
+        END
+        POPUP "&Renderer"
+        BEGIN
+            MENUITEM "&Text Buffer",                IDM_REND_TEXT
+            MENUITEM "Graphic Buffer&0",            IDM_REND_GP0
+            MENUITEM "Graphic Buffer&1",            IDM_REND_GP1
+            MENUITEM "Graphic Buffer&2",            IDM_REND_GP2
+            MENUITEM "Graphic Buffer&3",            IDM_REND_GP3
+            MENUITEM SEPARATOR
+            MENUITEM "P&CG Buffer",                 IDM_REND_PCG
+            MENUITEM "BG/&Sprite Buffer",           IDM_REND_BGSPRITE
+            MENUITEM SEPARATOR
+            MENUITEM "&Palette Buffer",             IDM_REND_PALET
+            MENUITEM SEPARATOR
+            MENUITEM "&Mix Buffer",                 IDM_REND_MIX
+        END
+        POPUP "&Win32"
+        BEGIN
+            MENUITEM "&Component",                  IDM_COMPONENT
+            MENUITEM "&OS Info",                    IDM_OSINFO
+            MENUITEM "&Sound",                      IDM_SOUND
+            MENUITEM "&Input",                      IDM_INPUT
+            MENUITEM "&Port",                       IDM_PORT
+            MENUITEM "&Bitmap",                     IDM_BITMAP
+            MENUITEM "&MIDI Driver",                IDM_MIDIDRV
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Caption",                    IDM_CAPTION
+        MENUITEM "&Menu Bar",                   IDM_MENU
+        MENUITEM "Status &Bar",                 IDM_STATUS
+        MENUITEM "Re&fresh",                    IDM_REFRESH
+        MENUITEM SEPARATOR
+        MENUITEM "Stretch with &Aspect Ratio",  IDM_STRETCH
+        MENUITEM "F&ull Screen\tAlt+Enter",     IDM_FULLSCREEN
+    END
+    POPUP "&Debug"
+    BEGIN
+        MENUITEM "E&xecute",                    IDM_EXEC
+        MENUITEM "&Break\tAlt+F12",             IDM_BREAK
+        MENUITEM "&Trace\tShift+F12",           IDM_TRACE
+        MENUITEM SEPARATOR
+        MENUITEM "&Reset",                      IDM_RESET
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Mouse Mode\tF12",            IDM_MOUSEMODE
+        MENUITEM "Software &Keyboard",          IDM_SOFTKEY
+        MENUITEM SEPARATOR
+        MENUITEM "Adjust &Time",                IDM_TIMEADJ
+        MENUITEM "trap #&0...",                 IDM_TRAP0
+        MENUITEM "&WAV Dump...",                IDM_SAVEWAV
+        MENUITEM SEPARATOR
+        MENUITEM "Make a new &Floppy Disk...",  IDM_NEWFD
+        MENUITEM "Make a new S&ASI Fixed Disk...", IDM_NEWSASI
+        MENUITEM "Make a new S&CSI Fixed Disk...", IDM_NEWSCSI
+        MENUITEM "Make a new SCSI MO &Disk...", IDM_NEWMO
+        MENUITEM SEPARATOR
+        MENUITEM "&Options...",                 IDM_OPTIONS
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    IDM_CASCADE
+        MENUITEM "&Tile",                       IDM_TILE
+        MENUITEM "&Iconic",                     IDM_ICONIC
+        MENUITEM "&Arrange Icon",               IDM_ARRANGEICON
+        MENUITEM "&Hide",                       IDM_HIDE
+        MENUITEM "&Restore",                    IDM_RESTORE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   IDM_ABOUT
+    END
+END
+
+IDR_US_MENUPOPUP MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        POPUP "&File"
+        BEGIN
+            MENUITEM "&Open...",                    IDM_OPEN
+            MENUITEM "&Save",                       IDM_SAVE
+            MENUITEM "Save &As...",                 IDM_SAVEAS
+            MENUITEM SEPARATOR
+            MENUITEM "&Reset",                      IDM_RESET
+            MENUITEM SEPARATOR
+            MENUITEM "&Interrupt",                  IDM_INTERRUPT
+            MENUITEM "&Power Switch",               IDM_POWER
+            MENUITEM SEPARATOR
+            MENUITEM "E&xit\tAlt+F4",               IDM_EXIT
+        END
+        POPUP "Floppy Drive #&0"
+        BEGIN
+            MENUITEM "&Open...",                    IDM_D0OPEN
+            MENUITEM "&Eject",                      IDM_D0EJECT
+            MENUITEM "&Write Protect",              IDM_D0WRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "&Force Eject",                IDM_D0FORCE
+            MENUITEM "&Invalid Insert",             IDM_D0INVALID
+        END
+        POPUP "Floppy Drive #&1"
+        BEGIN
+            MENUITEM "&Open...",                    IDM_D1OPEN
+            MENUITEM "&Eject",                      IDM_D1EJECT
+            MENUITEM "&Write Protect",              IDM_D1WRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "&Force Eject",                IDM_D1FORCE
+            MENUITEM "&Invalid Insert",             IDM_D1INVALID
+        END
+        POPUP "&MO Drive"
+        BEGIN
+            MENUITEM "&Open...",                    IDM_MOOPEN
+            MENUITEM "&Eject",                      IDM_MOEJECT
+            MENUITEM "&Write Protect",              IDM_MOWRITEP
+            MENUITEM SEPARATOR
+            MENUITEM "&Force Eject",                IDM_MOFORCE
+        END
+        POPUP "&CD-ROM"
+        BEGIN
+            MENUITEM "&Open...",                    IDM_CDOPEN
+            MENUITEM "&Eject",                      IDM_CDEJECT
+            MENUITEM SEPARATOR
+            MENUITEM "&Force Eject",                IDM_CDFORCE
+        END
+        POPUP "&View"
+        BEGIN
+            POPUP "&System"
+            BEGIN
+                MENUITEM "&Log",                        IDM_LOG
+                MENUITEM "&Scheduler",                  IDM_SCHEDULER
+                MENUITEM "&Device",                     IDM_DEVICE
+            END
+            POPUP "&Processor"
+            BEGIN
+                MENUITEM "&Register",                   IDM_CPUREG
+                MENUITEM "&Interrupt",                  IDM_INT
+                MENUITEM "&Disassemble",                IDM_DISASM
+                MENUITEM "&Memory",                     IDM_MEMORY
+                MENUITEM "&Break Point",                IDM_BREAKP
+            END
+            POPUP "&Device"
+            BEGIN
+                MENUITEM "Multi-Function &Peripheral",  IDM_MFP
+                MENUITEM "&Direct Memory Access",       IDM_DMAC
+                MENUITEM "C&RT Control",                IDM_CRTC
+                MENUITEM "&Video Control",              IDM_VC
+                MENUITEM "Real-&Time Clock",            IDM_RTC
+                MENUITEM "FM-Sound Synthesizer (&OPM)", IDM_OPM
+                MENUITEM "&Keyboard",                   IDM_KEYBOARD
+                MENUITEM "Floppy Disk Dr&ive",          IDM_FDD
+                MENUITEM "&Floppy Disk Control",        IDM_FDC
+                MENUITEM "Serial &Communication Control", IDM_SCC
+                MENUITEM "&BG/Sprite Control",          IDM_CYNTHIA
+                MENUITEM "SASI &Hard Disk",             IDM_SASI
+                MENUITEM "&MIDI Control",               IDM_MIDI
+                MENUITEM "&SCSI Protocol Control",      IDM_SCSI
+            END
+            POPUP "&Video"
+            BEGIN
+                MENUITEM "&Text",                       IDM_TVRAM
+                MENUITEM "Graphic 16Color 1024&x1024",  IDM_G1024
+                MENUITEM "Graphic 16Color Page&0",      IDM_G16P0
+                MENUITEM "Graphic 16Color Page&1",      IDM_G16P1
+                MENUITEM "Graphic 16Color Page&2",      IDM_G16P2
+                MENUITEM "Graphic 16Color Page&3",      IDM_G16P3
+                MENUITEM "Graphic 256Color Page0(&4)",  IDM_G256P0
+                MENUITEM "Graphic 256Color Page2(&5)",  IDM_G256P1
+                MENUITEM "Graphic &65536Color",         IDM_G64K
+                MENUITEM SEPARATOR
+                MENUITEM "P&CG",                        IDM_PCG
+                MENUITEM "&BG Page0",                   IDM_BG0
+                MENUITEM "B&G Page1",                   IDM_BG1
+                MENUITEM "&Sprite",                     IDM_SPRITE
+                MENUITEM SEPARATOR
+                MENUITEM "&Palette",                    IDM_PALET
+            END
+            POPUP "&Renderer"
+            BEGIN
+                MENUITEM "&Text Buffer",                IDM_REND_TEXT
+                MENUITEM "Graphic Buffer&0",            IDM_REND_GP0
+                MENUITEM "Graphic Buffer&1",            IDM_REND_GP1
+                MENUITEM "Graphic Buffer&2",            IDM_REND_GP2
+                MENUITEM "Graphic Buffer&3",            IDM_REND_GP3
+                MENUITEM SEPARATOR
+                MENUITEM "P&CG Buffer",                 IDM_REND_PCG
+                MENUITEM "BG/&Sprite Buffer",           IDM_REND_BGSPRITE
+                MENUITEM SEPARATOR
+                MENUITEM "&Palette Buffer",             IDM_REND_PALET
+                MENUITEM SEPARATOR
+                MENUITEM "&Mix Buffer",                 IDM_REND_MIX
+            END
+            POPUP "&Win32"
+            BEGIN
+                MENUITEM "&Component",                  IDM_COMPONENT
+                MENUITEM "&OS Info",                    IDM_OSINFO
+                MENUITEM "&Sound",                      IDM_SOUND
+                MENUITEM "&Input",                      IDM_INPUT
+                MENUITEM "&Port",                       IDM_PORT
+                MENUITEM "&Bitmap",                     IDM_BITMAP
+                MENUITEM "&MIDI Driver",                IDM_MIDIDRV
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Caption",                    IDM_CAPTION
+            MENUITEM "&Menu Bar",                   IDM_MENU
+            MENUITEM "Status &Bar",                 IDM_STATUS
+            MENUITEM "Re&fresh",                    IDM_REFRESH
+            MENUITEM SEPARATOR
+            MENUITEM "Stretch with &Aspect Ratio",  IDM_STRETCH
+            MENUITEM "F&ull Screen\tAlt+Enter",     IDM_FULLSCREEN
+        END
+        POPUP "&Debug"
+        BEGIN
+            MENUITEM "E&xecute",                    IDM_EXEC
+            MENUITEM "&Break\tAlt+F12",             IDM_BREAK
+            MENUITEM "&Trace\tShift+F12",           IDM_TRACE
+            MENUITEM SEPARATOR
+            MENUITEM "&Reset",                      IDM_RESET
+        END
+        POPUP "&Tools"
+        BEGIN
+            MENUITEM "&Mouse Mode\tF12",            IDM_MOUSEMODE
+            MENUITEM "Software &Keyboard",          IDM_SOFTKEY
+            MENUITEM SEPARATOR
+            MENUITEM "Adjust &Time",                IDM_TIMEADJ
+            MENUITEM "trap #&0...",                 IDM_TRAP0
+            MENUITEM "&WAV Dump...",                IDM_SAVEWAV
+            MENUITEM SEPARATOR
+            MENUITEM "Make a new &Floppy Disk...",  IDM_NEWFD
+            MENUITEM "Make a new S&ASI Fixed Disk...", IDM_NEWSASI
+            MENUITEM "Make a new S&CSI Fixed Disk...", IDM_NEWSCSI
+            MENUITEM "Make a new SCSI MO &Disk...", IDM_NEWMO
+            MENUITEM SEPARATOR
+            MENUITEM "&Options...",                 IDM_OPTIONS
+        END
+        POPUP "&Window"
+        BEGIN
+            MENUITEM "&Cascade",                    IDM_CASCADE
+            MENUITEM "&Tile",                       IDM_TILE
+            MENUITEM "&Iconic",                     IDM_ICONIC
+            MENUITEM "&Arrange Icon",               IDM_ARRANGEICON
+            MENUITEM "&Hide",                       IDM_HIDE
+            MENUITEM "&Restore",                    IDM_RESTORE
+        END
+        POPUP "&Help"
+        BEGIN
+            MENUITEM "&About...",                   IDM_ABOUT
+        END
+    END
+END
+
+IDR_DISMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "アドレスを指定(&A)...",       IDM_DIS_ADDR
+        MENUITEM "新しいウィンドウ(&N)...",     IDM_DIS_NEWWIN
+        MENUITEM SEPARATOR
+        MENUITEM "PCへ移動(&P)",                IDM_DIS_PC
+        MENUITEM "PCに同期(&Y)",                IDM_DIS_SYNC
+        MENUITEM SEPARATOR
+        POPUP "MPUレジスタ(&R)"
+        BEGIN
+            MENUITEM "D0 ($00000000)",              IDM_REG_D0
+            MENUITEM "D1 ($00000000)",              IDM_REG_D1
+            MENUITEM "D2 ($00000000)",              IDM_REG_D2
+            MENUITEM "D3 ($00000000)",              IDM_REG_D3
+            MENUITEM "D4 ($00000000)",              IDM_REG_D4
+            MENUITEM "D5 ($00000000)",              IDM_REG_D5
+            MENUITEM "D6 ($00000000)",              IDM_REG_D6
+            MENUITEM "D7 ($00000000)",              IDM_REG_D7
+            MENUITEM SEPARATOR
+            MENUITEM "A0 ($00000000)",              IDM_REG_A0
+            MENUITEM "A1 ($00000000)",              IDM_REG_A1
+            MENUITEM "A2 ($00000000)",              IDM_REG_A2
+            MENUITEM "A3 ($00000000)",              IDM_REG_A3
+            MENUITEM "A4 ($00000000)",              IDM_REG_A4
+            MENUITEM "A5 ($00000000)",              IDM_REG_A5
+            MENUITEM "A6 ($00000000)",              IDM_REG_A6
+            MENUITEM "A7 ($00000000)",              IDM_REG_A7
+            MENUITEM SEPARATOR
+            MENUITEM "USP ($00000000)",             IDM_REG_USP
+            MENUITEM "SSP ($00000000)",             IDM_REG_SSP
+            MENUITEM "PC ($000000)",                IDM_REG_PC
+        END
+        POPUP "スタック(&S)"
+        BEGIN
+            MENUITEM "(A7+00) : $000000",           IDM_STACK_0
+            MENUITEM "(A7+02) : $000000",           IDM_STACK_1
+            MENUITEM "(A7+04) : $000000",           IDM_STACK_2
+            MENUITEM "(A7+06) : $000000",           IDM_STACK_3
+            MENUITEM "(A7+08) : $000000",           IDM_STACK_4
+            MENUITEM "(A7+0A) : $000000",           IDM_STACK_5
+            MENUITEM "(A7+0C) : $000000",           IDM_STACK_6
+            MENUITEM "(A7+0E) : $000000",           IDM_STACK_7
+            MENUITEM "(A7+10) : $000000",           IDM_STACK_8
+            MENUITEM "(A7+12) : $000000",           IDM_STACK_9
+            MENUITEM "(A7+14) : $000000",           IDM_STACK_A
+            MENUITEM "(A7+16) : $000000",           IDM_STACK_B
+            MENUITEM "(A7+18) : $000000",           IDM_STACK_C
+            MENUITEM "(A7+1A) : $000000",           IDM_STACK_D
+            MENUITEM "(A7+1C) : $000000",           IDM_STACK_E
+            MENUITEM "(A7+1E) : $000000",           IDM_STACK_F
+        END
+        POPUP "ブレークポイント(&B)"
+        BEGIN
+            MENUITEM "0 : $000000",                 IDM_DIS_BREAKP0
+            MENUITEM "1 : $000000",                 IDM_DIS_BREAKP1
+            MENUITEM "2 : $000000",                 IDM_DIS_BREAKP2
+            MENUITEM "3 : $000000",                 IDM_DIS_BREAKP3
+            MENUITEM "4 : $000000",                 IDM_DIS_BREAKP4
+            MENUITEM "5 : $000000",                 IDM_DIS_BREAKP5
+            MENUITEM "6 : $000000",                 IDM_DIS_BREAKP6
+            MENUITEM "7 : $000000",                 IDM_DIS_BREAKP7
+        END
+        POPUP "割り込みベクタ(&V)"
+        BEGIN
+            MENUITEM "リセット",                    IDM_DIS_RESET
+            MENUITEM "バスエラー",                  IDM_DIS_BUSERR
+            MENUITEM "アドレスエラー",              IDM_DIS_ADDRERR
+            MENUITEM "不当命令",                    IDM_DIS_INST
+            MENUITEM "ゼロ除算",                    IDM_DIS_ZERODIV
+            MENUITEM "CHK命令",                     IDM_DIS_CHK
+            MENUITEM "TRAPV命令",                   IDM_DIS_TRAPV
+            MENUITEM "特権違反",                    IDM_DIS_PRIV
+            MENUITEM "トレース",                    IDM_DIS_TRACE
+            MENUITEM "Aラインエミュレータ (SX-WINDOW)", IDM_DIS_ALINE
+            MENUITEM "Fラインエミュレータ (Human68k/FLOAT*)", IDM_DIS_FLINE
+            MENUITEM SEPARATOR
+            MENUITEM "trap #0 (GENERIC)",           IDM_DIS_TRAP0
+            MENUITEM "trap #1 (BGDRV)",             IDM_DIS_TRAP1
+            MENUITEM "trap #2 (PCM8)",              IDM_DIS_TRAP2
+            MENUITEM "trap #3 (ZMUSIC)",            IDM_DIS_TRAP3
+            MENUITEM "trap #4 (MX/MA/ML/MC/MNDRV)", IDM_DIS_TRAP4
+            MENUITEM "trap #5 (CDC)",               IDM_DIS_TRAP5
+            MENUITEM "trap #6",                     IDM_DIS_TRAP6
+            MENUITEM "trap #7",                     IDM_DIS_TRAP7
+            MENUITEM "trap #8 (ROM DB)",            IDM_DIS_TRAP8
+            MENUITEM "trap #9 (DB/SCD)",            IDM_DIS_TRAP9
+            MENUITEM "trap #10 (POWER CTRL)",       IDM_DIS_TRAPA
+            MENUITEM "trap #11 (BREAK KEY)",        IDM_DIS_TRAPB
+            MENUITEM "trap #12 (COPY KEY)",         IDM_DIS_TRAPC
+            MENUITEM "trap #13 (CTRL+C)",           IDM_DIS_TRAPD
+            MENUITEM "trap #14 (DOS ERROR)",        IDM_DIS_TRAPE
+            MENUITEM "trap #15 (IOCS)",             IDM_DIS_TRAPF
+            MENUITEM SEPARATOR
+            MENUITEM "MFP 0 (ALARM)",               IDM_DIS_MFP0
+            MENUITEM "MFP 1 (Ext Power)",           IDM_DIS_MFP1
+            MENUITEM "MFP 2 (Power Switch)",        IDM_DIS_MFP2
+            MENUITEM "MFP 3 (OPM Timer)",           IDM_DIS_MFP3
+            MENUITEM "MFP 4 (Timer-D)",             IDM_DIS_MFP4
+            MENUITEM "MFP 5 (Timer-C)",             IDM_DIS_MFP5
+            MENUITEM "MFP 6 (V-DISP)",              IDM_DIS_MFP6
+            MENUITEM "MFP 7 (GPIP5)",               IDM_DIS_MFP7
+            MENUITEM "MFP 8 (Timer-B)",             IDM_DIS_MFP8
+            MENUITEM "MFP 9 (TxError)",             IDM_DIS_MFP9
+            MENUITEM "MFP A (TxBufEmpty)",          IDM_DIS_MFPA
+            MENUITEM "MFP B (RxError)",             IDM_DIS_MFPB
+            MENUITEM "MFP C (RxBufFull)",           IDM_DIS_MFPC
+            MENUITEM "MFP D (Timer-A)",             IDM_DIS_MFPD
+            MENUITEM "MFP E (CRTC Raster)",         IDM_DIS_MFPE
+            MENUITEM "MFP F (CRTC H-SYNC)",         IDM_DIS_MFPF
+            MENUITEM SEPARATOR
+            MENUITEM "SCC 0 (Channel-B TxBufEmpty)", IDM_DIS_SCC0
+            MENUITEM "SCC 1 (Channel-B ExtStatus)", IDM_DIS_SCC1
+            MENUITEM "SCC 2 (Channel-B RxBufFull)", IDM_DIS_SCC2
+            MENUITEM "SCC 3 (Channel-B SpecialRxCond)", IDM_DIS_SCC3
+            MENUITEM "SCC 4 (Channel-A TxBufEmpty)", IDM_DIS_SCC4
+            MENUITEM "SCC 5 (Channel-A ExtStatus)", IDM_DIS_SCC5
+            MENUITEM "SCC 6 (Channel-A RxBufFull)", IDM_DIS_SCC6
+            MENUITEM "SCC 7 (Channel-A SpecialRxCond)", IDM_DIS_SCC7
+            MENUITEM SEPARATOR
+            MENUITEM "DMAC 0 (FDC Normal)",         IDM_DIS_DMAC0
+            MENUITEM "DMAC 1 (FDC Error)",          IDM_DIS_DMAC1
+            MENUITEM "DMAC 2 (HDC Normal)",         IDM_DIS_DMAC2
+            MENUITEM "DMAC 3 (HDC Error)",          IDM_DIS_DMAC3
+            MENUITEM "DMAC 4 (USER Normal)",        IDM_DIS_DMAC4
+            MENUITEM "DMAC 5 (USER Error)",         IDM_DIS_DMAC5
+            MENUITEM "DMAC 6 (ADPCM Normal)",       IDM_DIS_DMAC6
+            MENUITEM "DMAC 7 (ADPCM Error)",        IDM_DIS_DMAC7
+            MENUITEM SEPARATOR
+            MENUITEM "IOSC 0 (FDC)",                IDM_DIS_IOSC0
+            MENUITEM "IOSC 1 (FDD)",                IDM_DIS_IOSC1
+            MENUITEM "IOSC 2 (HDC)",                IDM_DIS_IOSC2
+            MENUITEM "IOSC 3 (Printer)",            IDM_DIS_IOSC3
+        END
+        POPUP "アドレスヒストリ(&H)"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+    END
+END
+
+IDR_US_DISMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "Enter &Address...",           IDM_DIS_ADDR
+        MENUITEM "&New Window...",              IDM_DIS_NEWWIN
+        MENUITEM SEPARATOR
+        MENUITEM "Go to &PC",                   IDM_DIS_PC
+        MENUITEM "S&ync",                       IDM_DIS_SYNC
+        MENUITEM SEPARATOR
+        POPUP "&Register"
+        BEGIN
+            MENUITEM "D0 ($00000000)",              IDM_REG_D0
+            MENUITEM "D1 ($00000000)",              IDM_REG_D1
+            MENUITEM "D2 ($00000000)",              IDM_REG_D2
+            MENUITEM "D3 ($00000000)",              IDM_REG_D3
+            MENUITEM "D4 ($00000000)",              IDM_REG_D4
+            MENUITEM "D5 ($00000000)",              IDM_REG_D5
+            MENUITEM "D6 ($00000000)",              IDM_REG_D6
+            MENUITEM "D7 ($00000000)",              IDM_REG_D7
+            MENUITEM SEPARATOR
+            MENUITEM "A0 ($00000000)",              IDM_REG_A0
+            MENUITEM "A1 ($00000000)",              IDM_REG_A1
+            MENUITEM "A2 ($00000000)",              IDM_REG_A2
+            MENUITEM "A3 ($00000000)",              IDM_REG_A3
+            MENUITEM "A4 ($00000000)",              IDM_REG_A4
+            MENUITEM "A5 ($00000000)",              IDM_REG_A5
+            MENUITEM "A6 ($00000000)",              IDM_REG_A6
+            MENUITEM "A7 ($00000000)",              IDM_REG_A7
+            MENUITEM SEPARATOR
+            MENUITEM "USP ($00000000)",             IDM_REG_USP
+            MENUITEM "SSP ($00000000)",             IDM_REG_SSP
+            MENUITEM "PC ($000000)",                IDM_REG_PC
+        END
+        POPUP "&Stack"
+        BEGIN
+            MENUITEM "(A7+00) : $000000",           IDM_STACK_0
+            MENUITEM "(A7+02) : $000000",           IDM_STACK_1
+            MENUITEM "(A7+04) : $000000",           IDM_STACK_2
+            MENUITEM "(A7+06) : $000000",           IDM_STACK_3
+            MENUITEM "(A7+08) : $000000",           IDM_STACK_4
+            MENUITEM "(A7+0A) : $000000",           IDM_STACK_5
+            MENUITEM "(A7+0C) : $000000",           IDM_STACK_6
+            MENUITEM "(A7+0E) : $000000",           IDM_STACK_7
+            MENUITEM "(A7+10) : $000000",           IDM_STACK_8
+            MENUITEM "(A7+12) : $000000",           IDM_STACK_9
+            MENUITEM "(A7+14) : $000000",           IDM_STACK_A
+            MENUITEM "(A7+16) : $000000",           IDM_STACK_B
+            MENUITEM "(A7+18) : $000000",           IDM_STACK_C
+            MENUITEM "(A7+1A) : $000000",           IDM_STACK_D
+            MENUITEM "(A7+1C) : $000000",           IDM_STACK_E
+            MENUITEM "(A7+1E) : $000000",           IDM_STACK_F
+        END
+        POPUP "&Break Point"
+        BEGIN
+            MENUITEM "0 : $000000",                 IDM_DIS_BREAKP0
+            MENUITEM "1 : $000000",                 IDM_DIS_BREAKP1
+            MENUITEM "2 : $000000",                 IDM_DIS_BREAKP2
+            MENUITEM "3 : $000000",                 IDM_DIS_BREAKP3
+            MENUITEM "4 : $000000",                 IDM_DIS_BREAKP4
+            MENUITEM "5 : $000000",                 IDM_DIS_BREAKP5
+            MENUITEM "6 : $000000",                 IDM_DIS_BREAKP6
+            MENUITEM "7 : $000000",                 IDM_DIS_BREAKP7
+        END
+        POPUP "&Vector"
+        BEGIN
+            MENUITEM "Reset",                       IDM_DIS_RESET
+            MENUITEM "Bus Error",                   IDM_DIS_BUSERR
+            MENUITEM "Address Error",               IDM_DIS_ADDRERR
+            MENUITEM "Invalid Instruction",         IDM_DIS_INST
+            MENUITEM "Zero Divide",                 IDM_DIS_ZERODIV
+            MENUITEM "CHK Instruction",             IDM_DIS_CHK
+            MENUITEM "TRAPV Instruction",           IDM_DIS_TRAPV
+            MENUITEM "Privilege Violation",         IDM_DIS_PRIV
+            MENUITEM "Trace Exception",             IDM_DIS_TRACE
+            MENUITEM "A line Emulator (SX-WINDOW)", IDM_DIS_ALINE
+            MENUITEM "F line Emulator (Human68k/FLOAT*)", IDM_DIS_FLINE
+            MENUITEM SEPARATOR
+            MENUITEM "trap #0 (GENERIC)",           IDM_DIS_TRAP0
+            MENUITEM "trap #1 (BGDRV)",             IDM_DIS_TRAP1
+            MENUITEM "trap #2 (PCM8)",              IDM_DIS_TRAP2
+            MENUITEM "trap #3 (ZMUSIC)",            IDM_DIS_TRAP3
+            MENUITEM "trap #4 (MX/MA/ML/MC/MNDRV)", IDM_DIS_TRAP4
+            MENUITEM "trap #5 (CDC)",               IDM_DIS_TRAP5
+            MENUITEM "trap #6",                     IDM_DIS_TRAP6
+            MENUITEM "trap #7",                     IDM_DIS_TRAP7
+            MENUITEM "trap #8 (ROM DB)",            IDM_DIS_TRAP8
+            MENUITEM "trap #9 (DB/SCD)",            IDM_DIS_TRAP9
+            MENUITEM "trap #10 (POWER CTRL)",       IDM_DIS_TRAPA
+            MENUITEM "trap #11 (BREAK KEY)",        IDM_DIS_TRAPB
+            MENUITEM "trap #12 (COPY KEY)",         IDM_DIS_TRAPC
+            MENUITEM "trap #13 (CTRL+C)",           IDM_DIS_TRAPD
+            MENUITEM "trap #14 (DOS ERROR)",        IDM_DIS_TRAPE
+            MENUITEM "trap #15 (IOCS)",             IDM_DIS_TRAPF
+            MENUITEM SEPARATOR
+            MENUITEM "MFP 0 (ALARM)",               IDM_DIS_MFP0
+            MENUITEM "MFP 1 (Ext Power)",           IDM_DIS_MFP1
+            MENUITEM "MFP 2 (Power Switch)",        IDM_DIS_MFP2
+            MENUITEM "MFP 3 (OPM Timer)",           IDM_DIS_MFP3
+            MENUITEM "MFP 4 (Timer-D)",             IDM_DIS_MFP4
+            MENUITEM "MFP 5 (Timer-C)",             IDM_DIS_MFP5
+            MENUITEM "MFP 6 (V-DISP)",              IDM_DIS_MFP6
+            MENUITEM "MFP 7 (GPIP5)",               IDM_DIS_MFP7
+            MENUITEM "MFP 8 (Timer-B)",             IDM_DIS_MFP8
+            MENUITEM "MFP 9 (TxError)",             IDM_DIS_MFP9
+            MENUITEM "MFP A (TxBufEmpty)",          IDM_DIS_MFPA
+            MENUITEM "MFP B (RxError)",             IDM_DIS_MFPB
+            MENUITEM "MFP C (RxBufFull)",           IDM_DIS_MFPC
+            MENUITEM "MFP D (Timer-A)",             IDM_DIS_MFPD
+            MENUITEM "MFP E (CRTC Raster)",         IDM_DIS_MFPE
+            MENUITEM "MFP F (CRTC H-SYNC)",         IDM_DIS_MFPF
+            MENUITEM SEPARATOR
+            MENUITEM "SCC 0 (Channel-B TxBufEmpty)", IDM_DIS_SCC0
+            MENUITEM "SCC 1 (Channel-B ExtStatus)", IDM_DIS_SCC1
+            MENUITEM "SCC 2 (Channel-B RxBufFull)", IDM_DIS_SCC2
+            MENUITEM "SCC 3 (Channel-B SpecialRxCond)", IDM_DIS_SCC3
+            MENUITEM "SCC 4 (Channel-A TxBufEmpty)", IDM_DIS_SCC4
+            MENUITEM "SCC 5 (Channel-A ExtStatus)", IDM_DIS_SCC5
+            MENUITEM "SCC 6 (Channel-A RxBufFull)", IDM_DIS_SCC6
+            MENUITEM "SCC 7 (Channel-A SpecialRxCond)", IDM_DIS_SCC7
+            MENUITEM SEPARATOR
+            MENUITEM "DMAC 0 (FDC Normal)",         IDM_DIS_DMAC0
+            MENUITEM "DMAC 1 (FDC Error)",          IDM_DIS_DMAC1
+            MENUITEM "DMAC 2 (HDC Normal)",         IDM_DIS_DMAC2
+            MENUITEM "DMAC 3 (HDC Error)",          IDM_DIS_DMAC3
+            MENUITEM "DMAC 4 (USER Normal)",        IDM_DIS_DMAC4
+            MENUITEM "DMAC 5 (USER Error)",         IDM_DIS_DMAC5
+            MENUITEM "DMAC 6 (ADPCM Normal)",       IDM_DIS_DMAC6
+            MENUITEM "DMAC 7 (ADPCM Error)",        IDM_DIS_DMAC7
+            MENUITEM SEPARATOR
+            MENUITEM "IOSC 0 (FDC)",                IDM_DIS_IOSC0
+            MENUITEM "IOSC 1 (FDD)",                IDM_DIS_IOSC1
+            MENUITEM "IOSC 2 (HDC)",                IDM_DIS_IOSC2
+            MENUITEM "IOSC 3 (Printer)",            IDM_DIS_IOSC3
+        END
+        POPUP "Address &History"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+    END
+END
+
+IDR_MEMORYMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "アドレスを指定(&A)...",       IDM_MEMORY_ADDR
+        MENUITEM "新しいウィンドウ(&N)...",     IDM_MEMORY_NEWWIN
+        MENUITEM SEPARATOR
+        MENUITEM "バイト(&B)",                  IDM_MEMORY_BYTE
+        MENUITEM "ワード(&W)",                  IDM_MEMORY_WORD
+        MENUITEM "ロング(&L)",                  IDM_MEMORY_LONG
+        MENUITEM SEPARATOR
+        MENUITEM "$000000-$0FFFFF",             IDM_MEMORY_0
+        MENUITEM "$100000-$1FFFFF",             IDM_MEMORY_1
+        MENUITEM "$200000-$2FFFFF",             IDM_MEMORY_2
+        MENUITEM "$300000-$3FFFFF",             IDM_MEMORY_3
+        MENUITEM "$400000-$4FFFFF",             IDM_MEMORY_4
+        MENUITEM "$500000-$5FFFFF",             IDM_MEMORY_5
+        MENUITEM "$600000-$6FFFFF",             IDM_MEMORY_6
+        MENUITEM "$700000-$7FFFFF",             IDM_MEMORY_7
+        MENUITEM "$800000-$8FFFFF",             IDM_MEMORY_8
+        MENUITEM "$900000-$9FFFFF",             IDM_MEMORY_9
+        MENUITEM "$A00000-$AFFFFF",             IDM_MEMORY_A
+        MENUITEM "$B00000-$BFFFFF",             IDM_MEMORY_B
+        MENUITEM "$C00000-$CFFFFF",             IDM_MEMORY_C
+        MENUITEM "$D00000-$DFFFFF",             IDM_MEMORY_D
+        MENUITEM "$E00000-$EFFFFF",             IDM_MEMORY_E
+        MENUITEM "$F00000-$FFFFFF",             IDM_MEMORY_F
+        MENUITEM SEPARATOR
+        POPUP "MPUレジスタ(&R)"
+        BEGIN
+            MENUITEM "D0 ($00000000)",              IDM_REG_D0
+            MENUITEM "D1 ($00000000)",              IDM_REG_D1
+            MENUITEM "D2 ($00000000)",              IDM_REG_D2
+            MENUITEM "D3 ($00000000)",              IDM_REG_D3
+            MENUITEM "D4 ($00000000)",              IDM_REG_D4
+            MENUITEM "D5 ($00000000)",              IDM_REG_D5
+            MENUITEM "D6 ($00000000)",              IDM_REG_D6
+            MENUITEM "D7 ($00000000)",              IDM_REG_D7
+            MENUITEM SEPARATOR
+            MENUITEM "A0 ($00000000)",              IDM_REG_A0
+            MENUITEM "A1 ($00000000)",              IDM_REG_A1
+            MENUITEM "A2 ($00000000)",              IDM_REG_A2
+            MENUITEM "A3 ($00000000)",              IDM_REG_A3
+            MENUITEM "A4 ($00000000)",              IDM_REG_A4
+            MENUITEM "A5 ($00000000)",              IDM_REG_A5
+            MENUITEM "A6 ($00000000)",              IDM_REG_A6
+            MENUITEM "A7 ($00000000)",              IDM_REG_A7
+            MENUITEM SEPARATOR
+            MENUITEM "USP ($00000000)",             IDM_REG_USP
+            MENUITEM "SSP ($00000000)",             IDM_REG_SSP
+            MENUITEM "PC ($000000)",                IDM_REG_PC
+        END
+        POPUP "スタック(&S)"
+        BEGIN
+            MENUITEM "(A7+00) : $000000",           IDM_STACK_0
+            MENUITEM "(A7+02) : $000000",           IDM_STACK_1
+            MENUITEM "(A7+04) : $000000",           IDM_STACK_2
+            MENUITEM "(A7+06) : $000000",           IDM_STACK_3
+            MENUITEM "(A7+08) : $000000",           IDM_STACK_4
+            MENUITEM "(A7+0A) : $000000",           IDM_STACK_5
+            MENUITEM "(A7+0C) : $000000",           IDM_STACK_6
+            MENUITEM "(A7+0E) : $000000",           IDM_STACK_7
+            MENUITEM "(A7+10) : $000000",           IDM_STACK_8
+            MENUITEM "(A7+12) : $000000",           IDM_STACK_9
+            MENUITEM "(A7+14) : $000000",           IDM_STACK_A
+            MENUITEM "(A7+16) : $000000",           IDM_STACK_B
+            MENUITEM "(A7+18) : $000000",           IDM_STACK_C
+            MENUITEM "(A7+1A) : $000000",           IDM_STACK_D
+            MENUITEM "(A7+1C) : $000000",           IDM_STACK_E
+            MENUITEM "(A7+1E) : $000000",           IDM_STACK_F
+        END
+        POPUP "エリア直接指定(&D)"
+        BEGIN
+            MENUITEM "$000000 : MPUベクタ",         IDM_AREA_MPU
+            MENUITEM "$000400 : IOCSベクタ",        IDM_AREA_IOCS
+            MENUITEM "$001800 : DOSベクタ",         IDM_AREA_DOS
+            MENUITEM "$006800 : Human68k",          IDM_AREA_HUMAN
+            MENUITEM SEPARATOR
+            MENUITEM "$C00000 : グラフィックVRAM",  IDM_AREA_GVRAM
+            MENUITEM "$E00000 : テキストVRAM",      IDM_AREA_TVRAM
+            MENUITEM "$E80000 : CRTコントローラ",   IDM_AREA_CRTC
+            MENUITEM "$E82000 : ビデオコントローラ", IDM_AREA_VC
+            MENUITEM "$E84000 : DMAコントローラ",   IDM_AREA_DMAC
+            MENUITEM "$E86000 : エリアセット",      IDM_AREA_AREA
+            MENUITEM "$E88000 : マルチファンクションペリフェラル", IDM_AREA_MFP
+            MENUITEM "$E8A000 : リアルタイムクロック", IDM_AREA_RTC
+            MENUITEM "$E8C000 : プリンタ",          IDM_AREA_PRN
+            MENUITEM "$E8E000 : システムポート",    IDM_AREA_SYSP
+            MENUITEM "$E90000 : FM音源",            IDM_AREA_OPM
+            MENUITEM "$E92000 : ADPCM",             IDM_AREA_APCM
+            MENUITEM "$E94000 : フロッピーディスクコントローラ", IDM_AREA_FDC
+            MENUITEM "$E96000 : SASIコントローラ",  IDM_AREA_SASI
+            MENUITEM "$E98000 : シリアルコミュニケーションコントローラ", IDM_AREA_SCC
+            MENUITEM "$E9A000 : パラレルポート",    IDM_AREA_PPI
+            MENUITEM "$E9C000 : I/Oコントローラ",   IDM_AREA_IOSC
+            MENUITEM "$E9F000 : Windrv",            IDM_AREA_WDRV
+            MENUITEM "$EA0000 : SCSIプロトコルコントローラ", IDM_AREA_SCSI
+            MENUITEM "$EAFA00 : MIDIコントローラ",  IDM_AREA_MIDI
+            MENUITEM "$EB0000 : スプライトレジスタ", IDM_AREA_SPREG
+            MENUITEM "$EB8000 : スプライトメモリ",  IDM_AREA_SPMEM
+            MENUITEM "$ECC000 : Mercury-Unit",      IDM_AREA_MERC
+            MENUITEM "$ECE000 : Neptune-X",         IDM_AREA_NEPX
+            MENUITEM SEPARATOR
+            MENUITEM "$ED0000 : SRAM(メモリスイッチ)", IDM_AREA_SRSW
+            MENUITEM "$ED0100 : SRAM(ユーザ領域)",  IDM_AREA_SRUSER
+            MENUITEM "$F00000 : CG ROM",            IDM_AREA_CGROM
+            MENUITEM "$FC0000 : SCSI ROM",          IDM_AREA_SCSIROM
+            MENUITEM "$FE0000 : IPL ROM",           IDM_AREA_IPLROM
+        END
+        POPUP "アドレスヒストリ(&H)"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+    END
+END
+
+IDR_US_MEMORYMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "Enter &Address...",           IDM_MEMORY_ADDR
+        MENUITEM "&New Window...",              IDM_MEMORY_NEWWIN
+        MENUITEM SEPARATOR
+        MENUITEM "&Byte Size",                  IDM_MEMORY_BYTE
+        MENUITEM "&Word Size",                  IDM_MEMORY_WORD
+        MENUITEM "&Long Size",                  IDM_MEMORY_LONG
+        MENUITEM SEPARATOR
+        MENUITEM "$000000-$0FFFFF",             IDM_MEMORY_0
+        MENUITEM "$100000-$1FFFFF",             IDM_MEMORY_1
+        MENUITEM "$200000-$2FFFFF",             IDM_MEMORY_2
+        MENUITEM "$300000-$3FFFFF",             IDM_MEMORY_3
+        MENUITEM "$400000-$4FFFFF",             IDM_MEMORY_4
+        MENUITEM "$500000-$5FFFFF",             IDM_MEMORY_5
+        MENUITEM "$600000-$6FFFFF",             IDM_MEMORY_6
+        MENUITEM "$700000-$7FFFFF",             IDM_MEMORY_7
+        MENUITEM "$800000-$8FFFFF",             IDM_MEMORY_8
+        MENUITEM "$900000-$9FFFFF",             IDM_MEMORY_9
+        MENUITEM "$A00000-$AFFFFF",             IDM_MEMORY_A
+        MENUITEM "$B00000-$BFFFFF",             IDM_MEMORY_B
+        MENUITEM "$C00000-$CFFFFF",             IDM_MEMORY_C
+        MENUITEM "$D00000-$DFFFFF",             IDM_MEMORY_D
+        MENUITEM "$E00000-$EFFFFF",             IDM_MEMORY_E
+        MENUITEM "$F00000-$FFFFFF",             IDM_MEMORY_F
+        MENUITEM SEPARATOR
+        POPUP "&Register"
+        BEGIN
+            MENUITEM "D0 ($00000000)",              IDM_REG_D0
+            MENUITEM "D1 ($00000000)",              IDM_REG_D1
+            MENUITEM "D2 ($00000000)",              IDM_REG_D2
+            MENUITEM "D3 ($00000000)",              IDM_REG_D3
+            MENUITEM "D4 ($00000000)",              IDM_REG_D4
+            MENUITEM "D5 ($00000000)",              IDM_REG_D5
+            MENUITEM "D6 ($00000000)",              IDM_REG_D6
+            MENUITEM "D7 ($00000000)",              IDM_REG_D7
+            MENUITEM SEPARATOR
+            MENUITEM "A0 ($00000000)",              IDM_REG_A0
+            MENUITEM "A1 ($00000000)",              IDM_REG_A1
+            MENUITEM "A2 ($00000000)",              IDM_REG_A2
+            MENUITEM "A3 ($00000000)",              IDM_REG_A3
+            MENUITEM "A4 ($00000000)",              IDM_REG_A4
+            MENUITEM "A5 ($00000000)",              IDM_REG_A5
+            MENUITEM "A6 ($00000000)",              IDM_REG_A6
+            MENUITEM "A7 ($00000000)",              IDM_REG_A7
+            MENUITEM SEPARATOR
+            MENUITEM "USP ($00000000)",             IDM_REG_USP
+            MENUITEM "SSP ($00000000)",             IDM_REG_SSP
+            MENUITEM "PC ($000000)",                IDM_REG_PC
+        END
+        POPUP "&Stack"
+        BEGIN
+            MENUITEM "(A7+00) : $000000",           IDM_STACK_0
+            MENUITEM "(A7+02) : $000000",           IDM_STACK_1
+            MENUITEM "(A7+04) : $000000",           IDM_STACK_2
+            MENUITEM "(A7+06) : $000000",           IDM_STACK_3
+            MENUITEM "(A7+08) : $000000",           IDM_STACK_4
+            MENUITEM "(A7+0A) : $000000",           IDM_STACK_5
+            MENUITEM "(A7+0C) : $000000",           IDM_STACK_6
+            MENUITEM "(A7+0E) : $000000",           IDM_STACK_7
+            MENUITEM "(A7+10) : $000000",           IDM_STACK_8
+            MENUITEM "(A7+12) : $000000",           IDM_STACK_9
+            MENUITEM "(A7+14) : $000000",           IDM_STACK_A
+            MENUITEM "(A7+16) : $000000",           IDM_STACK_B
+            MENUITEM "(A7+18) : $000000",           IDM_STACK_C
+            MENUITEM "(A7+1A) : $000000",           IDM_STACK_D
+            MENUITEM "(A7+1C) : $000000",           IDM_STACK_E
+            MENUITEM "(A7+1E) : $000000",           IDM_STACK_F
+        END
+        POPUP "&Direct Select"
+        BEGIN
+            MENUITEM "$000000 : MPU Vector",        IDM_AREA_MPU
+            MENUITEM "$000400 : IOCS Vector",       IDM_AREA_IOCS
+            MENUITEM "$001800 : DOS Vector",        IDM_AREA_DOS
+            MENUITEM "$006800 : OS (Human68k)",     IDM_AREA_HUMAN
+            MENUITEM SEPARATOR
+            MENUITEM "$C00000 : Graphic VRAM",      IDM_AREA_GVRAM
+            MENUITEM "$E00000 : Text VRAM",         IDM_AREA_TVRAM
+            MENUITEM "$E80000 : CRT Controller",    IDM_AREA_CRTC
+            MENUITEM "$E82000 : Video Controller",  IDM_AREA_VC
+            MENUITEM "$E84000 : DMA Controller",    IDM_AREA_DMAC
+            MENUITEM "$E86000 : Area Set",          IDM_AREA_AREA
+            MENUITEM "$E88000 : Multi-Function Peripheral", IDM_AREA_MFP
+            MENUITEM "$E8A000 : Real-Time Clock",   IDM_AREA_RTC
+            MENUITEM "$E8C000 : Printer",           IDM_AREA_PRN
+            MENUITEM "$E8E000 : System Port",       IDM_AREA_SYSP
+            MENUITEM "$E90000 : FM Sound",          IDM_AREA_OPM
+            MENUITEM "$E92000 : ADPCM",             IDM_AREA_APCM
+            MENUITEM "$E94000 : Floppy Disk Controller", IDM_AREA_FDC
+            MENUITEM "$E96000 : SASI Controller",   IDM_AREA_SASI
+            MENUITEM "$E98000 : Serial Communication", IDM_AREA_SCC
+            MENUITEM "$E9A000 : Parallel Port",     IDM_AREA_PPI
+            MENUITEM "$E9C000 : I/O Contoller",     IDM_AREA_IOSC
+            MENUITEM "$E9F000 : Windrv",            IDM_AREA_WDRV
+            MENUITEM "$EA0000 : SCSI Protocol Controller", IDM_AREA_SCSI
+            MENUITEM "$EAFA00 : MIDI Controller",   IDM_AREA_MIDI
+            MENUITEM "$EB0000 : Sprite Register",   IDM_AREA_SPREG
+            MENUITEM "$EB8000 : Sprite Memory",     IDM_AREA_SPMEM
+            MENUITEM "$ECC000 : Mercury-Unit",      IDM_AREA_MERC
+            MENUITEM "$ECE000 : Neptune-X",         IDM_AREA_NEPX
+            MENUITEM SEPARATOR
+            MENUITEM "$ED0000 : SRAM Memory Switch", IDM_AREA_SRSW
+            MENUITEM "$ED0100 : SRAM User Area",    IDM_AREA_SRUSER
+            MENUITEM "$F00000 : CG ROM",            IDM_AREA_CGROM
+            MENUITEM "$FC0000 : SCSI ROM",          IDM_AREA_SCSIROM
+            MENUITEM "$FE0000 : IPL ROM",           IDM_AREA_IPLROM
+        END
+        POPUP "Address &History"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+    END
+END
+
+IDR_PCGMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "Palette &0 ($E82200)",        IDM_PCG_0
+        MENUITEM "Palette &1 ($E82220)",        IDM_PCG_1
+        MENUITEM "Palette &2 ($E82240)",        IDM_PCG_2
+        MENUITEM "Palette &3 ($E82260)",        IDM_PCG_3
+        MENUITEM "Palette &4 ($E82280)",        IDM_PCG_4
+        MENUITEM "Palette &5 ($E822A0)",        IDM_PCG_5
+        MENUITEM "Palette &6 ($E822C0)",        IDM_PCG_6
+        MENUITEM "Palette &7 ($E822E0)",        IDM_PCG_7
+        MENUITEM "Palette &8 ($E82300)",        IDM_PCG_8
+        MENUITEM "Palette &9 ($E82320)",        IDM_PCG_9
+        MENUITEM "Palette &A ($E82340)",        IDM_PCG_A
+        MENUITEM "Palette &B ($E82360)",        IDM_PCG_B
+        MENUITEM "Palette &C ($E82380)",        IDM_PCG_C
+        MENUITEM "Palette &D ($E823A0)",        IDM_PCG_D
+        MENUITEM "Palette &E ($E823C0)",        IDM_PCG_E
+        MENUITEM "Palette &F ($E823E0)",        IDM_PCG_F
+    END
+END
+
+IDR_REGMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "D0 ($00000000)",              IDM_REG_D0
+        MENUITEM "D1 ($00000000)",              IDM_REG_D1
+        MENUITEM "D2 ($00000000)",              IDM_REG_D2
+        MENUITEM "D3 ($00000000)",              IDM_REG_D3
+        MENUITEM "D4 ($00000000)",              IDM_REG_D4
+        MENUITEM "D5 ($00000000)",              IDM_REG_D5
+        MENUITEM "D6 ($00000000)",              IDM_REG_D6
+        MENUITEM "D7 ($00000000)",              IDM_REG_D7
+        MENUITEM SEPARATOR
+        MENUITEM "A0 ($00000000)",              IDM_REG_A0
+        MENUITEM "A1 ($00000000)",              IDM_REG_A1
+        MENUITEM "A2 ($00000000)",              IDM_REG_A2
+        MENUITEM "A3 ($00000000)",              IDM_REG_A3
+        MENUITEM "A4 ($00000000)",              IDM_REG_A4
+        MENUITEM "A5 ($00000000)",              IDM_REG_A5
+        MENUITEM "A6 ($00000000)",              IDM_REG_A6
+        MENUITEM "A7 ($00000000)",              IDM_REG_A7
+        MENUITEM SEPARATOR
+        MENUITEM "USP ($00000000)",             IDM_REG_USP
+        MENUITEM "SSP ($00000000)",             IDM_REG_SSP
+        MENUITEM "PC ($000000)",                IDM_REG_PC
+        MENUITEM "SR ($0000)",                  IDM_REG_SR
+    END
+END
+
+IDR_BREAKPMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "有効(&E)",                    IDM_BREAKP_ENABLE
+        MENUITEM "回数クリア(&C)",              IDM_BREAKP_CLEAR
+        MENUITEM "削除(&D)",                    IDM_BREAKP_DEL
+        MENUITEM SEPARATOR
+        MENUITEM "アドレスを指定(&A)...",       IDM_BREAKP_ADDR
+        POPUP "アドレスヒストリ(&H)"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "全て削除(&R)",                IDM_BREAKP_ALL
+    END
+END
+
+IDR_US_BREAKPMENU MENU
+BEGIN
+    POPUP "POPUP"
+    BEGIN
+        MENUITEM "&Enable",                     IDM_BREAKP_ENABLE
+        MENUITEM "&Clear Counter",              IDM_BREAKP_CLEAR
+        MENUITEM "&Delete",                     IDM_BREAKP_DEL
+        MENUITEM SEPARATOR
+        MENUITEM "Enter &Address...",           IDM_BREAKP_ADDR
+        POPUP "Address &History"
+        BEGIN
+            MENUITEM "$000000",                     IDM_HISTORY_0
+            MENUITEM "$000000",                     IDM_HISTORY_1
+            MENUITEM "$000000",                     IDM_HISTORY_2
+            MENUITEM "$000000",                     IDM_HISTORY_3
+            MENUITEM "$000000",                     IDM_HISTORY_4
+            MENUITEM "$000000",                     IDM_HISTORY_5
+            MENUITEM "$000000",                     IDM_HISTORY_6
+            MENUITEM "$000000",                     IDM_HISTORY_7
+            MENUITEM "$000000",                     IDM_HISTORY_8
+            MENUITEM "$000000",                     IDM_HISTORY_9
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&rase All",                  IDM_BREAKP_ALL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTDLG DIALOG 0, 0, 153, 149
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "XM6のバージョン情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,51,128,50,14
+    CONTROL         "",IDC_ABOUT_ICON,"Static",SS_BLACKFRAME,7,7,56,44
+    LTEXT           "X68000 EMULATOR XM6",IDC_ABOUT_XM6,68,13,74,8
+    LTEXT           "version %x.%02x (2006/10/23)",IDC_ABOUT_VER,68,29,77,8
+    LTEXT           "Copyright (C) 2001-2006 ＰＩ．",IDC_ABOUT_PI,34,57,86,8
+    LTEXT           "http://www.ipc-tokai.or.jp/~ytanaka/",IDC_ABOUT_URL,23,66,107,8
+    LTEXT           "Starscream 680x0 emulation library\nby Neill Corlett (neill@neillcorlett.com)",IDC_ABOUT_CORLETT,12,83,132,16
+    LTEXT           "FM Sound Generator with OPM interface\nCopyright (C) by cisc 1998, 2003.",IDC_ABOUT_CISC,12,104,121,16
+END
+
+IDD_US_ABOUTDLG DIALOGEX 0, 0, 184, 149
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About XM6"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Correcto",IDOK,52,128,89,14
+    CONTROL         "",IDC_ABOUT_ICON,"Static",SS_BLACKFRAME,7,5,72,44
+    LTEXT           "X68000 EMULATOR XM6",IDC_ABOUT_XM6,85,11,91,8
+    LTEXT           "version %x.%02x (10/23/2006)",IDC_ABOUT_VER,85,27,91,8
+    LTEXT           "Copyright (C) 2001-2006 PI.",IDC_ABOUT_PI,47,57,88,8
+    LTEXT           "http://www.ipc-tokai.or.jp/~ytanaka/",IDC_ABOUT_URL,30,66,122,8
+    LTEXT           "Starscream 680x0 emulation library\nby Neill Corlett (neill@neillcorlett.com)",IDC_ABOUT_CORLETT,22,83,146,16
+    LTEXT           "FM Sound Generator with OPM interface\nCopyright (C) by cisc 1998, 2003.",IDC_ABOUT_CISC,22,104,146,16
+END
+
+IDD_ADDRDLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "アドレス入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "16進アドレス(&A)",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,70,26,50,14
+END
+
+IDD_US_ADDRDLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Address"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Address",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,26,50,14
+END
+
+IDD_REGDLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "レジスタ値入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "レジスタ(&R)",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,70,26,50,14
+END
+
+IDD_US_REGDLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Value"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Register",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,26,50,14
+END
+
+IDD_DATADLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "メモリ値入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "アドレス(&A)",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,70,26,50,14
+END
+
+IDD_US_DATADLG DIALOG 0, 0, 127, 47
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Value"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Address",IDC_ADDR_ADDRL,7,11,47,8
+    COMBOBOX        IDC_ADDR_ADDRE,7,21,52,70,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP | 0x1000
+    DEFPUSHBUTTON   "OK",IDOK,70,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,70,26,50,14
+END
+
+IDD_FDIDLG DIALOG 0, 0, 203, 245
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "フロッピーディスクイメージの作成"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,41,224,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,113,224,50,14
+    LTEXT           "ファイル名(&F)",IDC_FDI_FILEL,7,8,40,8
+    EDITTEXT        IDC_FDI_FILEE,7,18,170,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_FDI_FILEB,183,17,13,14
+    LTEXT           "ディスク名(&N) (16文字まで)",IDC_FDI_NAMEL,7,37,99,8
+    EDITTEXT        IDC_FDI_NAMEE,7,47,170,14,ES_AUTOHSCROLL
+    GROUPBOX        "物理フォーマット",IDC_FDI_PHYG,7,67,189,78
+    CONTROL         "2&HD (1232KB)",IDC_FDI_2HD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,81,58,10
+    CONTROL         "2HD&A (1280KB)",IDC_FDI_2HDA,"Button",BS_AUTORADIOBUTTON,13,96,62,10
+    CONTROL         "2H&S (1440KB)",IDC_FDI_2HS,"Button",BS_AUTORADIOBUTTON,13,111,57,10
+    CONTROL         "2H&C (1200KB)",IDC_FDI_2HC,"Button",BS_AUTORADIOBUTTON,13,126,58,10
+    CONTROL         "2HD&E (1440KB)",IDC_FDI_2HDE,"Button",BS_AUTORADIOBUTTON,111,81,62,10
+    CONTROL         "2H&Q (1440KB)",IDC_FDI_2HQ,"Button",BS_AUTORADIOBUTTON,111,96,58,10
+    CONTROL         "2D&D (720KB)",IDC_FDI_2DD,"Button",BS_AUTORADIOBUTTON,111,111,58,10
+    CONTROL         "OS-&9/68000",IDC_FDI_OS9,"Button",BS_AUTORADIOBUTTON,111,126,52,10
+    GROUPBOX        "論理フォーマット",IDC_FDI_LOGG,7,151,189,28
+    CONTROL         "論理フォーマットを行う(&L)",IDC_FDI_LOGC,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,163,89,10
+    GROUPBOX        "作成後にセット",IDC_FDI_MOUNTG,7,185,189,29
+    CONTROL         "ドライブ&0",IDC_FDI_DRIVE0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,197,42,10
+    CONTROL         "ドライブ&1",IDC_FDI_DRIVE1,"Button",BS_AUTORADIOBUTTON,73,197,42,10
+    CONTROL         "セットしない(&M)",IDC_FDI_NOTMOUNT,"Button",BS_AUTORADIOBUTTON,133,197,59,10
+END
+
+IDD_US_FDIDLG DIALOG 0, 0, 203, 245
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Floppy Disk"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,41,224,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,224,50,14
+    LTEXT           "&File",IDC_FDI_FILEL,7,8,40,8
+    EDITTEXT        IDC_FDI_FILEE,7,18,170,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_FDI_FILEB,183,17,13,14
+    LTEXT           "&Name (Until 16Chars)",IDC_FDI_NAMEL,7,37,99,8
+    EDITTEXT        IDC_FDI_NAMEE,7,47,170,14,ES_AUTOHSCROLL
+    GROUPBOX        "Physical Format",IDC_FDI_PHYG,7,67,189,78
+    CONTROL         "2&HD (1232KB)",IDC_FDI_2HD,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,81,58,10
+    CONTROL         "2HD&A (1280KB)",IDC_FDI_2HDA,"Button",BS_AUTORADIOBUTTON,13,96,62,10
+    CONTROL         "2H&S (1440KB)",IDC_FDI_2HS,"Button",BS_AUTORADIOBUTTON,13,111,57,10
+    CONTROL         "2H&C (1200KB)",IDC_FDI_2HC,"Button",BS_AUTORADIOBUTTON,13,126,58,10
+    CONTROL         "2HD&E (1440KB)",IDC_FDI_2HDE,"Button",BS_AUTORADIOBUTTON,111,81,62,10
+    CONTROL         "2H&Q (1440KB)",IDC_FDI_2HQ,"Button",BS_AUTORADIOBUTTON,111,96,58,10
+    CONTROL         "2D&D (720KB)",IDC_FDI_2DD,"Button",BS_AUTORADIOBUTTON,111,111,58,10
+    CONTROL         "OS-&9/68000",IDC_FDI_OS9,"Button",BS_AUTORADIOBUTTON,111,126,62,10
+    GROUPBOX        "Logical Format",IDC_FDI_LOGG,7,151,189,28
+    CONTROL         "Do &Logical Formatting",IDC_FDI_LOGC,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,163,89,10
+    GROUPBOX        "Mounting",IDC_FDI_MOUNTG,7,185,189,29
+    CONTROL         "Drive &0",IDC_FDI_DRIVE0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,197,42,10
+    CONTROL         "Drive &1",IDC_FDI_DRIVE1,"Button",BS_AUTORADIOBUTTON,73,197,42,10
+    CONTROL         "&Don't Mount",IDC_FDI_NOTMOUNT,"Button",BS_AUTORADIOBUTTON,133,197,59,10
+END
+
+IDD_DISKDLG DIALOG 0, 0, 203, 201
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ディスクイメージの作成"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,41,180,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,113,180,50,14
+    LTEXT           "ファイル名(&F)",IDC_DISK_FILEL,7,8,40,8
+    EDITTEXT        IDC_DISK_FILEE,7,18,170,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_DISK_FILEB,183,17,13,14
+    GROUPBOX        "ディスク容量",IDC_DISK_SIZEG,7,38,189,30
+    CONTROL         "&128MB",IDC_DISK_SIZE128,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,50,33,10
+    CONTROL         "&230MB",IDC_DISK_SIZE230,"Button",BS_AUTORADIOBUTTON,60,50,33,10
+    CONTROL         "&540MB",IDC_DISK_SIZE540,"Button",BS_AUTORADIOBUTTON,107,50,33,10
+    CONTROL         "&640MB",IDC_DISK_SIZE640,"Button",BS_AUTORADIOBUTTON,154,50,33,10
+    EDITTEXT        IDC_DISK_SIZEE,16,48,28,14,ES_AUTOHSCROLL | ES_READONLY,WS_EX_RIGHT
+    CONTROL         "Spin1",IDC_DISK_SIZES,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,71,48,10,14
+    LTEXT           "MB",IDC_DISK_SIZEL,48,52,11,8
+    GROUPBOX        "論理フォーマット",IDC_DISK_LOGG,7,74,189,59
+    CONTROL         "&IBMフォーマット(スーパーフロッピー形式)",IDC_DISK_LOGI,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,13,86,136,10
+    CONTROL         "&SHARPフォーマット(起動可能\)",IDC_DISK_LOGS,"Button",BS_AUTORADIOBUTTON,13,101,104,10
+    CONTROL         "なし(&N)",IDC_DISK_LOGN,"Button",BS_AUTORADIOBUTTON,13,117,37,10
+    CONTROL         "論理フォーマットを行う(&L)",IDC_DISK_LOGC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,86,89,10
+    GROUPBOX        "その他のオプション",IDC_DISK_OPTG,7,140,189,29
+    CONTROL         "作成後、ドライブへセット(&M)",IDC_DISK_MOUNTB,"Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,153,96,10
+END
+
+IDD_US_DISKDLG DIALOG 0, 0, 203, 201
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION " Image File"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,41,180,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,180,50,14
+    LTEXT           "&File",IDC_DISK_FILEL,7,8,40,8
+    EDITTEXT        IDC_DISK_FILEE,7,18,170,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_DISK_FILEB,183,17,13,14
+    GROUPBOX        "Capacity",IDC_DISK_SIZEG,7,38,189,30
+    CONTROL         "&128MB",IDC_DISK_SIZE128,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,50,35,10
+    CONTROL         "&230MB",IDC_DISK_SIZE230,"Button",BS_AUTORADIOBUTTON,60,50,35,10
+    CONTROL         "&540MB",IDC_DISK_SIZE540,"Button",BS_AUTORADIOBUTTON,107,50,35,10
+    CONTROL         "&640MB",IDC_DISK_SIZE640,"Button",BS_AUTORADIOBUTTON,154,50,35,10
+    EDITTEXT        IDC_DISK_SIZEE,16,48,34,14,ES_AUTOHSCROLL | ES_READONLY,WS_EX_RIGHT
+    CONTROL         "Spin1",IDC_DISK_SIZES,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_NOTHOUSANDS,71,48,10,14
+    LTEXT           "MB",IDC_DISK_SIZEL,50,52,11,8
+    GROUPBOX        "&Logical Format",IDC_DISK_LOGG,7,74,189,59
+    CONTROL         "&IBM Format (Super Floppy)",IDC_DISK_LOGI,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,86,136,10
+    CONTROL         "&SHARP Format (Bootable)",IDC_DISK_LOGS,"Button",BS_AUTORADIOBUTTON,13,101,104,10
+    CONTROL         "&None",IDC_DISK_LOGN,"Button",BS_AUTORADIOBUTTON,13,117,37,10
+    CONTROL         "&Do Logical Formatting",IDC_DISK_LOGC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,86,89,10
+    GROUPBOX        "Other Options",IDC_DISK_OPTG,7,140,189,29
+    CONTROL         "Mount disk on drive after created.",IDC_DISK_MOUNTB,
+                    "Button",BS_AUTOCHECKBOX | WS_GROUP | WS_TABSTOP,13,153,120,10
+END
+
+IDD_DMAKEDLG DIALOG 0, 0, 187, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "進行状況"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,68,52,50,14
+    CONTROL         "Progress1",IDC_DMAKE_PROGRESS,"msctls_progress32",WS_BORDER,7,7,173,14
+    CTEXT           "40MB / 40MB (99%)",IDC_DMAKE_STATIC,7,33,173,8
+END
+
+IDD_US_DMAKEDLG DIALOG 0, 0, 187, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "In Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,68,52,50,14
+    CONTROL         "Progress1",IDC_DMAKE_PROGRESS,"msctls_progress32",WS_BORDER,7,7,173,14
+    CTEXT           "40MB / 40MB (99%)",IDC_DMAKE_STATIC,7,33,173,8
+END
+
+IDD_TRAPDLG DIALOG 0, 0, 151, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "trap#0実行"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "実行",IDOK,19,34,50,14
+    PUSHBUTTON      "ｷｬﾝｾﾙ",IDCANCEL,82,34,50,14
+    LTEXT           "d0.b = ",IDC_TRAP_D0L,18,10,20,8
+    EDITTEXT        IDC_TRAP_D0E,43,7,30,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_TRAP_D0S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,76,7,10,14
+    LTEXT           "※上位24bitは0固定",IDC_TRAP_WARN,80,10,60,8
+END
+
+IDD_US_TRAPDLG DIALOG 0, 0, 151, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "trap#0 Instruction"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Execute",IDOK,19,34,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,82,34,50,14
+    LTEXT           "d0.b = ",IDC_TRAP_D0L,18,10,20,8
+    EDITTEXT        IDC_TRAP_D0E,43,7,30,14,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_TRAP_D0S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,76,7,10,14
+    LTEXT           "bit0-bit23:always 0",IDC_TRAP_WARN,80,10,60,8
+END
+
+IDD_BASICPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "システム"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "速度",IDC_BASIC_CLOCKG,7,7,196,60
+    LTEXT           "システムクロック(&C)",IDC_BASIC_CLOCKL,15,22,58,8
+    COMBOBOX        IDC_BASIC_CLOCKC,82,19,110,66,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "MPUのみノーウェイト動作(&M)",IDC_BASIC_CPUFULLB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,37,99,10
+    CONTROL         "仮想マシン全体をノーウェイト動作(&V)",IDC_BASIC_ALLFULLB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,51,123,10
+    GROUPBOX        "メモリ",IDC_BASIC_MEMORYG,7,74,196,46
+    LTEXT           "メインRAMサイズ(&R)",IDC_BASIC_MEMORYL,15,88,60,8
+    COMBOBOX        IDC_BASIC_MEMORYC,82,85,110,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "メモリスイッチを自動更新する(&S)",IDC_BASIC_MEMSWB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,103,110,10
+    LTEXT           "",IDC_BASIC_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_BASICPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "System"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Speed",IDC_BASIC_CLOCKG,7,7,196,60
+    LTEXT           "System &Clock",IDC_BASIC_CLOCKL,15,22,58,8
+    COMBOBOX        IDC_BASIC_CLOCKC,82,19,110,66,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "No Wait Operation with &MPU",IDC_BASIC_CPUFULLB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,37,104,10
+    CONTROL         "No Wait Operation with &VM",IDC_BASIC_ALLFULLB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,51,123,10
+    GROUPBOX        "Memory",IDC_BASIC_MEMORYG,7,74,196,46
+    LTEXT           "Main &RAM",IDC_BASIC_MEMORYL,15,88,60,8
+    COMBOBOX        IDC_BASIC_MEMORYC,82,85,110,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Update Memory &Switch",IDC_BASIC_MEMSWB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,103,110,10
+    LTEXT           "",IDC_BASIC_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_SOUNDPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "サウンド"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "出力デバイス(&D)",IDC_SOUND_DEVICEG,7,7,118,32
+    COMBOBOX        IDC_SOUND_DEVICEC,15,19,103,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "サンプリングレート",IDC_SOUND_RATEG,135,7,68,82
+    CONTROL         "44.&1kHz",IDC_SOUND_RATE0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,142,18,55,10
+    CONTROL         "&48kHz",IDC_SOUND_RATE1,"Button",BS_AUTORADIOBUTTON,142,32,55,10
+    CONTROL         "&88.2kHz",IDC_SOUND_RATE2,"Button",BS_AUTORADIOBUTTON,142,46,55,10
+    CONTROL         "&96kHz",IDC_SOUND_RATE3,"Button",BS_AUTORADIOBUTTON,142,60,55,10
+    CONTROL         "(&62.5kHz)",IDC_SOUND_RATE4,"Button",BS_AUTORADIOBUTTON,142,74,55,10
+    GROUPBOX        "サウンドバッファ",IDC_SOUND_BUFFERG,7,45,118,44
+    LTEXT           "バッファサイズ(&S)",IDC_SOUND_BUF1L,15,58,50,8
+    EDITTEXT        IDC_SOUND_BUF1E,72,55,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SOUND_BUF1S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,54,7,14
+    LTEXT           "ms",IDC_SOUND_BUF1MS,105,58,10,8
+    LTEXT           "ポーリング間隔(&P)",IDC_SOUND_BUF2L,15,74,50,8
+    EDITTEXT        IDC_SOUND_BUF2E,72,71,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SOUND_BUF2S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,70,7,14
+    LTEXT           "ms",IDC_SOUND_BUF2MS,105,74,10,8
+    GROUPBOX        "その他のオプション",IDC_SOUND_OPTIONG,7,95,196,25
+    CONTROL         "ADPCMを線形補間する(&I)",IDC_SOUND_INTERP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,106,91,10
+    LTEXT           "",IDC_SOUND_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_SOUNDPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Sound"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Output &Device",IDC_SOUND_DEVICEG,7,7,118,32
+    COMBOBOX        IDC_SOUND_DEVICEC,15,19,103,64,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Sample Rate",IDC_SOUND_RATEG,135,7,68,82
+    CONTROL         "44.&1kHz",IDC_SOUND_RATE0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,142,18,55,10
+    CONTROL         "&48kHz",IDC_SOUND_RATE1,"Button",BS_AUTORADIOBUTTON,142,32,55,10
+    CONTROL         "&88.2kHz",IDC_SOUND_RATE2,"Button",BS_AUTORADIOBUTTON,142,46,55,10
+    CONTROL         "&96kHz",IDC_SOUND_RATE3,"Button",BS_AUTORADIOBUTTON,142,60,55,10
+    CONTROL         "(&62.5kHz)",IDC_SOUND_RATE4,"Button",BS_AUTORADIOBUTTON,142,74,34,10
+    GROUPBOX        "Sound Buffer",IDC_SOUND_BUFFERG,7,45,118,44
+    LTEXT           "&Size",IDC_SOUND_BUF1L,15,58,50,8
+    EDITTEXT        IDC_SOUND_BUF1E,72,55,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SOUND_BUF1S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,54,7,14
+    LTEXT           "ms",IDC_SOUND_BUF1MS,105,58,10,8
+    LTEXT           "&Polling",IDC_SOUND_BUF2L,15,74,50,8
+    EDITTEXT        IDC_SOUND_BUF2E,72,71,30,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin2",IDC_SOUND_BUF2S,"msctls_updown32",UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,118,70,7,14
+    LTEXT           "ms",IDC_SOUND_BUF2MS,105,74,10,8
+    GROUPBOX        "Option",IDC_SOUND_OPTIONG,7,95,196,25
+    CONTROL         "ADPCM &Interpolution",IDC_SOUND_INTERP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,106,91,10
+    LTEXT           "",IDC_SOUND_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_VOLPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "音量"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "出力",IDC_VOL_OUTG,7,7,196,61
+    LTEXT           "ボリューム(&V)",IDC_VOL_VOLL,15,20,41,8
+    CONTROL         "Slider1",IDC_VOL_VOLS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,17,91,15
+    LTEXT           "100",IDC_VOL_VOLN,176,20,19,8
+    LTEXT           "WAVEレベル(&W)",IDC_VOL_MASTERL,15,36,52,8
+    CONTROL         "Slider1",IDC_VOL_MASTERS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,33,91,15
+    LTEXT           "100",IDC_VOL_MASTERN,176,36,19,8
+    LTEXT           "MIDIレベル(&M)",IDC_VOL_SEPL,15,52,52,8
+    CONTROL         "Slider2",IDC_VOL_SEPS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,49,91,15
+    LTEXT           "100",IDC_VOL_SEPN,176,52,19,8
+    GROUPBOX        "合成",IDC_VOL_GENG,7,76,196,44
+    LTEXT           "FM音源(&F)",IDC_VOL_FML,15,88,32,8
+    CONTROL         "Slider3",IDC_VOL_FMS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,85,91,15
+    CONTROL         "",IDC_VOL_FMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,88,16,8
+    LTEXT           "30",IDC_VOL_FMN,176,88,19,8
+    LTEXT           "ADPCM音源(&A)",IDC_VOL_ADPCML,15,105,47,8
+    CONTROL         "Slider4",IDC_VOL_ADPCMS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,102,91,15
+    CONTROL         "",IDC_VOL_ADPCMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,105,16,8
+    LTEXT           "20",IDC_VOL_ADPCMN,176,105,19,8
+    LTEXT           "",IDC_VOL_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_VOLPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Volume"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Output",IDC_VOL_OUTG,7,7,196,61
+    LTEXT           "&Volume",IDC_VOL_VOLL,15,20,41,8
+    CONTROL         "Slider1",IDC_VOL_VOLS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,17,91,15
+    LTEXT           "100",IDC_VOL_VOLN,176,20,19,8
+    LTEXT           "&Wave Fader",IDC_VOL_MASTERL,15,36,42,8
+    CONTROL         "Slider1",IDC_VOL_MASTERS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,33,91,15
+    LTEXT           "100",IDC_VOL_MASTERN,176,36,19,8
+    LTEXT           "&Midi Fader",IDC_VOL_SEPL,15,52,52,8
+    CONTROL         "Slider2",IDC_VOL_SEPS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,49,91,15
+    LTEXT           "100%",IDC_VOL_SEPN,176,52,19,8
+    GROUPBOX        "Generation",IDC_VOL_GENG,7,76,196,44
+    LTEXT           "&FM",IDC_VOL_FML,15,88,32,8
+    CONTROL         "Slider3",IDC_VOL_FMS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,85,91,15
+    CONTROL         "",IDC_VOL_FMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,88,16,8
+    LTEXT           "30",IDC_VOL_FMN,176,88,19,8
+    LTEXT           "&ADPCM",IDC_VOL_ADPCML,15,105,47,8
+    CONTROL         "Slider4",IDC_VOL_ADPCMS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,83,102,91,15
+    CONTROL         "",IDC_VOL_ADPCMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,67,105,16,8
+    LTEXT           "20",IDC_VOL_ADPCMN,176,105,19,8
+    LTEXT           "",IDC_VOL_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_MISCPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "その他"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "その他のオプション",IDC_MISC_OPTG,7,7,196,95
+    CONTROL         "フロッピーディスク 高速モード(&S)",IDC_MISC_FDSPEED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,20,111,10
+    CONTROL         "フロッピーディスク モータ回転LED(&L)",IDC_MISC_FDLED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,123,10
+    CONTROL         "サブウィンドウをポップアップにする(&P)",IDC_MISC_POPUP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,52,125,10
+    CONTROL         "自動マウスモード(&A)",IDC_MISC_AUTOMOUSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,68,100,10
+    CONTROL         "電源スイッチOFFで起動(&B)",IDC_MISC_POWEROFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,84,110,10
+    LTEXT           "",IDC_MISC_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_MISCPAGE DIALOGEX 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Misc"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Other Options",IDC_MISC_OPTG,3,7,196,120
+    CONTROL         "Fa&st Floppy",IDC_MISC_FDSPEED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,20,111,10
+    CONTROL         "&LED for FDD Motor",IDC_MISC_FDLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,36,123,10
+    CONTROL         "&Popup Window Style",IDC_MISC_POPUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,52,125,10
+    CONTROL         "&Auto Mouse Mode",IDC_MISC_AUTOMOUSE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,68,100,10
+    CONTROL         "&Boot with POWER OFF State",IDC_MISC_POWEROFF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,84,110,10
+    LTEXT           "",IDC_MISC_HELP,7,129,196,18,SS_SUNKEN
+    EDITTEXT        IDC_EDIT1,15,112,118,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Buscar...",IDC_BUSCAR,137,112,55,14
+    LTEXT           "Ruta para almacenar guardados r疳idos:",IDC_STATIC,16,100,125,8
+END
+
+IDD_KBDPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "キーボード"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "キーボード マップ",IDC_KBD_MAPG,7,7,196,113
+    CONTROL         "List1",IDC_KBD_MAPL,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,19,180,74
+    PUSHBUTTON      "編集(&E)",IDC_KBD_EDITB,15,99,50,14
+    PUSHBUTTON      "デフォルト(&D)",IDC_KBD_DEFB,78,99,50,14
+    CONTROL         "接続しない(&N)",IDC_KBD_NOCONB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,142,101,52,10
+    LTEXT           "",IDC_KBD_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_KBDPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Keyboard"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Key Mapping",IDC_KBD_MAPG,7,7,196,113
+    CONTROL         "List1",IDC_KBD_MAPL,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,19,180,74
+    PUSHBUTTON      "&Edit",IDC_KBD_EDITB,15,99,50,14
+    PUSHBUTTON      "&Default",IDC_KBD_DEFB,78,99,50,14
+    CONTROL         "&Not Connect",IDC_KBD_NOCONB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,142,101,52,10
+    LTEXT           "",IDC_KBD_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_KBDMAPDLG DIALOG 0, 0, 258, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "キーボード マップの編集"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "Display",IDC_KBDMAP_DISP,0,3,258,45
+    LTEXT           "Status",IDC_KBDMAP_STAT,0,51,258,10,SS_SUNKEN
+END
+
+IDD_US_KBDMAPDLG DIALOG 0, 0, 258, 61
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keyboard Mapping"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display",IDC_KBDMAP_DISP,0,3,258,45
+    LTEXT           "Status",IDC_KBDMAP_STAT,0,51,258,10,SS_SUNKEN
+END
+
+IDD_KEYINDLG DIALOG 0, 0, 117, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "割り当てキーの入力"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "キーNo. %02X へ割り当てるキーを\nキーボードより入力してください。\n(右クリックで決定します)",IDC_KEYIN_LABEL,7,7,100,30
+    LTEXT           "現在のキー",IDC_KEYIN_STATIC,7,45,41,8
+    LTEXT           "(割り当てなし)",IDC_KEYIN_KEY,53,45,57,8
+END
+
+IDD_US_KEYINDLG DIALOG 0, 0, 117, 62
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keyin"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Press the key to assign for key %02X. (accept - right mouse button)",IDC_KEYIN_LABEL,7,7,100,30
+    LTEXT           "Now :",IDC_KEYIN_STATIC,7,45,41,8
+    LTEXT           "(No key)",IDC_KEYIN_KEY,53,45,57,8
+END
+
+IDD_MOUSEPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "マウス"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "移動速度(Windowsに対する比率)(&R)",IDC_MOUSE_SPEEDG,7,7,196,43
+    CONTROL         "Slider1",IDC_MOUSE_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,12,24,162,15
+    LTEXT           "100%",IDC_MOUSE_PARS,178,28,16,8
+    GROUPBOX        "接続ポート",IDC_MOUSE_PORTG,6,59,73,61
+    CONTROL         "本体(&X)",IDC_MOUSE_FPORT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,73,57,10
+    CONTROL         "キーボード(&K)",IDC_MOUSE_KPORT,"Button",BS_AUTORADIOBUTTON,15,88,57,10
+    CONTROL         "接続しない(&N)",IDC_MOUSE_NPORT,"Button",BS_AUTORADIOBUTTON,15,103,57,10
+    GROUPBOX        "その他のオプション",IDC_MOUSE_OPTG,90,59,113,60
+    CONTROL         "左右ボタンを入れ替える(&S)",IDC_MOUSE_SWAPB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,73,96,10
+    CONTROL         "中ボタンを使わない(&M)",IDC_MOUSE_MIDB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,88,96,10
+    CONTROL         "トラックボールとして使う(&T)",IDC_MOUSE_TBG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,103,96,10
+    LTEXT           "",IDC_MOUSE_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_MOUSEPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Mouse"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Mouse Speed (&Ratio)",IDC_MOUSE_SPEEDG,7,7,196,43
+    CONTROL         "Slider1",IDC_MOUSE_SLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,12,24,162,15
+    LTEXT           "100%",IDC_MOUSE_PARS,178,28,16,8
+    GROUPBOX        "Mouse Port",IDC_MOUSE_PORTG,6,59,73,61
+    CONTROL         "&X68000",IDC_MOUSE_FPORT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,73,57,10
+    CONTROL         "&Keyboard",IDC_MOUSE_KPORT,"Button",BS_AUTORADIOBUTTON,15,88,57,10
+    CONTROL         "&Not Connect",IDC_MOUSE_NPORT,"Button",BS_AUTORADIOBUTTON,15,103,57,10
+    GROUPBOX        "Other Options",IDC_MOUSE_OPTG,90,59,113,60
+    CONTROL         "Swap Left&&Right Button",IDC_MOUSE_SWAPB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,73,96,10
+    CONTROL         "Disable &Middle Button",IDC_MOUSE_MIDB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,88,96,10
+    CONTROL         "Use as &Trackball",IDC_MOUSE_TBG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,99,103,96,10
+    LTEXT           "",IDC_MOUSE_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_PORTPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "ポート"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "RS-232C(シリアルポート)",IDC_PORT_COMG,7,7,196,60
+    LTEXT           "ポート(&C)",IDC_PORT_COML,15,22,28,8
+    COMBOBOX        IDC_PORT_COMC,56,19,64,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "受信ログ(&R)",IDC_PORT_RECVL,15,38,35,8
+    EDITTEXT        IDC_PORT_RECVE,55,35,141,14,ES_AUTOHSCROLL
+    CONTROL         "ボーレートを38400bpsに固定する(&F)",IDC_PORT_BAUDRATE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,52,121,10
+    GROUPBOX        "プリンタ(パラレルポート)",IDC_PORT_LPTG,7,73,196,47
+    LTEXT           "ポート(&L)",IDC_PORT_LPTL,15,87,28,8
+    COMBOBOX        IDC_PORT_LPTC,55,84,64,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "送信ログ(&S)",IDC_PORT_SENDL,15,103,35,8
+    EDITTEXT        IDC_PORT_SENDE,55,100,141,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_PORT_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_PORTPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Port"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "RS-232C(Serial Port)",IDC_PORT_COMG,7,7,196,60
+    LTEXT           "&COM Port",IDC_PORT_COML,15,22,28,8
+    COMBOBOX        IDC_PORT_COMC,56,19,64,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Recv Log",IDC_PORT_RECVL,15,38,35,8
+    EDITTEXT        IDC_PORT_RECVE,55,35,141,14,ES_AUTOHSCROLL
+    CONTROL         "&Force 38400 bps",IDC_PORT_BAUDRATE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,52,121,10
+    GROUPBOX        "Printer(Parallel Port)",IDC_PORT_LPTG,7,73,196,47
+    LTEXT           "&LPT Port",IDC_PORT_LPTL,15,87,28,8
+    COMBOBOX        IDC_PORT_LPTC,55,84,64,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Send Log",IDC_PORT_SENDL,15,103,35,8
+    EDITTEXT        IDC_PORT_SENDE,55,100,141,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_PORT_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_ALTERPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "改造"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "本体の改造",IDC_ALTER_ALTERG,7,7,196,79
+    CONTROL         "スタティックRAMを64KBに増やす(&S)",IDC_ALTER_SRAM,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,20,179,10
+    CONTROL         "SCCクロックを7.5MHzにクロックアップする(&C)",IDC_ALTER_SCC,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,37,179,10
+    CONTROL         "電源LEDを青色タイプに交換する(&B)",IDC_ALTER_POWERLED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,54,179,10
+    CONTROL         "フロッピードライブを2DD/2HD兼用タイプに換装する(&F)",IDC_ALTER_2DD,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,71,179,10
+    GROUPBOX        "SASIバスの改造",IDC_ALTER_SASIG,7,93,196,27
+    CONTROL         "パリティ生成回路を付加する(&P)",IDC_ALTER_PARITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,104,107,10
+    LTEXT           "",IDC_ALTER_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_ALTERPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Alteration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "X68000 Options",IDC_ALTER_ALTERG,7,7,196,79
+    CONTROL         "64KB Battery-Backuped &SRAM",IDC_ALTER_SRAM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,20,179,10
+    CONTROL         "SCC Clock to 7.5MHz",IDC_ALTER_SCC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,37,179,10
+    CONTROL         "&Blue Power LED",IDC_ALTER_POWERLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,54,179,10
+    CONTROL         "2DD/2HD dual mode &FDD",IDC_ALTER_2DD,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,71,179,10
+    GROUPBOX        "SASI Bus Options",IDC_ALTER_SASIG,7,93,196,27
+    CONTROL         "Add &Parity-Generation Circuit",IDC_ALTER_PARITY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,104,107,10
+    LTEXT           "",IDC_ALTER_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_SASIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SASI"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "SASIハードディスク",IDC_SASI_GROUP,7,7,196,113
+    LTEXT           "ドライブ数(&D)",IDC_SASI_DRIVEL,15,22,39,8
+    EDITTEXT        IDC_SASI_DRIVEE,56,19,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SASI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,18,9,14
+    CONTROL         "メモリスイッチを自動更新する(&S)",IDC_SASI_MEMSWB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,21,110,10
+    CONTROL         "List1",IDC_SASI_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,39,180,72
+    LTEXT           "",IDC_SASI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_SASIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SASI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "SASI Fixed Disk",IDC_SASI_GROUP,7,7,196,113
+    LTEXT           "&Drives",IDC_SASI_DRIVEL,15,22,39,8
+    EDITTEXT        IDC_SASI_DRIVEE,56,19,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SASI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,18,9,14
+    CONTROL         "Update Memory &Switch",IDC_SASI_MEMSWB,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,90,21,110,10
+    CONTROL         "List1",IDC_SASI_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,39,180,72
+    LTEXT           "",IDC_SASI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_SXSIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SxSI"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "SCSIディスク(SASIインタフェース経由)",IDC_SXSI_GROUP,7,7,196,112
+    LTEXT           "ドライブ数(&D)",IDC_SXSI_DRIVEL,15,22,39,8
+    EDITTEXT        IDC_SXSI_DRIVEE,56,19,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SXSI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,18,9,14
+    CONTROL         "MOドライブを優先する(&F)",IDC_SXSI_MOCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,21,89,10
+    CONTROL         "List1",IDC_SXSI_LIST,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,39,180,72
+    LTEXT           "",IDC_SXSI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_SXSIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SxSI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "SCSI Disk (via SASI Interface)",IDC_SXSI_GROUP,7,7,196,112
+    LTEXT           "&Drives",IDC_SXSI_DRIVEL,15,22,39,8
+    EDITTEXT        IDC_SXSI_DRIVEE,56,19,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SXSI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,18,9,14
+    CONTROL         "MO Drive at &First",IDC_SXSI_MOCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,21,89,10
+    CONTROL         "List1",IDC_SXSI_LIST,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,39,180,72
+    LTEXT           "",IDC_SXSI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_MIDIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "MIDI"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "MIDIボード",IDC_MIDI_BIDG,7,6,67,60
+    CONTROL         "装着しない(&N)",IDC_MIDI_BID0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,18,57,10
+    CONTROL         "ボードID&1",IDC_MIDI_BID1,"Button",BS_AUTORADIOBUTTON,15,34,43,10
+    CONTROL         "ボードI&D2",IDC_MIDI_BID2,"Button",BS_AUTORADIOBUTTON,15,50,43,10
+    GROUPBOX        "割り込みレベル",IDC_MIDI_ILEVELG,82,6,55,60
+    CONTROL         "レベル&4",IDC_MIDI_ILEVEL4,"Button",BS_AUTORADIOBUTTON | WS_GROUP,89,21,38,10
+    CONTROL         "レベル&2",IDC_MIDI_ILEVEL2,"Button",BS_AUTORADIOBUTTON,89,45,38,10
+    GROUPBOX        "リセットコマンド",IDC_MIDI_RSTG,145,6,58,60
+    CONTROL         "G&M音源",IDC_MIDI_RSTGM,"Button",BS_AUTORADIOBUTTON | WS_GROUP,152,16,45,10
+    CONTROL         "G&S音源",IDC_MIDI_RSTGS,"Button",BS_AUTORADIOBUTTON,152,28,45,10
+    CONTROL         "&XG音源",IDC_MIDI_RSTXG,"Button",BS_AUTORADIOBUTTON,152,40,45,10
+    CONTROL         "&LA音源",IDC_MIDI_RSTLA,"Button",BS_AUTORADIOBUTTON,152,52,45,10
+    GROUPBOX        "割り当てデバイス",IDC_MIDI_DEVG,7,73,196,47
+    LTEXT           "入力(&I)",IDC_MIDI_INS,15,87,24,8
+    COMBOBOX        IDC_MIDI_INC,40,84,91,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "遅延",IDC_MIDI_DLYIL,138,87,15,8
+    EDITTEXT        IDC_MIDI_DLYIE,156,84,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_MIDI_DLYIS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,86,9,14
+    LTEXT           "ms",IDC_MIDI_DLYIG,188,87,10,8
+    LTEXT           "出力(&O)",IDC_MIDI_OUTS,15,104,24,8
+    COMBOBOX        IDC_MIDI_OUTC,40,101,91,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "遅延",IDC_MIDI_DLYOL,138,104,15,8
+    EDITTEXT        IDC_MIDI_DLYOE,156,101,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_MIDI_DLYOS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,103,9,14
+    LTEXT           "ms",IDC_MIDI_DLYOG,188,105,10,8
+    LTEXT           "",IDC_MIDI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_MIDIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "MIDI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "MIDI Board",IDC_MIDI_BIDG,7,6,67,60
+    CONTROL         "&None",IDC_MIDI_BID0,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,18,57,10
+    CONTROL         "ID &1",IDC_MIDI_BID1,"Button",BS_AUTORADIOBUTTON,15,34,43,10
+    CONTROL         "I&D 2",IDC_MIDI_BID2,"Button",BS_AUTORADIOBUTTON,15,50,43,10
+    GROUPBOX        "Int Level",IDC_MIDI_ILEVELG,82,6,55,60
+    CONTROL         "Level &4",IDC_MIDI_ILEVEL4,"Button",BS_AUTORADIOBUTTON | WS_GROUP,89,21,38,10
+    CONTROL         "Level &2",IDC_MIDI_ILEVEL2,"Button",BS_AUTORADIOBUTTON,89,45,38,10
+    GROUPBOX        "Reset Cmd",IDC_MIDI_RSTG,145,6,58,60
+    CONTROL         "G&M Synth",IDC_MIDI_RSTGM,"Button",BS_AUTORADIOBUTTON | WS_GROUP,152,16,45,10
+    CONTROL         "G&S Synth",IDC_MIDI_RSTGS,"Button",BS_AUTORADIOBUTTON,152,28,45,10
+    CONTROL         "&XG Synth",IDC_MIDI_RSTXG,"Button",BS_AUTORADIOBUTTON,152,40,45,10
+    CONTROL         "&LA Synth",IDC_MIDI_RSTLA,"Button",BS_AUTORADIOBUTTON,152,52,45,10
+    GROUPBOX        "Device",IDC_MIDI_DEVG,7,73,196,47
+    LTEXT           "&In",IDC_MIDI_INS,15,87,24,8
+    COMBOBOX        IDC_MIDI_INC,40,84,91,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Delay",IDC_MIDI_DLYIL,138,87,15,8
+    EDITTEXT        IDC_MIDI_DLYIE,156,84,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_MIDI_DLYIS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,86,9,14
+    LTEXT           "ms",IDC_MIDI_DLYIG,188,87,10,8
+    LTEXT           "&Out",IDC_MIDI_OUTS,15,104,24,8
+    COMBOBOX        IDC_MIDI_OUTC,40,101,91,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Delay",IDC_MIDI_DLYOL,138,104,15,8
+    EDITTEXT        IDC_MIDI_DLYOE,156,101,28,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_MIDI_DLYOS,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,103,9,14
+    LTEXT           "ms",IDC_MIDI_DLYOG,188,105,10,8
+    LTEXT           "",IDC_MIDI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_TKEYPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TrueKey"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "シリアルポート",IDC_TKEY_PORTG,7,6,108,48
+    LTEXT           "ポート(&C)",IDC_TKEY_COML,17,21,28,8
+    COMBOBOX        IDC_TKEY_COMC,50,19,57,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "RTSを反転する(R)",IDC_TKEY_RTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,37,70,10
+    GROUPBOX        "割り当て",IDC_TKEY_ASSIGNG,124,6,79,48
+    CONTROL         "VMで使う(&V)",IDC_TKEY_VMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,134,18,55,10
+    CONTROL         "Windowsで使う(W)",IDC_TKEY_WINC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,134,37,67,10
+    GROUPBOX        "Windows キーボード マップ",IDC_TKEY_MAPG,7,59,196,61
+    CONTROL         "List1",IDC_TKEY_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,16,70,179,44
+    LTEXT           "",IDC_TKEY_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_TKEYPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "TrueKey"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Serial Port",IDC_TKEY_PORTG,7,6,108,48
+    LTEXT           "&COM Port",IDC_TKEY_COML,17,21,28,8
+    COMBOBOX        IDC_TKEY_COMC,50,19,57,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Invert &RTS",IDC_TKEY_RTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,37,70,10
+    GROUPBOX        "Send",IDC_TKEY_ASSIGNG,124,6,79,48
+    CONTROL         "to &VM",IDC_TKEY_VMC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,134,18,55,10
+    CONTROL         "to &Windows",IDC_TKEY_WINC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,134,37,67,10
+    GROUPBOX        "Windows Key Mapping",IDC_TKEY_MAPG,7,59,196,61
+    CONTROL         "List1",IDC_TKEY_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,16,70,179,44
+    LTEXT           "",IDC_TKEY_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_JOYPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "ジョイスティック"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "タイプ",IDC_JOY_PORTG,7,6,196,48
+    LTEXT           "ポート&1",IDC_JOY_PORTL1,15,18,24,8
+    COMBOBOX        IDC_JOY_PORTC1,44,16,99,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "詳細",IDC_JOY_PORTD1,152,15,44,14
+    LTEXT           "ポート&2",IDC_JOY_PORTL2,15,36,24,8
+    COMBOBOX        IDC_JOY_PORTC2,44,34,99,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "詳細",IDC_JOY_PORTD2,152,34,44,14
+    GROUPBOX        "割り当てデバイス",IDC_JOY_DEVG,7,61,196,59
+    LTEXT           "デバイス&A",IDC_JOY_DEVLA,15,75,36,8
+    COMBOBOX        IDC_JOY_DEVCA,52,72,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "設定",IDC_JOY_DEVAA,157,71,39,14
+    LTEXT           "デバイス&B",IDC_JOY_DEVLB,15,90,36,8
+    COMBOBOX        IDC_JOY_DEVCB,52,87,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "設定",IDC_JOY_DEVAB,157,86,39,14
+    LTEXT           "デバイス&C",IDC_JOY_DEVLC,15,105,36,8
+    COMBOBOX        IDC_JOY_DEVCC,52,102,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "設定",IDC_JOY_DEVAC,157,101,39,14
+    LTEXT           "",IDC_JOY_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_JOYPAGE DIALOGEX 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Joystick"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Type",IDC_JOY_PORTG,7,6,196,48
+    LTEXT           "Port&1",IDC_JOY_PORTL1,15,18,24,8
+    COMBOBOX        IDC_JOY_PORTC1,44,16,99,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Detalle",IDC_JOY_PORTD1,152,15,44,14
+    LTEXT           "Port&2",IDC_JOY_PORTL2,15,36,24,8
+    COMBOBOX        IDC_JOY_PORTC2,44,34,99,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Detail",IDC_JOY_PORTD2,152,34,44,14
+    GROUPBOX        "Device",IDC_JOY_DEVG,7,61,196,59
+    LTEXT           "Device&A",IDC_JOY_DEVLA,15,75,36,8
+    COMBOBOX        IDC_JOY_DEVCA,52,72,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Setup",IDC_JOY_DEVAA,157,71,39,14
+    LTEXT           "Device&B",IDC_JOY_DEVLB,15,90,36,8
+    COMBOBOX        IDC_JOY_DEVCB,52,87,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Setup",IDC_JOY_DEVAB,157,86,39,14
+    LTEXT           "Device&C",IDC_JOY_DEVLC,15,105,36,8
+    COMBOBOX        IDC_JOY_DEVCC,52,102,97,74,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Setup",IDC_JOY_DEVAC,157,101,39,14
+    LTEXT           "",IDC_JOY_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_JOYDETDLG DIALOG 0, 0, 106, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ポート%dの詳細情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,28,82,50,14
+    CTEXT           "ジョイスティック名称",IDC_JOYDET_NAMEL,7,7,92,8
+    LTEXT           "軸数",IDC_JOYDET_AXISL,12,24,15,8
+    LTEXT           "%d軸",IDC_JOYDET_AXISS,66,24,15,8
+    LTEXT           "ボタン数",IDC_JOYDET_BUTTONL,12,37,25,8
+    LTEXT           "%dボタン",IDC_JOYDET_BUTTONS,66,37,25,8
+    LTEXT           "タイプ",IDC_JOYDET_TYPEL,12,50,21,8
+    LTEXT           "デジタル",IDC_JOYDET_TYPES,66,50,27,8
+    LTEXT           "データ数",IDC_JOYDET_DATASL,12,63,27,8
+    LTEXT           "%d",IDC_JOYDET_DATASS,66,63,8,8
+END
+
+IDD_US_JOYDETDLG DIALOG 0, 0, 106, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Port%d Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,28,82,50,14
+    CTEXT           "Name",IDC_JOYDET_NAMEL,7,7,92,8
+    LTEXT           "Axes",IDC_JOYDET_AXISL,12,24,15,8
+    LTEXT           "%d axes",IDC_JOYDET_AXISS,66,24,15,8
+    LTEXT           "Buttons",IDC_JOYDET_BUTTONL,12,37,25,8
+    LTEXT           "%d buttons",IDC_JOYDET_BUTTONS,66,37,25,8
+    LTEXT           "Type",IDC_JOYDET_TYPEL,12,50,21,8
+    LTEXT           "Digital",IDC_JOYDET_TYPES,66,50,27,8
+    LTEXT           "Datas",IDC_JOYDET_DATASL,12,63,27,8
+    LTEXT           "%d",IDC_JOYDET_DATASS,66,63,8,8
+END
+
+IDD_BTNSETPAGE DIALOG 0, 0, 222, 213
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ボタン"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "ボタン設定",IDC_BTNSET_BTNG,7,7,208,199
+    LTEXT           "No.",IDC_BTNSET_BTNL,15,19,10,8
+    LTEXT           "割り当て",IDC_BTNSET_ASSIGNL,48,19,26,8
+    LTEXT           "連射速度",IDC_BTNSET_RAPIDL,136,19,28,8
+    LTEXT           "ボタン1",IDC_BTNSET_BTNL1,15,33,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC1,45,30,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_BTNSET_RAPIDC1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,31,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL1,196,33,11,8
+    LTEXT           "ボタン2",IDC_BTNSET_BTNL2,15,47,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC2,45,44,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider2",IDC_BTNSET_RAPIDC2,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,44,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL2,196,47,11,8
+    LTEXT           "ボタン3",IDC_BTNSET_BTNL3,15,61,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC3,45,58,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider3",IDC_BTNSET_RAPIDC3,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,58,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL3,196,61,11,8
+    LTEXT           "ボタン4",IDC_BTNSET_BTNL4,15,75,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC4,45,72,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider4",IDC_BTNSET_RAPIDC4,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,72,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL4,196,75,11,8
+    LTEXT           "ボタン5",IDC_BTNSET_BTNL5,15,89,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC5,45,86,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider5",IDC_BTNSET_RAPIDC5,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,86,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL5,196,89,11,8
+    LTEXT           "ボタン6",IDC_BTNSET_BTNL6,15,103,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC6,45,100,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider6",IDC_BTNSET_RAPIDC6,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,100,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL6,196,103,11,8
+    LTEXT           "ボタン7",IDC_BTNSET_BTNL7,15,117,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC7,45,114,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider7",IDC_BTNSET_RAPIDC7,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,114,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL7,196,117,11,8
+    LTEXT           "ボタン8",IDC_BTNSET_BTNL8,15,131,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC8,45,128,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider8",IDC_BTNSET_RAPIDC8,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,128,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL8,196,131,11,8
+    LTEXT           "ボタン9",IDC_BTNSET_BTNL9,15,145,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC9,45,142,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider9",IDC_BTNSET_RAPIDC9,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,142,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL9,196,145,11,8
+    LTEXT           "ボタン10",IDC_BTNSET_BTNL10,15,159,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC10,45,156,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider10",IDC_BTNSET_RAPIDC10,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,156,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL10,196,159,11,8
+    LTEXT           "ボタン11",IDC_BTNSET_BTNL11,15,173,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC11,45,170,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider11",IDC_BTNSET_RAPIDC11,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,170,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL11,196,173,11,8
+    LTEXT           "ボタン12",IDC_BTNSET_BTNL12,15,187,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC12,45,184,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider12",IDC_BTNSET_RAPIDC12,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,184,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL12,196,187,11,8
+END
+
+IDD_US_BTNSETPAGE DIALOG 0, 0, 222, 213
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Button"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Button Setup",IDC_BTNSET_BTNG,7,7,208,199
+    LTEXT           "No.",IDC_BTNSET_BTNL,15,19,10,8
+    LTEXT           "Assignment",IDC_BTNSET_ASSIGNL,48,19,26,8
+    LTEXT           "Rapid Fire",IDC_BTNSET_RAPIDL,136,19,28,8
+    LTEXT           "Button1",IDC_BTNSET_BTNL1,15,33,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC1,45,30,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider1",IDC_BTNSET_RAPIDC1,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,31,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL1,196,33,11,8
+    LTEXT           "Button2",IDC_BTNSET_BTNL2,15,47,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC2,45,44,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider2",IDC_BTNSET_RAPIDC2,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,44,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL2,196,47,11,8
+    LTEXT           "Button3",IDC_BTNSET_BTNL3,15,61,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC3,45,58,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider3",IDC_BTNSET_RAPIDC3,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,58,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL3,196,61,11,8
+    LTEXT           "Button4",IDC_BTNSET_BTNL4,15,75,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC4,45,72,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider4",IDC_BTNSET_RAPIDC4,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,72,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL4,196,75,11,8
+    LTEXT           "Button5",IDC_BTNSET_BTNL5,15,89,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC5,45,86,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider5",IDC_BTNSET_RAPIDC5,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,86,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL5,196,89,11,8
+    LTEXT           "Button6",IDC_BTNSET_BTNL6,15,103,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC6,45,100,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider6",IDC_BTNSET_RAPIDC6,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,100,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL6,196,103,11,8
+    LTEXT           "Button7",IDC_BTNSET_BTNL7,15,117,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC7,45,114,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider7",IDC_BTNSET_RAPIDC7,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,114,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL7,196,117,11,8
+    LTEXT           "Button8",IDC_BTNSET_BTNL8,15,131,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC8,45,128,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider8",IDC_BTNSET_RAPIDC8,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,128,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL8,196,131,11,8
+    LTEXT           "Button9",IDC_BTNSET_BTNL9,15,145,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC9,45,142,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider9",IDC_BTNSET_RAPIDC9,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,142,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL9,196,145,11,8
+    LTEXT           "Button10",IDC_BTNSET_BTNL10,15,159,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC10,45,156,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider10",IDC_BTNSET_RAPIDC10,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,156,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL10,196,159,11,8
+    LTEXT           "Button11",IDC_BTNSET_BTNL11,15,173,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC11,45,170,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider11",IDC_BTNSET_RAPIDC11,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,170,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL11,196,173,11,8
+    LTEXT           "Button12",IDC_BTNSET_BTNL12,15,187,27,8
+    COMBOBOX        IDC_BTNSET_ASSIGNC12,45,184,83,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Slider12",IDC_BTNSET_RAPIDC12,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,136,184,54,11
+    LTEXT           "0",IDC_BTNSET_RAPIDL12,196,187,11,8
+END
+
+IDD_SCSIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SCSI"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "SCSIインタフェース",IDC_SCSI_IFG,7,7,196,26
+    CONTROL         "装着しない(&N)",IDC_SCSI_NONEB,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,18,57,10
+    CONTROL         "内蔵タイプ(&I)",IDC_SCSI_INTB,"Button",BS_AUTORADIOBUTTON,83,18,50,10
+    CONTROL         "外付ボード(&E)",IDC_SCSI_EXTB,"Button",BS_AUTORADIOBUTTON,144,18,56,10
+    GROUPBOX        "SCSI ディスク(SCSIインタフェース経由)",IDC_SCSI_GROUP,7,41,196,78
+    LTEXT           "ドライブ数(&D)",IDC_SCSI_DRIVEL,15,56,39,8
+    EDITTEXT        IDC_SCSI_DRIVEE,56,53,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SCSI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,52,9,14
+    CONTROL         "MOドライブを優先する(&F)",IDC_SCSI_MOCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,55,89,10
+    CONTROL         "List1",IDC_SCSI_LIST,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,71,180,40
+    LTEXT           "",IDC_SCSI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_SCSIPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "SCSI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "SCSI Interface",IDC_SCSI_IFG,7,7,196,26
+    CONTROL         "&None",IDC_SCSI_NONEB,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,18,57,10
+    CONTROL         "&Internal",IDC_SCSI_INTB,"Button",BS_AUTORADIOBUTTON,83,18,50,10
+    CONTROL         "&External",IDC_SCSI_EXTB,"Button",BS_AUTORADIOBUTTON,144,18,56,10
+    GROUPBOX        "SCSI Disk (via SCSI Interface)",IDC_SCSI_GROUP,7,41,196,78
+    LTEXT           "&Drives",IDC_SCSI_DRIVEL,15,56,39,8
+    EDITTEXT        IDC_SCSI_DRIVEE,56,53,23,14,ES_RIGHT | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Spin1",IDC_SCSI_DRIVES,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,198,52,9,14
+    CONTROL         "MO Drive at &First",IDC_SCSI_MOCHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,103,55,89,10
+    CONTROL         "List1",IDC_SCSI_LIST,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,15,71,180,40
+    LTEXT           "",IDC_SCSI_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_RESUMEPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "レジューム"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    GROUPBOX        "ディスク挿入状況の保存",IDC_RESUME_DISKG,7,7,196,29
+    CONTROL         "フロッピーディスク(&F)",IDC_RESUME_FDC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,19,77,10
+    CONTROL         "&MOディスク",IDC_RESUME_MOC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,19,51,10
+    CONTROL         "&CD-ROM",IDC_RESUME_CDC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,19,43,10
+    GROUPBOX        "ステートデータの保存",IDC_RESUME_STATEG,7,42,196,28
+    CONTROL         "ステートファイルがあれば、自動レジューム(&R)",IDC_RESUME_XM6C,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,54,149,10
+    GROUPBOX        "その他の保存",IDC_RESUME_MISCG,7,77,196,42
+    CONTROL         "ウィンドウ状態を保存(&W)",IDC_RESUME_SCREENC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,89,86,10
+    CONTROL         "カレントディレクトリを保存(&D)",IDC_RESUME_DIRC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,103,99,10
+    LTEXT           "",IDC_RESUME_HELP,7,129,196,18,SS_SUNKEN
+END
+
+IDD_US_RESUMEPAGE DIALOG 0, 0, 210, 154
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Resume"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Resume Disk Image Files",IDC_RESUME_DISKG,7,7,196,29
+    CONTROL         "&Floppy Disk",IDC_RESUME_FDC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,19,77,10
+    CONTROL         "&MO Disk",IDC_RESUME_MOC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,97,19,51,10
+    CONTROL         "&CD-ROM",IDC_RESUME_CDC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,153,19,43,10
+    GROUPBOX        "Resume State File",IDC_RESUME_STATEG,7,42,196,28
+    CONTROL         "Auto &Resume",IDC_RESUME_XM6C,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,54,149,10
+    GROUPBOX        "Other Options",IDC_RESUME_MISCG,7,77,196,42
+    CONTROL         "Resume &Window",IDC_RESUME_SCREENC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,89,86,10
+    CONTROL         "Resume Current &Dir",IDC_RESUME_DIRC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,103,99,10
+    LTEXT           "",IDC_RESUME_HELP,7,129,196,18,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS
+BEGIN
+    "S",            IDGR,                   VIRTKEY, ALT, NOINVERT
+    VK_F5,          IDGR,                   VIRTKEY, NOINVERT
+    VK_F12,         IDM_BREAK,              VIRTKEY, ALT, NOINVERT
+    VK_RETURN,      IDM_FULLSCREEN,         VIRTKEY, ALT, NOINVERT
+    VK_F12,         IDM_MOUSEMODE,          VIRTKEY, NOINVERT
+    VK_F12,         IDM_TRACE,              VIRTKEY, SHIFT, NOINVERT
+    VK_F7,          ID_FILE_CARGAR40006,    VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,5,0
+ PRODUCTVERSION 2,0,5,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x10004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "FileDescription", "X68000 EMULATOR XM6"
+            VALUE "FileVersion", "2, 0, 5, 0"
+            VALUE "InternalName", "XM6 "
+            VALUE "LegalCopyright", "Copyright (C) 2001-2006 ＰＩ．"
+            VALUE "OriginalFilename", "XM6.EXE"
+            VALUE "ProductName", "XM6 for Win32+DirectX5"
+            VALUE "ProductVersion", "2, 0, 5, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APPICON             ICON                    "res\\x68000.ico"
+IDI_XICON               ICON                    "res\\xm6.ico"
+AFX_IDI_STD_FRAME       ICON                    "res\\x68000.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_X68K                BITMAP                  "res\\x68k.bmp"
+IDB_CRT                 BITMAP                  "res\\crt.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""mfc_res.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_US_ABOUTDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_ADDRDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_REGDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_DATADLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_DISKDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_DMAKEDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_TRAPDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_BASICPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_SOUNDPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_VOLPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_VOLPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_MISCPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_MISCPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_KBDPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_KBDMAPDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_KEYINDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_PORTPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_ALTERPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_SXSIPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_MIDIPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_TKEYPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_JOYPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_JOYDETDLG, DIALOG
+    BEGIN
+    END
+
+    IDD_US_BTNSETPAGE, DIALOG
+    BEGIN
+    END
+
+    IDD_US_SCSIPAGE, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDM_OPEN                "仮想マシンステートファイルを開く"
+    IDM_SAVE                "仮想マシンステートファイルを保存"
+    IDM_RESET               "仮想マシンをリセット"
+    IDM_INTERRUPT           "NMI割り込みをかける"
+    IDM_POWER               "電源スイッチの操作"
+    IDM_EXIT                "XM6の終了"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_D0OPEN              "ディスクイメージをマウント"
+    IDM_D0EJECT             "ディスクイメージをイジェクト"
+    IDM_D0WRITEP            "ライトプロテクトシールの操作"
+    IDM_D0FORCE             "ディスクイメージを強制イジェクト"
+    IDM_D0INVALID           "誤挿入をシミュレーション"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_D1OPEN              "ディスクイメージをマウント"
+    IDM_D1EJECT             "ディスクイメージをイジェクト"
+    IDM_D1WRITEP            "ライトプロテクトシールの操作"
+    IDM_D1FORCE             "ディスクイメージを強制イジェクト"
+    IDM_D1INVALID           "誤挿入をシミュレーション"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_MOOPEN              "MOイメージをマウント"
+    IDM_MOEJECT             "MOイメージをイジェクト"
+    IDM_MOWRITEP            "書き込み禁止タブの操作"
+    IDM_MOFORCE             "MOイメージを強制イジェクト"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_CDOPEN              "CD-ROMイメージをマウント"
+    IDM_CDEJECT             "CD-ROMイメージをイジェクト"
+    IDM_CDFORCE             "CD-ROMイメージを強制イジェクト"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_LOG                 "動作ログウィンドウを表\示"
+    IDM_SCHEDULER           "スケジューラウィンドウを表\示"
+    IDM_DEVICE              "デバイスウィンドウを表\示"
+    IDM_CPUREG              "MPUレジスタウィンドウを表\示"
+    IDM_INT                 "割り込みウィンドウを表\示"
+    IDM_DISASM              "逆アセンブルウィンドウを表\示"
+    IDM_MEMORY              "メモリダンプウィンドウを表\示"
+    IDM_BREAKP              "ブレークポイントウィンドウを表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_MFP                 "MFPウィンドウを表\示"
+    IDM_DMAC                "DMACウィンドウを表\示"
+    IDM_CRTC                "CRTCウィンドウを表\示"
+    IDM_VC                  "VCウィンドウを表\示"
+    IDM_RTC                 "RTCウィンドウを表\示"
+    IDM_OPM                 "OPMウィンドウを表\示"
+    IDM_KEYBOARD            "キーボードウィンドウを表\示"
+    IDM_FDD                 "FDDウィンドウを表\示"
+    IDM_FDC                 "FDCウィンドウを表\示"
+    IDM_SCC                 "SCCウィンドウを表\示"
+    IDM_CYNTHIA             "BG/スプライトウィンドウを表\示"
+    IDM_SASI                "SASIウィンドウを表\示"
+    IDM_MIDI                "MIDIウィンドウを表\示"
+    IDM_SCSI                "SCSIウィンドウを表\示"
+    IDM_TVRAM               "テキスト画面ウィンドウを表\示"
+    IDM_G1024               "グラフィック画面(16色モード・1024×1024)ウィンドウを表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_G16P0               "グラフィック画面(16色モード・ページ0)ウィンドウを表\示"
+    IDM_G16P1               "グラフィック画面(16色モード・ページ1)ウィンドウを表\示"
+    IDM_G16P2               "グラフィック画面(16色モード・ページ2)ウィンドウを表\示"
+    IDM_G16P3               "グラフィック画面(16色モード・ページ3)ウィンドウを表\示"
+    IDM_G256P0              "グラフィック画面(256色モード・ページ0)ウィンドウを表\示"
+    IDM_G256P1              "グラフィック画面(256色モード・ページ1)ウィンドウを表\示"
+    IDM_G64K                "グラフィック画面(65536色モード)ウィンドウを表\示"
+    IDM_PCG                 "PCGウィンドウを表\示"
+    IDM_BG0                 "BG画面(ページ0)ウィンドウを表\示"
+    IDM_BG1                 "BG画面(ページ1)ウィンドウを表\示"
+    IDM_SPRITE              "スプライトウィンドウを表\示"
+    IDM_PALET               "パレットウィンドウを表\示"
+    IDM_REND_TEXT           "テキストバッファウィンドウを表\示"
+    IDM_REND_GP0            "グラフィックバッファ(0)ウィンドウを表\示"
+    IDM_REND_GP1            "グラフィックバッファ(1)ウィンドウを表\示"
+    IDM_REND_GP2            "グラフィックバッファ(2)ウィンドウを表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_REND_GP3            "グラフィックバッファ(3)ウィンドウを表\示"
+    IDM_REND_PCG            "PCGバッファウィンドウを表\示"
+    IDM_REND_BGSPRITE       "BG/スプライトバッファウィンドウを表\示"
+    IDM_REND_PALET          "パレットバッファウィンドウを表\示"
+    IDM_REND_MIX            "合成バッファウィンドウを表\示"
+    IDM_COMPONENT           "コンポーネントウィンドウを表\示"
+    IDM_OSINFO              "OS情報ウィンドウを表\示"
+    IDM_SOUND               "サウンドウィンドウを表\示"
+    IDM_INPUT               "インプットウィンドウを表\示"
+    IDM_PORT                "ポートウィンドウを表\示"
+    IDM_BITMAP              "ビットマップウィンドウを表\示"
+    IDM_MIDIDRV             "MIDIドライバウィンドウを表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_CAPTION             "キャプションの表\示切り替え"
+    IDM_MENU                "メニューバーの表\示切り替え"
+    IDM_STATUS              "ステータスバーの表\示切り替え"
+    IDM_REFRESH             "全てのウィンドウを再描画"
+    IDM_STRETCH             "768×512以外のモードで、アスペクト比を5:4に調整"
+    IDM_FULLSCREEN          "全画面モードへ切り替え"
+    IDM_EXEC                "仮想マシンの実行を開始"
+    IDM_BREAK               "仮想マシンの実行を停止"
+    IDM_TRACE               "1命令だけ実行"
+    IDM_MOUSEMODE           "マウス入力モードの切り替え"
+    IDM_SOFTKEY             "ソ\ウトウェアキーボードを表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_TIMEADJ             "時計を現在時刻に補正"
+    IDM_TRAP0               "d0に指定値をセットし、trap#0命令を実行"
+    IDM_SAVEWAV             "サウンドをWAVファイルに記録"
+    IDM_NEWFD               "新しいフロッピーディスクイメージを作成"
+    IDM_NEWSASI             "新しいSASI ハードディスクイメージを作成"
+    IDM_NEWSCSI             "新しいSCSI ハードディスクイメージを作成"
+    IDM_NEWMO               "新しいSCSI MO(光磁気)ディスクイメージを作成"
+    IDM_OPTIONS             "XM6の動作オプション"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_CASCADE             "サブウィンドウの整列(重ねて表\示)"
+    IDM_TILE                "サブウィンドウの整列(並べて表\示)"
+    IDM_ICONIC              "全てのサブウィンドウを最小化"
+    IDM_ARRANGEICON         "アイコン化されたサブウィンドウの整列"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_HIDE                "全てのサブウィンドウを隠す"
+    IDM_RESTORE             "全てのサブウィンドウを復元"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_ABOUT               "XM6のバージョン情報を表\示"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_STDWIN              "メインウィンドウをスクリーン中央に配置"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "XM6"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_LOG            "ログ"
+    IDS_SWND_LOG_NUMBER     "No."
+    IDS_SWND_LOG_TIME       "仮想時間"
+    IDS_SWND_LOG_PC         "PC"
+    IDS_SWND_LOG_LEVEL      "レベル"
+    IDS_SWND_LOG_DEVICE     "デバイス"
+    IDS_SWND_LOG_MSG        "メッセージ"
+    IDS_SWND_LOG_DETAIL     "詳細"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_LOG_NORMAL     "通常"
+    IDS_SWND_LOG_WARNING    "警告"
+    IDS_SWND_SCHEDULER      "スケジューラ"
+    IDS_SWND_DEVICE         "デバイス"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_CPUREG         "MPUレジスタ"
+    IDS_SWND_INT            "割り込み"
+    IDS_SWND_DISASM         "逆アセンブル"
+    IDS_SWND_MEMORY         "メモリ"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_BREAKP         "ブレークポイント"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_MFP            "MFP (MC68901)"
+    IDS_SWND_DMAC           "DMAC (HD63450)"
+    IDS_SWND_CRTC           "CRTC (VICON)"
+    IDS_SWND_VC             "VC (CATHY and VIPS)"
+    IDS_SWND_RTC            "RTC (RP5C15)"
+    IDS_SWND_OPM            "OPM (YM2151)"
+    IDS_SWND_KEYBOARD       "キーボード"
+    IDS_SWND_FDD            "FDD (FD55GFR)"
+    IDS_SWND_FDC            "FDC (uPD72065)"
+    IDS_SWND_SCC            "SCC (Z8530)"
+    IDS_SWND_CYNTHIA        "BG/スプライト (CYNTHIA)"
+    IDS_SWND_SASI           "SASI (IOSC-2)"
+    IDS_SWND_MIDI           "MIDI (YM3802)"
+    IDS_SWND_SCSI           "SCSI (MB89352)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_TVRAM          "テキスト画面"
+    IDS_SWND_G1024          "グラフィック画面(16色モード・1024×1024)"
+    IDS_SWND_G16P0          "グラフィック画面(16色モード・ページ0)"
+    IDS_SWND_G16P1          "グラフィック画面(16色モード・ページ1)"
+    IDS_SWND_G16P2          "グラフィック画面(16色モード・ページ2)"
+    IDS_SWND_G16P3          "グラフィック画面(16色モード・ページ3)"
+    IDS_SWND_G256P0         "グラフィック画面(256色モード・ページ0)"
+    IDS_SWND_G256P1         "グラフィック画面(256色モード・ページ1)"
+    IDS_SWND_G64K           "グラフィック画面(65536色モード)"
+    IDS_SWND_PCG            "PCG"
+    IDS_SWND_BG0            "BG画面(ページ0)"
+    IDS_SWND_BG1            "BG画面(ページ1)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_SPRITE         "スプライト画面"
+    IDS_SWND_PALET          "パレット"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_REND_TEXT      "テキストバッファ"
+    IDS_SWND_REND_GP0       "グラフィックバッファ(0)"
+    IDS_SWND_REND_GP1       "グラフィックバッファ(1)"
+    IDS_SWND_REND_GP2       "グラフィックバッファ(2)"
+    IDS_SWND_REND_GP3       "グラフィックバッファ(3)"
+    IDS_SWND_REND_PCG       "PCGバッファ"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_REND_BGSPRITE  "BG/スプライトバッファ"
+    IDS_SWND_REND_PALET     "パレットバッファ"
+    IDS_SWND_REND_MIX       "合成バッファ"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_COMPONENT      "コンポーネント"
+    IDS_SWND_OSINFO         "OS情報"
+    IDS_SWND_SOUND          "サウンド"
+    IDS_SWND_INPUT          "インプット"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_PORT           "ポート"
+    IDS_SWND_BITMAP         "ビットマップ"
+    IDS_SWND_MIDIDRV        "MIDIドライバ"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_SWND_SOFTKEY        "ソ\フトウェアキーボード"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_BASIC_MEMORYC       "メインメモリを増設します。変更後リセットにより反映されます。デフォルトは2MBです"
+    IDC_BASIC_MEMORYL       "メインメモリを増設します。変更後リセットにより反映されます。デフォルトは2MBです"
+    IDC_BASIC_CLOCKL        "システムクロックをクロックアップします。SCCには別系統クロックが供給されます。デフォルトは10MHzです"
+    IDC_BASIC_CLOCKC        "システムクロックをクロックアップします。SCCには別系統クロックが供給されます。デフォルトは10MHzです"
+    IDC_BASIC_CPUFULLB      "CPUパワーに余裕がある場合、余裕分だけMPUをクロックアップします。デフォルトはOFFです"
+    IDC_BASIC_ALLFULLB      "CPUパワーに余裕がある場合、余裕分だけ仮想マシン全体の進行を速めます。デフォルトはOFFです"
+    IDS_BASIC_CLOCK0        "10MHz  (標準)"
+    IDS_BASIC_CLOCK1        "12MHz  (ACE改)"
+    IDS_BASIC_CLOCK2        "15MHz  (PRO改)"
+    IDS_BASIC_CLOCK3        "16MHz  (SUPER改)"
+    IDS_BASIC_CLOCK4        "17.4MHz(EXPERT改)"
+    IDS_BASIC_CLOCK5        "20MHz  (大当たり!!)"
+    IDS_BASIC_MEMORY0       "2MB  (EXPERT～Compact標準)"
+    IDS_BASIC_MEMORY1       "4MB  (X68030標準)"
+    IDS_BASIC_MEMORY2       "6MB"
+    IDS_BASIC_MEMORY3       "8MB"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_BASIC_MEMORY4       "10MB"
+    IDS_BASIC_MEMORY5       "12MB (フル実装)"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_BASIC_CLOCKG        "エミュレーション速度を設定します"
+    IDC_BASIC_MEMORYG       "エミュレーションメモリを設定します"
+    IDC_BASIC_MEMSWB        "リセット時に増設メモリに応じてスタティックRAM内メモリスイッチを自動更新します。デフォルトはONです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_SOUND_DEVICEG       "サウンドを再生するデバイスを選択します。(割り当てない)にするとサウンド合成および再生を行いません"
+    IDC_SOUND_DEVICEC       "サウンドを再生するデバイスを選択します。(割り当てない)にするとサウンド合成および再生を行いません"
+    IDC_SOUND_RATEG         "再生レートを選択します。48.2k・88.2k・96kは対応しているデバイスが必要です。デフォルトは62.5kです"
+    IDC_SOUND_RATE0         "44.1kHzで合成します。ほとんどのデバイスが対応しています。デフォルトは62.5kHzです"
+    IDC_SOUND_RATE1         "48kHzで合成します。多くのデバイスが対応しています。デフォルトは62.5kHzです"
+    IDC_SOUND_RATE2         "88.2kHzで合成します。CPU負荷は多めになります。デフォルトは62.5kHzです"
+    IDC_SOUND_RATE3         "96kHzで合成します。CPU負荷は最大になります。デフォルトは62.5kHzです"
+    IDC_SOUND_RATE4         "62.5kHzで合成します。DirectSoundにより周波数変換が行われます。デフォルトは62.5kHzです"
+    IDC_SOUND_BUFFERG       "サウンドバッファのサイズおよび更新間隔を設定します。"
+    IDC_SOUND_BUF1L         "バッファサイズを設定します。サイズを増やすと再生遅れが大きくなります。デフォルトは100msです"
+    IDC_SOUND_BUF1E         "バッファサイズを設定します。サイズを増やすと再生遅れが大きくなります。デフォルトは100msです"
+    IDC_SOUND_BUF1S         "バッファサイズを設定します。サイズを増やすと再生遅れが大きくなります。デフォルトは100msです"
+    IDC_SOUND_BUF1MS        "バッファサイズを設定します。サイズを増やすと再生遅れが大きくなります。デフォルトは100msです"
+    IDC_SOUND_BUF2L         "バッファのポーリング間隔を調整します。これは上級者向けの設定です。デフォルトは5msです"
+    IDC_SOUND_BUF2E         "バッファのポーリング間隔を調整します。これは上級者向けの設定です。デフォルトは5msです"
+    IDC_SOUND_BUF2S         "バッファのポーリング間隔を調整します。これは上級者向けの設定です。デフォルトは5msです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_SOUND_BUF2MS        "バッファのポーリング間隔を調整します。これは上級者向けの設定です。デフォルトは5msです"
+    IDC_SOUND_OPTIONG       "再生オプションを選択します"
+    IDC_SOUND_INTERP        "ADPCMからWAVへの変換時に補間をかけます。デフォルトはONです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_VOL_OUTG            "出力段の音量パラメータを設定します"
+    IDC_VOL_VOLL            "メインボリュームを設定します。0で最小、100で最大です。WAVEデバイスにより無効となります"
+    IDC_VOL_VOLS            "メインボリュームを設定します。0で最小、100で最大です。WAVEデバイスにより無効となります"
+    IDC_VOL_VOLN            "メインボリュームを設定します。0で最小、100で最大です。WAVEデバイスにより無効となります"
+    IDC_VOL_MASTERL         "WAVEレベルを設定します。0で最小、100で最大です。デフォルトは100です"
+    IDC_VOL_MASTERS         "WAVEレベルを設定します。0で最小、100で最大です。デフォルトは100です"
+    IDC_VOL_MASTERN         "WAVEレベルを設定します。0で最小、100で最大です。デフォルトは100です"
+    IDC_VOL_SEPL            "MIDIレベルを設定します。0で最小、100で最大です。MIDIデバイスにより無効となります"
+    IDC_VOL_SEPS            "MIDIレベルを設定します。0で最小、100で最大です。MIDIデバイスにより無効となります"
+    IDC_VOL_SEPN            "MIDIレベルを設定します。0で最小、100で最大です。MIDIデバイスにより無効となります"
+    IDC_VOL_GENG            "合成部の音量パラメータを設定します"
+    IDC_VOL_FML             "FM音源の音量を設定します"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_VOL_FMC             "FM音源の出力を有効にします。デフォルトはONです"
+    IDC_VOL_FMS             "FM音源の音量を設定します。0で最小、100で最大です。上げすぎると音割れの原因になります。デフォルトは54です"
+    IDC_VOL_FMN             "FM音源の音量を設定します。0で最小、100で最大です。上げすぎると音割れの原因になります。デフォルトは54です"
+    IDC_VOL_ADPCML          "ADPCM音源の音量を設定します"
+    IDC_VOL_ADPCMC          "ADPCM音源の出力を有効にします。デフォルトはONです"
+    IDC_VOL_ADPCMS          "ADPCM音源の音量を設定します。0で最小、100で最大です。上げすぎると音割れの原因になります。デフォルトは52です"
+    IDC_VOL_ADPCMN          "ADPCM音源の音量を設定します。0で最小、100で最大です。上げすぎると音割れの原因になります。デフォルトは52です"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MISC_OPTG           "その他の設定を行います"
+    IDC_MISC_FDSPEED        "フロッピーディスクのアクセス速度を擬似的に高速化します。デフォルトはOFFです"
+    IDC_MISC_FDLED          "フロッピーディスクのモータ回転状況をアクセスLEDとして表\示します。これは実機と同じ動作です。デフォルトはONです"
+    IDC_MISC_POPUP          "サブウィンドウをポップアップスタイルにします。ポップアップウィンドウをアクティブにすると速度が低下します。デフォルトはOFFです"
+    IDC_MISC_AUTOMOUSE      "スクリーンモード変更に連動してマウスモードの自動切り替えを行います。デフォルトはOFFです。"
+    IDC_MISC_POWEROFF       "前面電源スイッチがOFFの状態でXM6を起動します。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_KBD_MAPG            "キーボード変換表\を設定します"
+    IDC_KBD_MAPL            "現在のキーボード変換表\を表\示しています。DirectXキーIDが空白であれば対応するキーは割り当てられていません"
+    IDC_KBD_EDITB           "キーボード変換表\を編集します"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_KBD_DEFB            "編集結果を破棄し、デフォルトの変換表\に戻します"
+    IDC_KBD_NOCONB          "キーボードを本体前面キーボードコネクタへ接続しません。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MOUSE_SPEEDG        "マウスの移動速度を設定します"
+    IDC_MOUSE_SLIDER        "マウス速度をWindowsのマウス移動量に対する比率で設定します。デフォルトは80%です"
+    IDC_MOUSE_PARS          "マウス速度をWindowsのマウス移動量に対する比率で設定します。デフォルトは80%です"
+    IDC_MOUSE_PORTG         "マウスを接続するポートを設定します。デフォルトは本体です"
+    IDC_MOUSE_FPORT         "マウスを本体前面マウスコネクタへ接続します"
+    IDC_MOUSE_KPORT         "マウスをキーボード側面マウスコネクタへ接続します"
+    IDC_MOUSE_NPORT         "マウスを接続しません"
+    IDC_MOUSE_OPTG          "マウスの動作を調整します"
+    IDC_MOUSE_SWAPB         "左ボタン・右ボタンを入れ替えます。デフォルトはOFFです"
+    IDC_MOUSE_MIDB          "中ボタンによるマウスモード切り替えを行いません。デフォルトはOFFです"
+    IDC_MOUSE_TBG           "マウス裏面スイッチをマウス(M)からトラックボール(T)に切り替えます。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_PORT_COMG           "RS-232Cポートのエミュレーションを設定します"
+    IDC_PORT_COML           "RS-232Cへ割り当てるシリアルポートを設定します。COMポートを指定するとポーリング負荷がかかります"
+    IDC_PORT_COMC           "RS-232Cへ割り当てるシリアルポートを設定します。COMポートを指定するとポーリング負荷がかかります"
+    IDC_PORT_RECVL          "RS-232Cの受信ログファイルを設定します。空白にするとファイルへの記録を行いません"
+    IDC_PORT_RECVE          "RS-232Cの受信ログファイルを設定します。空白にするとファイルへの記録を行いません"
+    IDC_PORT_BAUDRATE       "X68000側の設定によらず、常に38400bpsで通信します。RS-MIDIの送信に効果があります。デフォルトはOFFです"
+    IDC_PORT_LPTG           "プリンタポートのエミュレーションを設定します"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_PORT_LPTL           "プリンタへ割り当てるパラレルポートを設定します。LPTポートを指定するとポーリング負荷がかかります"
+    IDC_PORT_LPTC           "プリンタへ割り当てるパラレルポートを設定します。LPTポートを指定するとポーリング負荷がかかります"
+    IDC_PORT_SENDL          "プリンタの送信ログファイルを設定します。空白にするとファイルへの記録を行いません"
+    IDC_PORT_SENDE          "プリンタの送信ログファイルを設定します。空白にするとファイルへの記録を行いません"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_ALTER_ALTERG        "本体の改造オプションを設定します"
+    IDC_ALTER_SRAM          "バックアップSRAMを62C64×2から62C256×2に交換します。デフォルトはOFFです"
+    IDC_ALTER_SCC           "SCCクロックを5MHzから7.5MHzへ上げます。マウス制御には対応ソ\フトが必要です。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_ALTER_POWERLED      "電源LEDを赤色・緑色タイプから青色タイプへ交換します。デフォルトはOFFです"
+    IDC_ALTER_2DD           "フロッピーディスクドライブを2HD専用ドライブから2DD/2HD兼用ドライブへ交換します。デフォルトはOFFです"
+    IDC_ALTER_SASIG         "SASIバスの改造オプションを設定します"
+    IDC_ALTER_PARITY        "74F280を用いたパリティ生成回路を追加します。SxSIを使う場合に必要となります。デフォルトはONです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_SASI_GROUP          "SASIインタフェースに接続するSASIハードディスクを設定します"
+    IDC_SASI_DRIVEL         "接続ドライブ数を設定します。容量40MBのドライブを最大16台まで接続できます。デフォルトは0です"
+    IDC_SASI_DRIVEE         "接続ドライブ数を設定します。容量40MBのドライブを最大16台まで接続できます。デフォルトは0です"
+    IDC_SASI_DRIVES         "接続ドライブ数を設定します。容量40MBのドライブを最大16台まで接続できます。デフォルトは0です"
+    IDC_SASI_MEMSWB         "リセット時に接続ドライブ数に応じてスタティックRAM内メモリスイッチを自動更新します。SCSIにも有効です。デフォルトはONです"
+    IDC_SASI_LIST           "No.欄をクリックしてSASIハードディスクのイメージファイルを指定します。容量が'無効'となっているドライブにはアクセスできません"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_SXSI_GROUP          "SASIインタフェースに接続するSCSIドライブを設定します"
+    IDC_SXSI_DRIVEL         "接続ドライブ数を設定します。HDドライブが(設定数-1)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SXSI_DRIVEE         "接続ドライブ数を設定します。HDドライブが(設定数-1)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SXSI_MOCHECK        "MOドライブのSCSI IDを最初に割り当てます。MOから起動したい場合に使用します。デフォルトはOFFです"
+    IDC_SXSI_DRIVES         "接続ドライブ数を設定します。HDドライブが(設定数-1)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SXSI_LIST           "ID欄をクリックしてSCSIハードディスクのイメージファイルを指定します。容量が'無効'となっているドライブにはアクセスできません"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MIDI_BIDG           "MIDIボードの種別を設定します。通常は装着しない、又はボードID1を選択します。デフォルトは装着しません"
+    IDC_MIDI_BID0           "MIDIボードを装着せず、MIDIを使用しません。デフォルトは装着しません"
+    IDC_MIDI_BID1           "MIDIボードをボードID1($EAFA01-$EAFA0F)として装着します。デフォルトは装着しません"
+    IDC_MIDI_BID2           "MIDIボードをボードID2($EAFA11-$EAFA1F)として装着します。デフォルトは装着しません"
+    IDC_MIDI_ILEVELG        "MIDIボードの割り込みレベルを設定します。デフォルトはレベル4です"
+    IDC_MIDI_ILEVEL4        "MIDIボードの割り込みレベルを4にします。デフォルトはレベル4です"
+    IDC_MIDI_ILEVEL2        "MIDIボードの割り込みレベルを2にします。デフォルトはレベル4です"
+    IDC_MIDI_RSTG           "音源のリセットコマンドを設定します。デフォルトはGM音源です"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MIDI_RSTGM          "リセットコマンドとしてGMコマンドを出力します。デフォルトはGM音源です"
+    IDC_MIDI_RSTGS          "リセットコマンドとしてGSコマンドを出力します。デフォルトはGM音源です"
+    IDC_MIDI_RSTXG          "リセットコマンドとしてXGコマンドを出力します。デフォルトはGM音源です"
+    IDC_MIDI_RSTLA          "リセットコマンドとしてLAコマンドを出力します。デフォルトはGM音源です"
+    IDC_MIDI_DEVG           "MIDI入出力を割り当てるデバイスを選択します"
+    IDC_MIDI_INS            "MIDI入力を割り当てるデバイスを選択します。デフォルトは割り当てません"
+    IDC_MIDI_INC            "MIDI入力を割り当てるデバイスを選択します。デフォルトは割り当てません"
+    IDC_MIDI_DLYIL          "MIDI入力の受信遅延時間を設定します。デフォルトは0msです"
+    IDC_MIDI_DLYIE          "MIDI入力の受信遅延時間を設定します。デフォルトは0msです"
+    IDC_MIDI_DLYIS          "MIDI入力の受信遅延時間を設定します。デフォルトは0msです"
+    IDC_MIDI_DLYIG          "MIDI入力の受信遅延時間を設定します。デフォルトは0msです"
+    IDC_MIDI_OUTS           "MIDI出力を割り当てるデバイスを選択します。デフォルトは割り当てません"
+    IDC_MIDI_OUTC           "MIDI出力を割り当てるデバイスを選択します。デフォルトは割り当てません"
+    IDC_MIDI_DLYOL          "MIDI出力の送信遅延時間を設定します。デフォルトは84msです"
+    IDC_MIDI_DLYOE          "MIDI出力の送信遅延時間を設定します。デフォルトは84msです"
+    IDC_MIDI_DLYOS          "MIDI出力の送信遅延時間を設定します。デフォルトは84msです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_MIDI_DLYOG          "MIDI出力の送信遅延時間を設定します。デフォルトは84msです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_TKEY_PORTG          "X680x0キーボードを接続するシリアルポートを設定します"
+    IDC_TKEY_COML           "X680x0キーボードを接続するシリアルポートを設定します。デフォルトは割り当てません"
+    IDC_TKEY_COMC           "X680x0キーボードを接続するシリアルポートを設定します。デフォルトは割り当てません"
+    IDC_TKEY_RTS            "RTS信号の論理を指定します。X680x0キーボードから入力できない場合に設定します。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_TKEY_ASSIGNG        "X680x0キーボードの入力先を設定します"
+    IDC_TKEY_VMC            "XM6動作時に仮想マシンに対して入力します。デフォルトはONです"
+    IDC_TKEY_WINC           "XM6停止時にWindowsアプリケーションに対して入力します。デフォルトはOFFです"
+    IDC_TKEY_MAPG           "Windows入力時のキー変換表\を設定します"
+    IDC_TKEY_LIST           "No.欄をクリックしてキーコードを設定します。VKキーIDが空白であれば対応するキーは割り当てられていません"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_JOY_PORTG           "ジョイスティックポートに接続するデバイスを設定します"
+    IDC_JOY_PORTL1          "ポート1のデバイスを設定します。デフォルトはATARI標準です"
+    IDC_JOY_PORTC1          "ポート1のデバイスを設定します。デフォルトはATARI標準です"
+    IDC_JOY_PORTD1          "デバイスの詳細情報を表\示します"
+    IDC_JOY_PORTL2          "ポート2のデバイスを設定します。デフォルトはATARI標準です"
+    IDC_JOY_PORTC2          "ポート2のデバイスを設定します。デフォルトはATARI標準です"
+    IDC_JOY_PORTD2          "デバイスの詳細情報を表\示します"
+    IDC_JOY_DEVG            "各ポートに割り当てるゲームコントローラを設定します"
+    IDC_JOY_DEVLA           "ポート1に割り当てるゲームコントローラを設定します"
+    IDC_JOY_DEVCA           "ポート1に割り当てるゲームコントローラを設定します"
+    IDC_JOY_DEVAA           "ゲームコントローラの情報を表\示します"
+    IDC_JOY_DEVLB           "ポート2に割り当てるゲームコントローラを設定します"
+    IDC_JOY_DEVCB           "ポート2に割り当てるゲームコントローラを設定します"
+    IDC_JOY_DEVAB           "ゲームコントローラの情報を表\示します"
+    IDC_JOY_DEVLC           "その他のゲームコントローラを設定します"
+    IDC_JOY_DEVCC           "その他のゲームコントローラを設定します"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_JOY_DEVAC           "ゲームコントローラの情報を表\示します"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_SCSI_IFG            "SCSIインタフェースの種別を設定します。デフォルトは装着しません"
+    IDC_SCSI_NONEB          "SCSIインタフェースを装着せず、X68000EXPERT互換のSASIインタフェースを使用します。デフォルトは装着しません"
+    IDC_SCSI_INTB           "内蔵SCSIインタフェース(X68000SUPER互換)を装着します。SCSIINROM.DATファイルが必要です。デフォルトは装着しません"
+    IDC_SCSI_EXTB           "SCSIボード(CZ-6BS1互換)を装着します。SCSIEXROM.DATファイルが必要です。デフォルトは装着しません"
+    IDC_SCSI_GROUP          "SCSIインタフェースに接続するSCSIドライブを設定します"
+    IDC_SCSI_DRIVEL         "接続ドライブ数を設定します。HDドライブが(設定数-2)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SCSI_DRIVEE         "接続ドライブ数を設定します。HDドライブが(設定数-2)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SCSI_DRIVES         "接続ドライブ数を設定します。HDドライブが(設定数-2)台、MOドライブが1台割り当てられます。デフォルトは0です"
+    IDC_SCSI_MOCHECK        "MOドライブのSCSI IDを最初に割り当てます。補助ソ\フトを使用してMOから起動したい場合に使用します。デフォルトはOFFです"
+    IDC_SCSI_LIST           "ID欄をクリックしてSCSIハードディスクのイメージファイルを指定します。容量が'無効'となっているドライブにはアクセスできません"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_RESUME_DISKG        "フロッピーディスク(両ドライブ)・MOディスク・CD-ROMに関する保存オプションを設定します"
+    IDC_RESUME_FDC          "XM6終了時にフロッピーディスクが挿入されていれば、次回起動時に自動挿入します。デフォルトはOFFです"
+    IDC_RESUME_MOC          "XM6終了時にMOディスクが挿入されていれば、次回起動時に自動挿入します。デフォルトはOFFです"
+    IDC_RESUME_CDC          "XM6終了時にCD-ROMが挿入されていれば、次回起動時に自動挿入します。デフォルトはOFFです"
+    IDC_RESUME_STATEG       "ステートデータに関する保存オプションを設定します"
+    IDC_RESUME_XM6C         "XM6終了時にステートデータが保存されていれば、次回起動時に読み込み、再開します。デフォルトはOFFです"
+    IDC_RESUME_MISCG        "その他の保存オプションを設定します"
+    IDC_RESUME_SCREENC      "XM6終了時にフルスクリーン状態・ウィンドウ位置・コントロールバーの有無を保存し、次回起動時に復元します。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_RESUME_DIRC         "XM6終了時にカレントディレクトリを保存し、次回起動時に復元します。ステートデータが保存されている場合は無効です。デフォルトはOFFです"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_CAPTION_RUN         "XM6 [実行]"
+    IDS_CAPTION_STOP        "XM6 [停止]"
+    IDS_INIT_VMERR          "仮想マシンを初期化できません"
+    IDS_INIT_COMERR         "DirectXコンポーネントを初期化できません"
+    IDS_INIT_IPLERR         "IPLバージョンがVersion1.00(87/05/07)ではありません。\n続けますか？"
+    IDS_INIT_CGERR          "CGROMの内容がX680x0と異なっています。\n続けますか？"
+    IDS_FDOPEN              "対応しているすべてのディスクイメージ|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG;*.DIM;*.D68;*.D88;*.2DD;*.2HQ|1.25MBディスクイメージ (XDF;HDM;2HD;DUP;IMG)|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG|DIMディスクイメージ (DIM)|*.DIM|D68ディスクイメージ (D68;D88)|*.D68;*.D88|720KBディスクイメージ (2DD)|*.2DD|1.44MBディスクイメージ (2HQ)|*.2HQ|すべてのファイル (*.*)|*.*||"
+    IDS_FDERR               "ディスクイメージファイルが見つからないか、サポートしていない形式です"
+    IDS_NEWFD               "新しいフロッピーディスクイメージを作成しました"
+    IDS_SASIOPEN            "SASIハードディスクイメージ (*.HDF)|*.HDF|全てのファイル (*.*)|*.*||"
+    IDS_NEWSASI             "新しいSASI ハードディスクイメージを作成しました"
+    IDS_CREATEERR           "ファイル作成に失敗しました"
+    IDS_OPTIONS             "XM6の動作設定"
+    IDS_MOUSE_X68K          "マウスエミュレーションを有効にしました"
+    IDS_MOUSE_WIN           "マウスエミュレーションを無効にしました"
+    IDS_WAVOPEN             "WAVオーディオ (*.WAV)|*.WAV|全てのファイル (*.*)|*.*||"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_WAVSTART            "WAVキャプチャを開始しました"
+    IDS_WAVSTOP             "WAVキャプチャを終了しました"
+    IDS_KBD_NO              "No."
+    IDS_KBD_KEYTOP          "キー刻印"
+    IDS_KBD_DIRECTX         "DirectX キーID"
+    IDS_RESET               "システムリセット"
+    IDS_KBDMAP_GUIDE        "設定したいキーを左クリックしてください。右上×ボタンで終了します"
+    IDS_STDWIN              "標準のウィンドウ位置(&P)"
+    IDS_SASI_CAPACITY       "容量"
+    IDS_SASI_FILENAME       "SASIハードディスク イメージファイル"
+    IDS_SASI_DEVERROR       "無効"
+    IDS_NEWSCSI             "新しいSCSI ハードディスクイメージを作成しました"
+    IDS_NEWMO               "新しいSCSI MOディスクイメージを作成しました"
+    IDS_SCSIOPEN            "SCSI ハードディスクイメージ (*.HDS)|*.HDS|全てのファイル (*.*)|*.*||"
+    IDS_MOOPEN              "SCSI MOディスクイメージ (*.MOS)|*.MOS|全てのファイル (*.*)|*.*||"
+    IDS_CANCEL              "キャンセルされました"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_MOERR               "MOイメージファイルが見つからないか、サポートしていない形式です"
+    IDS_SXSI_CAPACITY       "容量"
+    IDS_SXSI_FILENAME       "SCSIハードディスク イメージファイル"
+    IDS_SXSI_SASI           "(SASI ハードディスクドライブ)"
+    IDS_SXSI_MO             "(SCSI MOディスクドライブ)"
+    IDS_SXSI_INIT           "(SCSI イニシエータ)"
+    IDS_SXSI_NONE           " "
+    IDS_SXSI_DEVERROR       "無効"
+    IDS_FDI_DISKNAME        "ディスク名(&N) (16文字まで)"
+    IDS_FDI_COMMENT         "コメント(&N) (59文字まで)"
+    IDS_PORT_NOASSIGN       "(割り当てない)"
+    IDS_MIDI_NOASSIGN       "(割り当てない)"
+    IDS_MIDI_MAPPER         "MIDI マッパー"
+    IDS_SOUND_NOASSIGN      "(割り当てない)"
+    IDS_BADFDI_WARNING      "ディスクイメージの一部が欠落しているか、または余分があります。\n1.25MBイメージのエミュレーションを行います。"
+    IDS_TKEY_NOASSIGN       "(割り当てない)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_TKEY_NO             "No."
+    IDS_TKEY_KEYTOP         "キー刻印"
+    IDS_TKEY_VK             "VK キーID"
+    IDS_INTERRUPT           "INTERRUPTスイッチが押されました"
+    IDS_POWEROFF            "電源が切れました"
+    IDS_JOY_NOASSIGN        "(割り当てない)"
+    IDS_JOY_ATARI           "ATARI標準"
+    IDS_JOY_ATARISS         "ATARI標準+START/SELECT"
+    IDS_JOY_CYBERA          "サイバースティック(アナログ)"
+    IDS_JOY_CYBERD          "サイバースティック(デジタル)"
+    IDS_JOY_MD3             "メガドライブ3ボタン"
+    IDS_JOY_MD6             "メガドライブ6ボタン"
+    IDS_JOY_CPSF            "CPSファイター(SFC)"
+    IDS_JOY_CPSFMD          "CPSファイター(MD)"
+    IDS_JOY_MAGICAL         "マジカルパッド"
+    IDS_JOY_LR              "XPD-1LR"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_JOY_PACLAND         "パックランド専用パッド"
+    IDS_JOY_BM              "BM68専用コントローラ"
+    IDS_KBD_DELTITLE        "キー割り当ての削除"
+    IDS_KBD_DELMSG          "キーNo. %02X への割り当て %s を削除します。\nよろしいですか？"
+    IDS_JOYSET              "デバイス%c(%s) の設定"
+    IDS_JOYSET_NOASSIGN     "(割り当てない)"
+    IDS_JOYSET_BTNPORT      "ポート%d-ボタン%d%s"
+    IDS_JOYSET_BTNLABEL     "ボタン%d"
+    IDS_JOYDET_ANALOG       "アナログ"
+    IDS_XM6OPEN             "XM6ステートデータ (*.XM6)|*.XM6|全てのファイル (*.*)|*.*||"
+    IDS_XM6LOADOK           "仮想マシン情報および設定情報をロードしました"
+    IDS_XM6LOADERR          "サポートしていないデータ形式です。\n自動リセットします"
+    IDS_XM6SAVEOK           "仮想マシン情報および設定情報をセーブしました"
+    IDS_XM6SAVEERR          "保存できませんでした"
+    IDS_EXIT                "終了(&X)\tAlt+F4"
+    IDS_XM6LOADFILE         "ファイルが見つかりません"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_XM6LOADHDR          "XM6のステートデータではありません"
+    IDS_XM6LOADVER          "未知のバージョンのため、ロードできません\n\n[現在のバージョン] version%1X.%02X\n[ファイルバージョン] version%1X.%02X"
+    IDS_FILEUPDATE          "ステートセーブ後にファイルが更新されています。このまま\n書き込みを行うと、論理不整合が起こる可能\性があります。\n\n[ファイル名] %s\n[更新記録] %d/%d/%d\n[最終更新] %d/%d/%d"
+    IDS_SCSI_CAPACITY       "容量"
+    IDS_SCSI_FILENAME       "SCSIハードディスク イメージファイル"
+    IDS_SCSI_MO             "(SCSI MOディスクドライブ)"
+    IDS_SCSI_CD             "(SCSI CD-ROMドライブ)"
+    IDS_SCSI_INIT           "(SCSI イニシエータ)"
+    IDS_SCSI_NONE           " "
+    IDS_SCSI_DEVERROR       "無効"
+    IDS_CDOPEN              "ISO9660イメージ (*.ISO)|*.ISO|すべてのファイル (*.*)|*.*||"
+    IDS_CDERR               "CD-ROMイメージファイルが見つからないか、サポートしていない形式です"
+    IDS_SCHDSIZE            "1017MB以上のSCSIハードディスクは、SCSIインタフェース経由のみ\n使用可能\です。(SxSIではサポートされません)"
+    IDS_MPUSXSI             "SxSIが有効になっています。MPUノーウェイト状態でSxSIへのアクセスを行うと、\n読み込み・書き込みに失敗する可能\性があります"
+    IDS_SAVECLOSE           "%s を保存しますか？"
+    IDS_PROCESSOR           "このプロセッサでは動作しません。\nIntel PentiumII/Celeron以降, AMD Athlon/Duron以降が必要です"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_OPEN             "Open a state file"
+    IDM_US_SAVE             "Save the active state file"
+    IDM_US_SAVEAS           "Save the active state file with a new name"
+    IDM_US_RESET            "Press 'RESET' button"
+    IDM_US_INTERRUPT        "Press 'INTERRUPT' button"
+    IDM_US_POWER            "Turn on or off 'POWER' switch"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_EXIT             "Quit XM6"
+    IDM_US_D0OPEN           "Open a floppy disk image file"
+    IDM_US_D0EJECT          "Eject disk normally"
+    IDM_US_D0WRITEP         "Protect against writing"
+    IDM_US_D0FORCE          "Eject disk forcedly"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_D0INVALID        "Insert a invalid media"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_D1OPEN           "Open a floppy disk image file"
+    IDM_US_D1EJECT          "Eject disk normally"
+    IDM_US_D1WRITEP         "Protect against writing"
+    IDM_US_D1FORCE          "Eject disk forcedly"
+    IDM_US_D1INVALID        "Insert a invalid media"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_MOOPEN           "Open a MO disk image file"
+    IDM_US_MOEJECT          "Eject disk normally"
+    IDM_US_MOWRITEP         "Protect against writing"
+    IDM_US_MOFORCE          "Eject disk forcedly"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_CDOPEN           "Open a CD disc image file"
+    IDM_US_CDEJECT          "Eject disc normally"
+    IDM_US_CDFORCE          "Eject disc forcedly"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_CPUREG           "View register window"
+    IDM_US_INT              "View interrupt window"
+    IDM_US_DISASM           "View disassemble window"
+    IDM_US_MEMORY           "View memory window"
+    IDM_US_BREAKP           "View breakpoint window"
+    IDM_US_MFP              "View multi-function peripheral window"
+    IDM_US_DMAC             "View direct memory access window"
+    IDM_US_CRTC             "View CRT control window"
+    IDM_US_VC               "View video control window"
+    IDM_US_RTC              "View real-time clock window"
+    IDM_US_OPM              "View FM-sound synthesizer window"
+    IDM_US_KEYBOARD         "View keyboard window"
+    IDM_US_FDD              "View floppy disk drive window"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_FDC              "View floppy disk controller window"
+    IDM_US_SCC              "View serial communication window"
+    IDM_US_CYNTHIA          "View BG/sprite window"
+    IDM_US_SASI             "View SASI disk window"
+    IDM_US_MIDI             "View MIDI controller window"
+    IDM_US_SCSI             "View SCSI protocol controller window"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_COMPONENT        "View component window"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_OSINFO           "View OS window"
+    IDM_US_SOUND            "View sound window"
+    IDM_US_INPUT            "View input window"
+    IDM_US_PORT             "View port window"
+    IDM_US_BITMAP           "View bitmap window"
+    IDM_US_MIDIDRV          "View MIDI driver window"
+    IDM_US_CAPTION          "Show or hide the windows caption"
+    IDM_US_MENU             "Show or hide the menu bar"
+    IDM_US_STATUS           "Show or hide the status bar"
+    IDM_US_REFRESH          "Redraw all windows"
+    IDM_US_STRETCH          "stretch to 5:4-ratio except 768x512 mode"
+    IDM_US_FULLSCREEN       "Display on full screen"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_MOUSEMODE        "Enter/Exit the mouse mode"
+    IDM_US_SOFTKEY          "View software keyboard window"
+    IDM_US_TIMEADJ          "Adjust X68000's calender"
+    IDM_US_TRAP0            "Execute trap #0 instruction"
+    IDM_US_SAVEWAV          "Dump the sound to WAV file"
+    IDM_US_NEWFD            "Make a new floppy disk"
+    IDM_US_NEWSASI          "Make a new SASI fixed disk"
+    IDM_US_NEWSCSI          "Make a new SCSI fixed disk"
+    IDM_US_NEWMO            "Make a new SCSI MO disk"
+    IDM_US_OPTIONS          "XM6 Options"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_CASCADE          "Cascade all windows"
+    IDM_US_TILE             "Tile all windows"
+    IDM_US_ICONIC           "Iconic all windows"
+    IDM_US_ARRANGEICON      "Arrange all iconic windows"
+    IDM_US_HIDE             "Hide all windows"
+    IDM_US_RESTORE          "Restore all windows"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_ABOUT            "About XM6"
+END
+
+STRINGTABLE
+BEGIN
+    IDM_US_STDWIN           "Move XM6 window to standard position."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_LOG         "LOG"
+    IDS_US_SWND_LOG_NUMBER  "No."
+    IDS_US_SWND_LOG_TIME    "Time"
+    IDS_US_SWND_LOG_PC      "PC"
+    IDS_US_SWND_LOG_LEVEL   "Level"
+    IDS_US_SWND_LOG_DEVICE  "Device"
+    IDS_US_SWND_LOG_MSG     "Message"
+    IDS_US_SWND_LOG_DETAIL  "Detail"
+    IDS_US_SWND_LOG_NORMAL  "Normal"
+    IDS_US_SWND_LOG_WARNING "Warning"
+    IDS_US_SWND_SCHEDULER   "SCHEDULER"
+    IDS_US_SWND_DEVICE      "DEVICE"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_CPUREG      "MPU REGISTER"
+    IDS_US_SWND_INT         "INTERRUPT"
+    IDS_US_SWND_DISASM      "DISASSEMBLE"
+    IDS_US_SWND_MEMORY      "MEMORY"
+    IDS_US_SWND_BREAKP      "BREAK POINT"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_MFP         "MFP (MC68901)"
+    IDS_US_SWND_DMAC        "DMAC (HD63450)"
+    IDS_US_SWND_CRTC        "CRTC (VICON)"
+    IDS_US_SWND_VC          "VC (CATHY and VIPS)"
+    IDS_US_SWND_RTC         "RTC (RP5C15)"
+    IDS_US_SWND_OPM         "OPM (YM2151)"
+    IDS_US_SWND_KEYBOARD    "KEYBOARD"
+    IDS_US_SWND_FDD         "FDD (FD55GFR)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_FDC         "FDC (uPD72065)"
+    IDS_US_SWND_SCC         "SCC (Z8530)"
+    IDS_US_SWND_CYNTHIA     "BG/SPRITE (CYNTHIA)"
+    IDS_US_SWND_SASI        "SASI (IOSC-2)"
+    IDS_US_SWND_MIDI        "MIDI (YM3802)"
+    IDS_US_SWND_SCSI        "SCSI (MB89352)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_TVRAM       "TEXT PLANE"
+    IDS_US_SWND_G1024       "GRAPHIC PLANE(16COLOR, 1024X1024)"
+    IDS_US_SWND_G16P0       "GRAPHIC PLANE(16COLOR, PAGE0)"
+    IDS_US_SWND_G16P1       "GRAPHIC PLANE(16COLOR, PAGE1)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_G16P2       "GRAPHIC PLANE(16COLOR, PAGE2)"
+    IDS_US_SWND_G16P3       "GRAPHIC PLANE(16COLOR, PAGE3)"
+    IDS_US_SWND_G256P0      "GRAPHIC PLANE(256COLOR, PAGE0)"
+    IDS_US_SWND_G256P1      "GRAPHIC PLANE(256COLOR, PAGE1)"
+    IDS_US_SWND_G64K        "GRAPHIC PLANE(65536COLOR)"
+    IDS_US_SWND_PCG         "PCG"
+    IDS_US_SWND_BG0         "BG PLANE(PAGE0)"
+    IDS_US_SWND_BG1         "BG PLANE(PAGE1)"
+    IDS_US_SWND_SPRITE      "SPRITE PLANE"
+    IDS_US_SWND_PALET       "PALETTE"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_REND_TEXT   "TEXT BUFFER"
+    IDS_US_SWND_REND_GP0    "GRAPHIC BUFFER (0)"
+    IDS_US_SWND_REND_GP1    "GRAPHIC BUFFER (1)"
+    IDS_US_SWND_REND_GP2    "GRAPHIC BUFFER (2)"
+    IDS_US_SWND_REND_GP3    "GRAPHIC BUFFER (3)"
+    IDS_US_SWND_REND_PCG    "PCG BUFFER"
+    IDS_US_SWND_REND_BGSPRITE "BG/SPRITE BUFFER"
+    IDS_US_SWND_REND_PALET  "PALETTE BUFFER"
+    IDS_US_SWND_REND_MIX    "MIX BUFFER"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_COMPONENT   "COMPONENT"
+    IDS_US_SWND_OSINFO      "OS INFO"
+    IDS_US_SWND_SOUND       "SOUND"
+    IDS_US_SWND_INPUT       "INPUT"
+    IDS_US_SWND_PORT        "PORT"
+    IDS_US_SWND_BITMAP      "BITMAP"
+    IDS_US_SWND_MIDIDRV     "MIDI DRIVER"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SWND_SOFTKEY     "SOFTWARE KEYBOARD"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_BASIC_CLOCKG     "Speed Setup"
+    IDC_US_BASIC_MEMORYG    "Memory Setup"
+    IDC_US_BASIC_MEMSWB     "Allow XM6 to update memory switch for amount of main RAM. Default setting is ON."
+    IDC_US_BASIC_MEMORYC    "Amount of main RAM. Default setting is 2MB."
+    IDC_US_BASIC_MEMORYL    "Amount of main RAM. Default setting is 2MB."
+    IDC_US_BASIC_CLOCKL     "Select system clock. Default setting is 10MHz."
+    IDC_US_BASIC_CLOCKC     "Select system clock. Default setting is 10MHz."
+    IDC_US_BASIC_CPUFULLB   "No wait operation with MPU. Default setting is OFF."
+    IDC_US_BASIC_ALLFULLB   "No wait operation with the virtual machine. Default settting is OFF."
+    IDS_US_BASIC_CLOCK0     "10MHz  (Standard)"
+    IDS_US_BASIC_CLOCK1     "12MHz  (X68000ACE w/oc)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_BASIC_CLOCK2     "15MHz  (X68000PRO w/oc)"
+    IDS_US_BASIC_CLOCK3     "16MHz  (X68000SUPER w/oc)"
+    IDS_US_BASIC_CLOCK4     "17.4MHz(X68000EXPERT w/oc)"
+    IDS_US_BASIC_CLOCK5     "20MHz  (Lucky!!)"
+    IDS_US_BASIC_MEMORY0    "2MB  (Standard)"
+    IDS_US_BASIC_MEMORY1    "4MB  (X68030)"
+    IDS_US_BASIC_MEMORY2    "6MB"
+    IDS_US_BASIC_MEMORY3    "8MB"
+    IDS_US_BASIC_MEMORY4    "10MB"
+    IDS_US_BASIC_MEMORY5    "12MB (Maximum)"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SOUND_DEVICEG    "Device Setup"
+    IDC_US_SOUND_DEVICEC    "Select output device."
+    IDC_US_SOUND_RATEG      "Sound Rate Setup"
+    IDC_US_SOUND_RATE0      "Generates sounds at 44.1kHz. Default setting is 62.5kHz."
+    IDC_US_SOUND_RATE1      "Generates sounds at 48kHz. Default setting is 62.5kHz."
+    IDC_US_SOUND_RATE2      "Generates sounds at 88.2kHz. Default setting is 62.5kHz."
+    IDC_US_SOUND_RATE3      "Generates sounds at 96kHz. Default setting is 62.5kHz."
+    IDC_US_SOUND_RATE4      "Generates sounds at 62.5kHz. Defaut setting is 62.5kHz."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SOUND_BUFFERG    "Sound Buffer Setup"
+    IDC_US_SOUND_BUF1L      "Specify the size of buffer. Default setting is 100ms."
+    IDC_US_SOUND_BUF1E      "Specify the size of buffer. Default setting is 100ms."
+    IDC_US_SOUND_BUF1S      "Specify the size of buffer. Default setting is 100ms."
+    IDC_US_SOUND_BUF1MS     "Specify the size of buffer. Default setting is 100ms."
+    IDC_US_SOUND_BUF2L      "Adjust interval time for polling buffer. Default setting is 5ms."
+    IDC_US_SOUND_BUF2E      "Adjust interval time for polling buffer. Default setting is 5ms."
+    IDC_US_SOUND_BUF2S      "Adjust interval time for polling buffer. Default setting is 5ms."
+    IDC_US_SOUND_BUF2MS     "Adjust interval time for polling buffer. Default setting is 5ms."
+    IDC_US_SOUND_OPTIONG    "Other Options"
+    IDC_US_SOUND_INTERP     "Enable Interpolution with converting ADPCM to WAV. Default setting is ON."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_VOL_OUTG         "Output Setup"
+    IDC_US_VOL_VOLL         "Main Fader level."
+    IDC_US_VOL_VOLS         "Main Fader level."
+    IDC_US_VOL_VOLN         "Main Fader level."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_VOL_MASTERL      "Wave Fader level. Default setting is 100."
+    IDC_US_VOL_MASTERS      "Wave Fader level. Default setting is 100."
+    IDC_US_VOL_MASTERN      "Wave Fader level. Default setting is 100."
+    IDC_US_VOL_SEPL         "MIDI Fader level."
+    IDC_US_VOL_SEPS         "MIDI Fader level."
+    IDC_US_VOL_SEPN         "MIDI Fader level."
+    IDC_US_VOL_GENG         "Genaration Setup"
+    IDC_US_VOL_FML          "FM level. Default setting is 54."
+    IDC_US_VOL_FMC          "Enable FM sound. Default setting is ON."
+    IDC_US_VOL_FMS          "FM level. Default setting is 54."
+    IDC_US_VOL_FMN          "FM level. Default setting is 54."
+    IDC_US_VOL_ADPCML       "ADPCM level. Default setting is 52."
+    IDC_US_VOL_ADPCMC       "Enable ADPCM sound. Default setting is ON."
+    IDC_US_VOL_ADPCMS       "ADPCM level. Default setting is 52."
+    IDC_US_VOL_ADPCMN       "ADPCM level. Default setting is 52."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_MISC_OPTG        "Other Setup"
+    IDC_US_MISC_FDSPEED     "Enable fast emulation of floppy disk. Default setting is OFF."
+    IDC_US_MISC_FDLED       "Display the state of motor as floppy LED. Default setting is OFF."
+    IDC_US_MISC_POPUP       "Create all windows with WS_POPUP style. Default setting is OFF."
+    IDC_US_MISC_AUTOMOUSE   "Set the mouse mode on changing the screen mode. Defaut setting is OFF."
+    IDC_US_MISC_POWEROFF    "Start XM6 without turning on POWER SW. Default setting is OFF."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_KBD_MAPG         "Key Mapping Setup"
+    IDC_US_KBD_MAPL         "View the mapping."
+    IDC_US_KBD_EDITB        "Display the mapping."
+    IDC_US_KBD_DEFB         "Restore to default mapping."
+    IDC_US_KBD_NOCONB       "Don't connect the keyboard."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_MOUSE_SPEEDG     "Mouse Speed Setup"
+    IDC_US_MOUSE_SLIDER     "Select mouse speed ratio for Windows."
+    IDC_US_MOUSE_PARS       "Select mouse speed ratio for Windows."
+    IDC_US_MOUSE_PORTG      "Mouse Port Setup"
+    IDC_US_MOUSE_FPORT      "Connect the mouse to front panel."
+    IDC_US_MOUSE_KPORT      "Connect the mouse to keyboard."
+    IDC_US_MOUSE_NPORT      "Don't connect the mouse."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_MOUSE_OPTG       "Other Options"
+    IDC_US_MOUSE_SWAPB      "Swap the left and the right button."
+    IDC_US_MOUSE_MIDB       "Disable the middle button."
+    IDC_US_MOUSE_TBG        "Change mode from mouse to trackball."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SASI_GROUP       "SASI Fixed Disk Setup"
+    IDC_US_SASI_DRIVEL      "Select the number of drives. 10/20/40MB drives are supported."
+    IDC_US_SASI_DRIVEE      "Select the number of drives. 10/20/40MB drives are supported."
+    IDC_US_SASI_DRIVES      "Select the number of drives. 10/20/40MB drives are supported."
+    IDC_US_SASI_MEMSWB      "Allow XM6 to update memory switch with the number of drives."
+    IDC_US_SASI_LIST        "To change the name of image file, please click 'No.' area."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SXSI_GROUP       "SCSI Disk Setup (via SASI Interface)"
+    IDC_US_SXSI_DRIVEL      "Select the number of drives (includes one MO drive)."
+    IDC_US_SXSI_DRIVEE      "Select the number of drives (includes one MO drive)."
+    IDC_US_SXSI_MOCHECK     "Assign SCSI ID of MO drive at first."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SXSI_DRIVES      "Select the number of drives (includes one MO drive)."
+    IDC_US_SXSI_LIST        "To change the name of image file, please click 'ID' area."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_PORT_COMG        "RS-232C Setup"
+    IDC_US_PORT_COML        "Select the COM port assigned to RS-232C."
+    IDC_US_PORT_COMC        "Select the COM port assigned to RS-232C."
+    IDC_US_PORT_RECVL       "The name of the file for logging data from selected port."
+    IDC_US_PORT_RECVE       "The name of the file for logging data from selected port."
+    IDC_US_PORT_BAUDRATE    "Force the speed of RS-232C to 38400bps for RS-MIDI."
+    IDC_US_PORT_LPTG        "Printer Setup"
+    IDC_US_PORT_LPTL        "Select the LPT port assigned to printer."
+    IDC_US_PORT_LPTC        "Select the LPT port assigned to printer."
+    IDC_US_PORT_SENDL       "The name of the file for logging data to printer."
+    IDC_US_PORT_SENDE       "The name of the file for logging data to printer."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_MIDI_BIDG        "MIDI (Opt.) Setup"
+    IDC_US_MIDI_BID0        "No MIDI I/F is installed. This is default setting."
+    IDC_US_MIDI_BID1        "MIDI I/F (ID1) is installed. Default setting is NONE."
+    IDC_US_MIDI_BID2        "MIDI I/F (ID2) is installed. Default setting is NONE."
+    IDC_US_MIDI_ILEVELG     "Interrupt Level Setup"
+    IDC_US_MIDI_ILEVEL4     "Use INT4 for MIDI I/F. Default settings is INT4."
+    IDC_US_MIDI_ILEVEL2     "Use INT2 for MIDI I/F. Default settings is INT4."
+    IDC_US_MIDI_RSTG        "Reset Command Setup"
+    IDC_US_MIDI_RSTGM       "Use 'GM command' to reset MIDI device. Default setting is GM."
+    IDC_US_MIDI_RSTGS       "Use 'GS command' to reset MIDI device. Default setting is GM."
+    IDC_US_MIDI_RSTXG       "Use 'XG command' to reset MIDI device. Default setting is GM."
+    IDC_US_MIDI_RSTLA       "Use 'LA command' to reset MIDI device. Default setting is GM."
+    IDC_US_MIDI_DEVG        "Device Setup"
+    IDC_US_MIDI_INS         "Select the device to input MIDI data."
+    IDC_US_MIDI_INC         "Select the device to input MIDI data."
+    IDC_US_MIDI_DLYIL       "Specify delayed time for receiveing MIDI data. Default setting is 0ms."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_MIDI_DLYIE       "Specify delayed time for receiveing MIDI data. Default setting is 0ms."
+    IDC_US_MIDI_DLYIS       "Specify delayed time for receiveing MIDI data. Default setting is 0ms."
+    IDC_US_MIDI_DLYIG       "Specify delayed time for receiveing MIDI data. Default setting is 0ms."
+    IDC_US_MIDI_OUTS        "Select the device to output MIDI data."
+    IDC_US_MIDI_OUTC        "Select the device to output MIDI data."
+    IDC_US_MIDI_DLYOL       "Specify delayed time for sending MIDI data. Default setting is 84ms."
+    IDC_US_MIDI_DLYOE       "Specify delayed time for sending MIDI data. Default setting is 84ms."
+    IDC_US_MIDI_DLYOS       "Specify delayed time for sending MIDI data. Default setting is 84ms."
+    IDC_US_MIDI_DLYOG       "Specify delayed time for sending MIDI data. Default setting is 84ms."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_ALTER_ALTERG     "Alteration Setup"
+    IDC_US_ALTER_SRAM       "Replace SRAM 62C64 chip to 62C256. Default setting is OFF."
+    IDC_US_ALTER_SCC        "Change SCC clock to 7.5MHz from 5.0MHz. Default setting is OFF."
+    IDC_US_ALTER_POWERLED   "Replace green POWER LED to blue POWER LED. Default setting is OFF."
+    IDC_US_ALTER_2DD        "Replace 2HD single mode drive to 2DD/2HD dual mode drive. Default setting is OFF."
+    IDC_US_ALTER_SASIG      "SASI Bus Setup"
+    IDC_US_ALTER_PARITY     "Add 74F280 circuit to generate a parity bit on SASI bus. Default setting is ON."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_TKEY_PORTG       "Serial Port Setup"
+    IDC_US_TKEY_COML        "Select the COM Port assigned to TrueKey."
+    IDC_US_TKEY_COMC        "Select the COM Port assigned to TrueKey."
+    IDC_US_TKEY_RTS         "Invert RTS line for READY signal."
+    IDC_US_TKEY_ASSIGNG     "Destination Setup"
+    IDC_US_TKEY_VMC         "TrueKey is sent to VM when running."
+    IDC_US_TKEY_WINC        "TrueKey is sent to Windows when stopping."
+    IDC_US_TKEY_MAPG        "View key mapping. Please click No. to change key."
+    IDC_US_TKEY_LIST        "View key mapping. Please click No, to change key."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_JOY_PORTG        "Port Setup"
+    IDC_US_JOY_PORTL1       "Select the device to be connected with port1."
+    IDC_US_JOY_PORTC1       "Select the device to be connected with port1."
+    IDC_US_JOY_PORTD1       "Show additional information of this device."
+    IDC_US_JOY_PORTL2       "Select the device to be connected with port2."
+    IDC_US_JOY_PORTC2       "Select the device to be connected with port2."
+    IDC_US_JOY_PORTD2       "Show additional information of this device."
+    IDC_US_JOY_DEVG         "Device Setup"
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_JOY_DEVLA        "Select the contoller to be connected with port1."
+    IDC_US_JOY_DEVCA        "Select the contoller to be connected with port1."
+    IDC_US_JOY_DEVAA        "Show additional information of selected contoller."
+    IDC_US_JOY_DEVLB        "Select the controller to be connected with port2."
+    IDC_US_JOY_DEVCB        "Select the controllerr to be connected with port2."
+    IDC_US_JOY_DEVAB        "Show additional information of selected contoller."
+    IDC_US_JOY_DEVLC        " "
+    IDC_US_JOY_DEVCC        " "
+    IDC_US_JOY_DEVAC        " "
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SCSI_IFG         "SCSI Interface Setup"
+    IDC_US_SCSI_NONEB       "No SCSI I/F is installed. This is default setting."
+    IDC_US_SCSI_INTB        "Use internal SCSI I/F. SCSIINROM.DAT file is required. Default setting is NONE."
+    IDC_US_SCSI_EXTB        "Use external SCSI I/F. SCSIEXROM.DAT file is required. Default setting is NONE."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_SCSI_GROUP       "SCSI Disk Setup (via SCSI Interface)"
+    IDC_US_SCSI_DRIVEL      "Select the number of drives (includes MO and CD-ROM drive)."
+    IDC_US_SCSI_DRIVEE      "Select the number of drives (includes MO and CD-ROM drive)."
+    IDC_US_SCSI_DRIVES      "Select the number of drives (includes MO and CD-ROM drive)."
+    IDC_US_SCSI_MOCHECK     "Assign SCSI ID of MO drive at first."
+    IDC_US_SCSI_LIST        "To change the name of image file, please click 'ID' area."
+END
+
+STRINGTABLE
+BEGIN
+    IDC_US_RESUME_DISKG     "Disk/Disc Resume Setup"
+    IDC_US_RESUME_FDC       "Insert previous floppy disk image file(s) when XM6 starts. Default setting is OFF."
+    IDC_US_RESUME_MOC       "Insert previous MO disk image file when XM6 starts. Default setting is OFF."
+    IDC_US_RESUME_CDC       "Insert previous CD-ROM disc image file when XM6 starts. Default setting is OFF."
+    IDC_US_RESUME_STATEG    "State Resume Setup"
+    IDC_US_RESUME_XM6C      "Load and continue previous state file when XM6 starts. Default setting is OFF."
+    IDC_US_RESUME_MISCG     "Other Resume Setup"
+    IDC_US_RESUME_SCREENC   "Restore previous window properties when XM6 starts. Default setting is OFF."
+    IDC_US_RESUME_DIRC      "Restore current directory when XM6 starts. Default settting is OFF."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_CAPTION_RUN      "XM6 [Running]"
+    IDS_US_CAPTION_STOP     "XM6 [Stopped]"
+    IDS_US_INIT_VMERR       "Initializing the virtual machine is failed."
+    IDS_US_INIT_COMERR      "Initializing DirectX components is failed."
+    IDS_US_INIT_IPLERR      "IPLROM.DAT may not be version 1.00.\nContinue?"
+    IDS_US_INIT_CGERR       "CGROM.DAT may be different with X680x0's.\nContinue?"
+    IDS_US_FDOPEN           "All Supported Image Files|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG;*.DIM;*.D68;*.D88|1.25MB Disk Image Files (XDF;HDM;2HD;DUP;IMG)|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG;*.2DD;*.2HQ|DIM Image Files (DIM)|*.DIM|D68 Image Files (D68;D88)|*.D68;*.D88|720KB Image Files (2DD)|*.2DD|1.44MB Image Files (2HQ)|*.2HQ|All Files (*.*)|*.*||"
+    IDS_US_FDERR            "No file or Invalid file."
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_NEWFD            "New floppy image file has been created."
+    IDS_US_SASIOPEN         "SASI HD Image Files (*.HDF)|*.HDF|All Files (*.*)|*.*||"
+    IDS_US_NEWSASI          "New SASI HD image file has been created."
+    IDS_US_CREATEERR        "Creating image file is failed."
+    IDS_US_OPTIONS          "Options"
+    IDS_US_MOUSE_X68K       "Mouse emulation is enabled."
+    IDS_US_MOUSE_WIN        "Mouse emulation is disabled."
+    IDS_US_WAVOPEN          "WAV Audio Files (*.WAV)|*.WAV|All Files (*.*)|*.*||"
+    IDS_US_WAVSTART         "Dumping is started"
+    IDS_US_WAVSTOP          "Dumping is finished"
+    IDS_US_KBD_NO           "No."
+    IDS_US_KBD_KEYTOP       "Name"
+    IDS_US_KBD_DIRECTX      "DirectX KeyID"
+    IDS_US_RESET            "Reset System"
+    IDS_US_KBDMAP_GUIDE     "Please click the left mouse button to edit."
+    IDS_US_STDWIN           "Standard Window &Pos"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SASI_CAPACITY    "Status"
+    IDS_US_SASI_FILENAME    "SASI-HD Image File"
+    IDS_US_SASI_DEVERROR    "Err"
+    IDS_US_NEWSCSI          "New SCSI HD image file has been created."
+    IDS_US_NEWMO            "New SCSI MO image file has been created."
+    IDS_US_SCSIOPEN         "SCSI HD Image Files (*.HDS)|*.HDS|All Files (*.*)|*.*||"
+    IDS_US_MOOPEN           "SCSI MO Image Files (*.MOS)|*.MOS|All Files (*.*)|*.*||"
+    IDS_US_CANCEL           "Canceled"
+    IDS_US_MOERR            "No file or Invalid file."
+    IDS_US_SXSI_CAPACITY    "Status"
+    IDS_US_SXSI_FILENAME    "SCSI-HD Image File"
+    IDS_US_SXSI_SASI        "(SASI Fixed Drive)"
+    IDS_US_SXSI_MO          "(SCSI MO Drive)"
+    IDS_US_SXSI_INIT        "(Initiator)"
+    IDS_US_SXSI_NONE        " "
+    IDS_US_SXSI_DEVERROR    "Err"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_FDI_DISKNAME     "&Name (Until 16 Chars)"
+    IDS_US_FDI_COMMENT      "Comme&nt (Until 59 Chars)"
+    IDS_US_PORT_NOASSIGN    "(None)"
+    IDS_US_MIDI_NOASSIGN    "(None)"
+    IDS_US_MIDI_MAPPER      "MIDI Mapper"
+    IDS_US_SOUND_NOASSIGN   "(None)"
+    IDS_US_BADFDI_WARNING   "This floppy image file doesn't have right size. XM6 uses it as a 1.25MB normal image."
+    IDS_US_TKEY_NOASSIGN    "(None)"
+    IDS_US_TKEY_NO          "No."
+    IDS_US_TKEY_KEYTOP      "Name"
+    IDS_US_TKEY_VK          "VK KeyID"
+    IDS_US_INTERRUPT        "INTERRUPT switch is pressed."
+    IDS_US_POWEROFF         "Power has been turned off."
+    IDS_US_JOY_NOASSIGN     "(None)"
+    IDS_US_JOY_ATARI        "ATARI (Standard)"
+    IDS_US_JOY_ATARISS      "ATARI+START/SELECT"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_JOY_CYBERA       "Cyberstick (Analog)"
+    IDS_US_JOY_CYBERD       "Cyberstick (Digital)"
+    IDS_US_JOY_MD3          "Genesis 3 buttons"
+    IDS_US_JOY_MD6          "Genesis 6 buttons"
+    IDS_US_JOY_CPSF         "CPS Fighter (SFC)"
+    IDS_US_JOY_CPSFMD       "CPS Fighter (MD)"
+    IDS_US_JOY_MAGICAL      "Magical Pad"
+    IDS_US_JOY_LR           "XPD-1LR"
+    IDS_US_JOY_PACLAND      "Pacland 3 buttons"
+    IDS_US_JOY_BM           "BM68 6 buttons"
+    IDS_US_KBD_DELTITLE     "Delete"
+    IDS_US_KBD_DELMSG       "Delete the assignment No. %02X to %s.\nSure?"
+    IDS_US_JOYSET           "Device%c(%s) Setup"
+    IDS_US_JOYSET_NOASSIGN  "(None)"
+    IDS_US_JOYSET_BTNPORT   "Port%d-Button%d%s"
+    IDS_US_JOYSET_BTNLABEL  "Btn. %d"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_JOYDET_ANALOG    "Analog"
+    IDS_US_XM6OPEN          "XM6 State Files (*.XM6)|*.XM6|All Files (*.*)|*.*||"
+    IDS_US_XM6LOADOK        "Restoring data has been completed."
+    IDS_US_XM6LOADERR       "Invalid file! now reset XM6..."
+    IDS_US_XM6SAVEOK        "Saving data has been completed."
+    IDS_US_XM6SAVEERR       "Write error!"
+    IDS_US_EXIT             "E&xit\tAlt+F4"
+    IDS_US_XM6LOADFILE      "File not found"
+    IDS_US_XM6LOADHDR       "Invalid file!"
+    IDS_US_XM6LOADVER       "Unrecognized version\n\n[Now]  version%1X.%02X\n[File] version%1X.%02X"
+    IDS_US_FILEUPDATE       "The file is updated after saving\n\n[F i l e]  %s\n[Recorded] %d/%d/%d\n[Current]  %d/%d/%d"
+    IDS_US_SCSI_CAPACITY    "Status"
+    IDS_US_SCSI_FILENAME    "SCSI-HD Image File"
+    IDS_US_SCSI_MO          "(SCSI MO Drive)"
+    IDS_US_SCSI_CD          "(SCSI CD-ROM Drive)"
+    IDS_US_SCSI_INIT        "(Initiator)"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_US_SCSI_NONE        " "
+    IDS_US_SCSI_DEVERROR    "Err"
+    IDS_US_CDOPEN           "ISO9660 Image Files (*.ISO)|*.ISO|All Files (*.*)|*.*||"
+    IDS_US_CDERR            "No file or Invalid file."
+    IDS_US_SCHDSIZE         "The SCSI disk over 1017M bytes is not supported under SxSI."
+    IDS_US_MPUSXSI          "MPU no-wait function is enabled. The SxSI function may not work."
+    IDS_US_SAVECLOSE        "%s is updated. Save?"
+    IDS_US_PROCESSOR        "This processor is not supported.\nMMX and CMOV instructions are required."
+END
+
+#endif    // Spanish (Spain, International Sort) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

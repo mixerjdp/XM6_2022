@@ -1,0 +1,298 @@
+﻿------------------------------------------------------------------------------
+
+  EMULADOR X68000 XM6 (versión 2.05)
+
+  Código fuente
+  para Win32
+  Copyright (C) 2001-2006 PI.
+
+------------------------------------------------------------------------------
+Sobre la publicación del código fuente
+
+  Este archivo es todo el código fuente del emulador X68000 XM6 (versión 2.05).
+
+  Todos los códigos fuente de XM6 se han mantenido privados hasta la versión 1.95. Esto se debe a que la dirección del conjunto
+  Esto se debe a que juzgué que es más ventajoso para mí mantenerlo en privado hasta el
+  hasta que se fijó la dirección general y se hicieron las partes importantes.
+
+  En 2005, con el lanzamiento de la versión 2.00, el conjunto empezaba a parecer completo y pude hacer algunos cambios en el diseño.
+  Empecé a pensar que había arreglado algunos detalles del diseño y que podía liberar el código fuente.
+  El X68000 ha sido objeto del famoso libro "Insanity".
+
+  Cabe decir que el X68000 es un modelo para el que es relativamente fácil encontrar material técnico, incluido el famoso libro "Inside X68000".
+  El X68000 es una máquina para la que es relativamente fácil encontrar documentación técnica, incluido el famoso libro Inside X68000. Sin embargo, ahora estamos en 2006, 19 años desde que el primer X68000 salió al mercado en 1987.
+  Han pasado 19 años desde que se lanzó el primer X68000 en 1987, y el mencionado Inside X68000, así como las hojas de datos de cada dispositivo, han dejado de estar disponibles uno tras otro.
+  Poco a poco, la información se va perdiendo.
+
+  Espero que este código fuente le ayude en su investigación del hardware del X68000 y en el desarrollo de aplicaciones.
+  Esperamos que este código fuente le sea de utilidad. También espero que este código fuente sea uno de los materiales de referencia para quienes intenten desarrollar nuevos emuladores.
+  Creo que se convierte en uno de los materiales de referencia para la persona que intenta desarrollar un nuevo emulador.
+
+
+Condiciones de uso (licencia)
+
+  Los ficheros contenidos en el archivo están protegidos por los derechos de autor de PI, con algunas excepciones (véase más abajo).
+  Los ficheros del archivo están protegidos por los derechos de autor de PI.
+
+  Si desea reutilizar parte o la totalidad de los archivos fuente, se aplican las siguientes reglas.
+  Se aplican las siguientes normas
+
+  Si se reutilizan archivos en el directorio vm, se debe incluir el
+    Si reutiliza alguno de los archivos del directorio vm, debe indicar claramente el aviso de copyright original en el documento. El uso comercial está prohibido.
+  Es libre de reutilizar cualquier otra parte de los archivos. Sin embargo, al igual que en el apartado anterior, el uso comercial está prohibido.
+
+  Este archivo no puede ser redistribuido. Queda prohibida la reproducción sin autorización.
+
+
+Excepciones no incluidas en las normas de uso
+
+  Los siguientes archivos son versiones modificadas del emulador de 68000 "Starscream".
+  El titular original de los derechos de autor es Neill Corlett. (neill@neillcorlett.com)
+  Las normas mencionadas anteriormente no se aplican a esta parte, que tiene la licencia Starscream
+  se aplican los términos y condiciones.
+
+  cpu\star.c
+  vm\cpudebug.c
+  vm\cpudebug.h
+
+  Los siguientes archivos son versiones modificadas del emulador de sonido FM "fmgen".
+  El titular original de los derechos de autor es el Sr. cisc (cisc@retropc.net).
+  Las normas mencionadas anteriormente no se aplican a esta parte.
+  Se aplican los términos de la licencia de fmgen.
+
+vm\fmgen.cpp
+  vm\fmgen.h
+  vm\fmgeninl.h
+  vm\fmtimer.cpp
+  vm\fmtimer.h
+  vm\opm.cpp
+  vm\opm.h
+
+  Los siguientes archivos fueron creados por co. (cogood@gmail.com)
+  Los siguientes archivos son creados por co (). Sin embargo, actualmente se utilizan como parte integral del XM6
+  vm\windrv.h
+
+  vm\windrv.cpp
+  vm\windrv.h
+  mfc\mfc_host.cpp
+  mfc\mfc_host.h
+
+
+Entorno de desarrollo
+
+  Código fuente de XM6 (versión 2.05)
+Este es el código fuente completo de XM6. NET 2003 y Netwide Assembler 0.98.39 son necesarios para generar un archivo ejecutable a partir de este código fuente.
+XM6 no es un software de código abierto. Se prohíbe cualquier uso contrario a los términos de la licencia.
+
+
+  Se requiere Microsoft Visual C++ .NET 2003 como compilador. vc++.net 2003
+  NET 2003 se utiliza como marco de aplicación.
+
+  NET 2003 utiliza MFC 7.1 como marco de aplicación.
+  NET 2005. NET 2005, pero esto no se ha confirmado en el entorno del autor.
+
+  Se requiere un ensamblador de red (NASM) como ensamblador. Se distribuye gratuitamente.
+  Por favor, consígalo por separado. Recomendamos la versión Win32 de 0.98.39.
+
+  (URL de referencia:http://sourceforge.net/projects/nasm/)
+
+
+Directorio
+
+  La estructura del directorio es la siguiente.
+
+  núcleo de la CPU (Starscream)
+  vm Virtual X68000
+  Sección de E/S de mfc (Win32)
+  res Recurso Win32
+  00vcproj.vc6 Proyecto para Visual C++ 6
+  00vcproj.vc7 Proyecto para Visual C++ .NET 2003
+
+
+Símbolos predefinios
+
+  Se utilizan los siguientes símbolos en todo el documento.
+
+  _DEBUG Construcción de depuración, autodiagnóstico por aserto.
+  NDEBUG Construcción de la versión. Normalmente se define aquí.
+  _WIN32 Declare Win32. (El compilador lo define automáticamente).
+
+  Los siguientes símbolos se declaran en xm6.h
+
+  FALSO 0
+  TRUE (!FALSE)
+  NULL 0
+  Activa la afirmación cuando se define ASSERT _DEBUG.
+  Utilice la convención de llamada a la función de registro FASTCALL.
+
+
+Compilación
+
+   Gracias a la amabilidad de Kenjo, tenemos archivos de proyecto para VC++6 y VC++.
+   NET.
+
+   Cargar XM6.dsw (VC++6) o XM6.sln (VC++.NET).
+
+   Una vez cargado el proyecto seleccione "Release" o "Debug" como configuración activa y haga clic en Build (B) → Build Solution (B).
+
+   Compilar la solución (B).
+
+   Esto compilará y enlazará XM6.exe en el directorio Release o Debug.
+   XM6.exe se generará en el directorio Release o Debug. La compilación ya está completa.
+
+   NET, se creará un archivo .asm correspondiente a la fuente C++.
+   NET, se creará un archivo .asm correspondiente a la fuente C++. NET, se creará el archivo .asm correspondiente a la fuente C++, ya que ésta es la configuración del proyecto.
+
+
+  Guía del código fuente
+
+  La arquitectura y la estructura del programa de XM6 se explican brevemente.
+
+  XM6 se divide en dos partes, la parte virtual X68000 llamada VM y la parte Win32 que se encarga de la emulación real de E/S.
+  que es responsable de la emulación de E/S real. La VM describe la máquina virtual de forma lógica y abstracta.
+  La VM es la descripción lógica y abstracta de la máquina virtual, mientras que la parte Win32 maneja la VM y la conecta a los dispositivos de Windows.
+  La parte Win32 maneja la VM y la conecta a los dispositivos del lado de Windows. La parte Win32 maneja la VM y se conecta a los dispositivos de Windows.
+  La parte Win32 maneja la VM y se conecta a los dispositivos de Windows.
+  Estos dos conceptos están abstraídos y ocultos a la MV. Una cosa más, el objeto de sincronización entre hilos también es
+  Dado que el objeto de sincronización entre hilos también depende del sistema operativo, hemos proporcionado una clase Sync como envoltorio.
+
+
+  Por las razones anteriores, hemos intentado que la parte de la máquina virtual sea de uso general, independiente del procesador y del sistema operativo.
+  La parte VM está escrita de forma genérica. Sin embargo, como Starscream, el núcleo de la CPU, está dedicado a x86(IA-32), y para acelerar
+  Sin embargo, debido a que el núcleo de la CPU Starscream está dedicado a x86 (IA-32), y debido a que las partes frecuentemente llamadas están ensambladas para la velocidad
+  Al portar a otros compiladores, procesadores o sistemas operativos, es necesario reescribir algunos archivos, especialmente los de cpu, memoria y programación.
+  Al portar a otros compiladores, procesadores o sistemas operativos, los archivos de cpu, memoria y programación deben ser reescritos de alguna manera.
+
+  Cada dispositivo implementado en la VM es una clase derivada de la clase Device o de la clase MemDevice.
+  Clase de dispositivo o clase MemDevice. Estas entidades (instancias) son propiedad de la clase VM.
+  Cada dispositivo puede ser buscado y recuperado por VM::SearchDevice.
+
+  La siguiente es una lista de archivos en la parte VM.
+
+  Nombre del archivo (se omiten algunas extensiones) Contenido
+
+    -------------------------------------------------------------------------
+    os.h       Archivos include dependientes del sistema operativo
+    xm6.h      Definiciones comunes de XM6
+    adpcm      ADPCM
+    areaset    areaset
+    cisc.h     cabecera de conexión fmgen
+    config.h   Definición de los datos de configuración
+    core_asm   Subrutinas en ensamblador
+    cpu        MPU Desensamblador 
+    cpudebug   (modificación de la versión suministrada con Starscream)
+    crtc       Controlador CRT
+    device     Dispositivos comúnes y dispositivos de memoria
+    disk       Archivos de imagen de disco SASI/SCSI
+    dmac       Controlador DMA
+    event      Callback de eventos
+    fdc        Controlador de disquetes
+    fdd        Unidad de disquete
+    fdi        Archivos de imagen de disquete
+    fileio     E/S de archivos (*sólo para Win32)
+    filepath   Ruta de archivos (*sólo para Win32)
+    fmgen      Generador de sonido FM (fmgen)
+    fmgeninl   Generador de sonido FM (fmgen)
+    fmtimer    Temporizador del generador de sonido FM (fmgen) (*no se utiliza realmente)
+    gvram      Graphic VRAM
+    iosc       Controlador de E/S 
+    keyboard   Teclado
+    log        Registro
+    memory     Memoria general y asignación de memoria
+    mercury    Unidad de mercurio
+    mfp        MFP
+    midi       MIDI
+    mouse      Ratón
+    neptune    Neptuno-X
+    opm        YM2151 (fmgen)
+    opmif      Generador de sonido FM 
+    ppi        Dispositivo de joystick de puerto paralelo
+    printer    Impresora
+    render     Renderizador (composición de la pantalla)
+    renderin   Renderer Inline part
+    rend_asm   Ensamblador del renderizador
+    rtc        Reloj en tiempo real
+    SASI       Controlador sasi
+    scc        Comunicación en serie
+    schedule   Programador
+    scsi       Controlador SCSI
+    sprite     BG/controlador de sprites
+    sram       Batería de respaldo SRAM
+    starcpu.h  Conexión Starscream
+    sync       Objeto de sincronización de hilos (* sólo Win32)
+    sysport    Puerto del sistema
+    tvram      VRAM Texto
+    vc         Controlador de vídeo
+    vm         Cuerpo de la máquina virtual
+    windrv     WindrvXM (WINDRV)
+
+  En esta versión, las clases Mercurio y Neptuno son implementaciones ficticias.
+  Se aplicarán en el futuro. También está prevista la ampliación de CRTC, GVRAM y Sprite.
+
+
+  Win32 utiliza MFC (Microsoft Foundation Classlibrary) como marco de aplicación.
+  La parte Win32 utiliza MFC (Microsoft Foundation Classlibrary) como marco de aplicación. No se utiliza ningún tipo de documentación o plantillas de documentos.
+  La parte de Win32 utiliza MFC (Microsoft Foundation Classlibrary) como marco de aplicación, sin documentación ni plantillas de documentación, pero es muy dependiente de MFC y, por tanto, difícil de portar a otros entornos.
+  Sería mejor referirse a ella como un ejemplo de cómo manejar una VM, y recrearla de nuevo.
+  Sería mejor referirse a ella como un ejemplo de cómo manejar una VM y recrearla. Además, algunas partes utilizan especificaciones no reveladas obtenidas del análisis del código fuente.
+
+  El siguiente es un ejemplo:
+
+  Cada módulo que se ejecuta en Win32 es una clase derivada de la clase CComponent, excepto algunos.
+  clase. Estas entidades (instancias) están conectadas por enlaces bidireccionales.
+  Cada componente puede ser buscado y recuperado por CComponent::SearchComponent.
+  CComponent::SearchComponent.
+
+  La siguiente es una lista de archivos de la interfaz Win32.
+
+  Nombre del archivo (se omiten algunas extensiones) Contenido
+  -------------------------------------------------------------------------
+    mfc.h      Definición común de la parte Win32
+    mfc_app    Aplicación y global, Manejo de ventanas, inicializacion de aplicacion y linea de comando
+    mfc_asm    Subrutinas ensamblador
+    mfc_cfg    Gestión de datos de configuración y ajuste de opciones
+    mfc_cmd    Manejo de comandos del menú
+    mfc_com    Componente común
+    mfc_cpu    Subventana (procesador)
+    mfc_dev    Subventana (dispositivo)
+    mfc_draw   Gestión de ventanas y subventanas de dibujo
+    mfc_frm    Ventana del marco y control general
+    mfc_host   Sistema de archivos host (WindrvXM)
+    mfc_info   Gestión centralizada de la información de estado
+    mfc_inp    Controlador de entrada 
+    mfc_midi   Controlador MIDI
+    mfc_port   Controlador de puerto serie y puerto paralelo
+    mfc_que    Cola de propósito general
+    mfc_rend   Subventana (renderizador)
+    mfc_res    Recursos
+    mfc_sch    Programador
+    mfc_snd    Controlador de sonido
+    mfc_stat   Vista de estado (sólo se utiliza en pantalla completa)
+    mfc_sub    Subventana común
+    mfc_sys    Subventana (sistema)
+    mfc_tkey   TrueKey
+    mfc_tool   Creación de imágenes de disco, etc.
+    mfc_ver    Información sobre la versión
+    mfc_vid    Subventana (Vídeo)
+    mfc_w32    Subventana (Win32)
+
+
+  El proceso de inicialización real es el siguiente. Esta parte es la plataforma
+  Esta parte depende de la plataforma, por lo que será más fácil de entender si tienes conocimientos de MFC.
+
+  (1)Capp::InitInstance()    Inicialización de la instancia
+  (2)CFrmWnd::Init()         Creación de la ventana del marco
+  (3)CFrmWnd::OnCreate()     Inicialización de la ventana del marco y de la ventana de dibujo
+                             Construir, inicializar y reiniciar la VM
+                             Construcción e inicialización de componentes
+                             Contabilización de los mensajes del usuario WM_KICK
+  (4)CFrmWnd::OnKick()       Procesamiento según códigos de estado
+                             Procesamiento del sistema de bombeo de mensajes y del estado de los subtítulos
+  (5)CScheduler::Run() 	     Cuando se llama a CScheduler::Enable(TRUE) en OnKick, la VM
+                             el hilo corre. Llama a vm->Exec mientras se mantiene el tiempo.
+
+
+ Contacto
+
+  Página de inicio (PI. Página de inicio)
+  http://www.ipc-tokai.or.jp/~ytanaka/
