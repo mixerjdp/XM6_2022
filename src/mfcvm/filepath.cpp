@@ -187,7 +187,7 @@ void FASTCALL Filepath::SetBaseDir()
 
 //---------------------------------------------------------------------------
 //
-//	ベースファイル名設定
+//	Establecer nombre base para el archivo de configuraci
 //
 //---------------------------------------------------------------------------
 void FASTCALL Filepath::SetBaseFile()
@@ -200,9 +200,12 @@ void FASTCALL Filepath::SetBaseFile()
 	// モジュールのパス名を得る
 	::GetModuleFileName(NULL, szModule, _MAX_PATH);
 
-	// 分離(拡張子は書き込まない)
-	_tsplitpath(szModule, m_szDrive, m_szDir, m_szFile, NULL);
+	
 
+	// En este lugar se determina el nombre del archivo de configuracion *-*
+	_tsplitpath(szModule, m_szDrive, m_szDir, m_szFile, NULL);
+	_tcscpy(m_szFile, "XM6");
+	//MessageBox(NULL, m_szFile, "BBC", MB_OKCANCEL | MB_DEFBUTTON2);
 	// 合成
 	Make();
 }

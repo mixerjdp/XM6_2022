@@ -908,6 +908,11 @@ void FASTCALL CFrmWnd::InitCmd(LPCTSTR lpszCmd)
 	CString sz;	
 	sz.Format(_T("%s"),  lpszCmd);	
     CString fileName= sz.Mid(sz.ReverseFind('\\')+1);
+	if (RutaCompletaArchivoXM6.GetLength() > 0) // Si RutaCompletaArchivoXM6 ya esta ocupado
+	{
+		//int msgboxID = MessageBox(RutaCompletaArchivoXM6, "Se especifico parametro previo", 2);
+	}
+
 	RutaCompletaArchivoXM6 = lpszCmd;
 	NombreArchivoXM6 = fileName;
 
@@ -918,13 +923,13 @@ void FASTCALL CFrmWnd::InitCmd(LPCTSTR lpszCmd)
 	// Proceso de Obtener extension de archivo 
 	CString str = RutaCompletaArchivoXM6;
 	CString extensionArchivo = "";
-	//int msgboxID = MessageBox( "["+str+"]", "Ruta",  2 );	
+	
 	//sz.Format(_T("Ruta:[%s]   \r\n"),  str);	
 	//OutputDebugStringW(CT2W(sz));
-
+	 
 
 	int curPos = 0;
-	CString resToken = str.Tokenize(_T("."), curPos);
+	CString resToken = str.Tokenize(_T("."), curPos); // Obtiene extension de la ruta completa del archivo
 	while(!resToken.IsEmpty())
 	{
 		// Process resToken here - print, store etc
@@ -935,7 +940,7 @@ void FASTCALL CFrmWnd::InitCmd(LPCTSTR lpszCmd)
 	}
 
 	/* Si es m3u lo analiza y carga*/
-	if (extensionArchivo == "m3u")
+	if (extensionArchivo.MakeUpper() == "M3U")
 	{
 		CString contenidoM3u, cont2 ;
 		ReadFile(lpszCmd, contenidoM3u);		 
@@ -945,13 +950,6 @@ void FASTCALL CFrmWnd::InitCmd(LPCTSTR lpszCmd)
 	//	int msgboxID = MessageBox( sz, "Contenido archivo final",  2 );			  
 	}	
 
-
-	 //  Seccion actualizar HDF
-   //  Config config;
-   //  GetConfig()->GetConfig(&config);  
-   //  strcpy(config.sasi_file[0], lpszCmd);
-   //  GetConfig()->SetConfig(&config);
-	
 	
 
 	// Inicializacion de punteros y banderas
@@ -1242,7 +1240,7 @@ BOOL FASTCALL CFrmWnd::LoadComponent(const Filepath& path, DWORD dwPos)
 		return FALSE;
 	}
 
-	// ヘッダチェック、バージョン情報読み取り
+	// Comprobacion de cabeceras, lectura de la informacion de la version
 	cHeader[0x0a] = '\0';
 	nVer = ::strtoul(&cHeader[0x09], NULL, 16);
 	nVer <<= 8;
@@ -1254,13 +1252,13 @@ BOOL FASTCALL CFrmWnd::LoadComponent(const Filepath& path, DWORD dwPos)
 		return FALSE;
 	}
 
-	// シーク
+	// buscar
 	if (!fio.Seek(dwPos)) {
 		fio.Close();
 		return FALSE;
 	}
 
-	// メインコンポーネント読み取り
+	// lectura de los componentes principales
 	if (!fio.Read(&dwID, sizeof(dwID))) {
 		fio.Close();
 		return FALSE;
@@ -1270,45 +1268,45 @@ BOOL FASTCALL CFrmWnd::LoadComponent(const Filepath& path, DWORD dwPos)
 		return FALSE;
 	}
 
-	// コンポーネントループ
+	// bucle de componentes
 	for (;;) {
-		// ID読み取り
+		// Lectura de identificacion
 		if (!fio.Read(&dwID, sizeof(dwID))) {
 			fio.Close();
 			return FALSE;
 		}
 
-		// 終了チェック
+		// control de salida
 		if (dwID == MAKEID('E', 'N', 'D', ' ')) {
 			break;
 		}
 
-		// コンポーネントを探す
+		// Buscar componente
 		pComponent = m_pFirstComponent->SearchComponent(dwID);
 		if (!pComponent) {
-			// セーブ時はコンポーネントが存在したが、今は見つからない
+			// Los componentes estaban presentes en el momento de la grabacion, pero ahora faltan
 			fio.Close();
 			return FALSE;
 		}
 
-		// コンポーネント固有
+		// componente especifico
 		if (!pComponent->Load(&fio, nVer)) {
 			fio.Close();
 			return FALSE;
 		}
 	}
 
-	// クローズ
+	//  cerrar
 	fio.Close();
 
-	// 設定適用(VMロックして行う)
+	// Aplicar la configuracion (se hace con la VM bloqueada).
 	if (GetConfig()->IsApply()) {
 		::LockVM();
 		ApplyCfg();
 		::UnlockVM();
 	}
 
-	// ウィンドウ再描画
+	// redistribucion de la ventana
 	GetView()->Invalidate(FALSE);
 
 	return TRUE;
@@ -1342,24 +1340,24 @@ void FASTCALL CFrmWnd::ApplyCfg()
 
 	// Ventana enmarcada (emergente)
 	if (config.popup_swnd != m_bPopup) {
-		// サブウィンドウをすべてクリア
+		// Borrar todas las subventanas.
 		GetView()->ClrSWnd();
 
-		// 変更
+		// cambiar
 		m_bPopup = config.popup_swnd;
 	}
 
 	
 
-	// フレームウィンドウ(マウス)
+	// Ventana del marco (raton)
 	m_bMouseMid = config.mouse_mid;
 	m_bAutoMouse = config.auto_mouse;
 	RutaSaveStates = config.ruta_savestate;
 	//int msgboxID = MessageBox(RutaSaveStates,"rutasave",  2 );	
 	if (config.mouse_port == 0) {
-		// マウス接続なしなら、マウスモードOFF
+		// Modo raton desactivado si no hay conexion con el raton.
 		if (GetInput()->GetMouseMode()) {
-			OnMouseMode();
+			OnMouseMode(); 
 		}
 	}
 }

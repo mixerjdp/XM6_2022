@@ -392,25 +392,25 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "E&xit\tAlt+F4",               IDM_EXIT
     END
-    POPUP "Floppy Drive #&0"
+    POPUP "Floppy Disco #&0"
     BEGIN
         MENUITEM "&Open...",                    IDM_D0OPEN
         MENUITEM "&Eject",                      IDM_D0EJECT
         MENUITEM "&Write Protect",              IDM_D0WRITEP
         MENUITEM SEPARATOR
         MENUITEM "&Force Eject",                IDM_D0FORCE
-        MENUITEM "&Invalid Insert",             IDM_D0INVALID
+        MENUITEM "&Insertar inválido",             IDM_D0INVALID
     END
-    POPUP "Floppy Drive #&1"
+    POPUP "Floppy Disco #&1"
     BEGIN
         MENUITEM "&Open...",                    IDM_D1OPEN
         MENUITEM "&Eject",                      IDM_D1EJECT
         MENUITEM "&Write Protect",              IDM_D1WRITEP
         MENUITEM SEPARATOR
         MENUITEM "&Force Eject",                IDM_D1FORCE
-        MENUITEM "&Invalid Insert",             IDM_D1INVALID
+        MENUITEM "&Insertar inválido",             IDM_D1INVALID
     END
-    POPUP "&MO Drive"
+    POPUP "&MO Disco"
     BEGIN
         MENUITEM "&Open...",                    IDM_MOOPEN
         MENUITEM "&Eject",                      IDM_MOEJECT
@@ -507,7 +507,7 @@ BEGIN
         MENUITEM "Status &Bar",                 IDM_STATUS
         MENUITEM "Re&fresh",                    IDM_REFRESH
         MENUITEM SEPARATOR
-        MENUITEM "Stretch with &Aspect Ratio",  IDM_STRETCH
+        MENUITEM "Stretch con &Aspect Ratio",  IDM_STRETCH
         MENUITEM "F&ull Screen\tAlt+Enter",     IDM_FULLSCREEN
     END
     POPUP "&Debug"

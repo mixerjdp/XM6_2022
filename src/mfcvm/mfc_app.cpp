@@ -356,6 +356,13 @@ BOOL CApp::InitInstance()
 {
 	CFrmWnd *pFrmWnd;
 
+	
+	// Get the string from the command line ('Run' in PocketPC)
+	CString testString(m_lpCmdLine);
+
+	//int msgboxIDx = MessageBox(NULL, testString, "BBC", MB_OKCANCEL | MB_DEFBUTTON2);
+
+
 	// Borrar el directorio por defecto
 	Filepath::ClearDefaultDir();
 
@@ -377,11 +384,19 @@ BOOL CApp::InitInstance()
 	pFrmWnd = new CFrmWnd();
 	m_pMainWnd = (CWnd*)pFrmWnd;
 
+
+
+	pFrmWnd->RutaCompletaArchivoXM6 = m_lpCmdLine;
+	//MessageBox(NULL, pFrmWnd->RutaCompletaArchivoXM6, "BBC", MB_OKCANCEL | MB_DEFBUTTON2);
+
+
+
+
 	// Inicializacion
 	if (!pFrmWnd->Init()) {
 		return FALSE;
 	}
-
+		
 	// Mostrar
 	pFrmWnd->ShowWindow(m_nCmdShow);
 	pFrmWnd->UpdateWindow();

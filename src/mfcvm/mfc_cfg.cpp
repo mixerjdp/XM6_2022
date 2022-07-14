@@ -76,6 +76,51 @@ BOOL FASTCALL CConfig::Init()
 	// Datos de configuracion
 	LoadConfig();
 
+
+
+		  
+
+
+
+
+	OutputDebugString("\n\n LoadConfig ejecutado *-*\n\n");	 
+	  //Aqui cargamos el parametro de linea de comandos si es HDF *-*	
+
+	if (m_pFrmWnd->RutaCompletaArchivoXM6.GetLength() > 0) // Si RutaCompletaArchivoXM6 ya esta ocupado
+	{
+
+		CString str = m_pFrmWnd->RutaCompletaArchivoXM6;
+		CString extensionArchivo = "";
+
+		int curPos = 0;
+		CString resToken = str.Tokenize(_T("."), curPos); // Obtiene extension de la ruta completa del archivo
+		while (!resToken.IsEmpty())
+		{			
+			// Obtain next token
+			extensionArchivo = resToken;
+			resToken = str.Tokenize(_T("."), curPos);
+		}
+
+		
+		/* Si es hdf lo analiza y carga*/
+		if (extensionArchivo.MakeUpper() == "HDF")
+		{
+			// Process resToken here - print, store etc
+			//int msgboxID = MessageBox(NULL, m_pFrmWnd->RutaCompletaArchivoXM6, "Xm6", 2);
+			_tcscpy(m_Config.sasi_file[0], m_pFrmWnd->RutaCompletaArchivoXM6);
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
 	// Mantener la compatibilidad
 	ResetSASI();
 	ResetCDROM();
@@ -91,6 +136,9 @@ BOOL FASTCALL CConfig::Init()
 
 	// TrueKey
 	LoadTKey();
+
+
+	
 
 	// Guardar y cargar
 	m_bApply = FALSE;
@@ -398,22 +446,22 @@ void FASTCALL CConfig::LoadConfig()
 
 	ASSERT(this);
 
-	// テーブルの先頭に合わせる
+	// Alinear con la el inicio del ini
 	pIni = (const PINIKEY)&IniTable[0];
 	pszSection = NULL;
 	szDef[0] = _T('\0');
 
-	// テーブルループ
+	// bucle de ini
 	while (pIni->pBuf) {
-		// セクション設定
+		// configuracion de la seccion
 		if (pIni->pszSection) {
 			pszSection = pIni->pszSection;
 		}
 		ASSERT(pszSection);
 
-		// タイプチェック
+		//verificacion del tipo
 		switch (pIni->nType) {
-			// 整数型(範囲を超えたらデフォルト値)
+			// Tipo entero (valor por defecto si se supera el rango)
 			case 0:
 				nValue = ::GetPrivateProfileInt(pszSection, pIni->pszKey, pIni->nDef, m_IniFile);
 				if ((nValue < pIni->nMin) || (pIni->nMax < nValue)) {
@@ -422,7 +470,7 @@ void FASTCALL CConfig::LoadConfig()
 				*((int*)pIni->pBuf) = nValue;
 				break;
 
-			// 論理型(0,1のどちらでもなければデフォルト値)
+			// Booleano (valor por defecto si no es ni 0 ni 1)
 			case 1:
 				nValue = ::GetPrivateProfileInt(pszSection, pIni->pszKey, -1, m_IniFile);
 				switch (nValue) {
@@ -439,25 +487,25 @@ void FASTCALL CConfig::LoadConfig()
 				*((BOOL*)pIni->pBuf) = bFlag;
 				break;
 
-			// 文字列型(バッファサイズ範囲内でのターミネートを保証)
+			// Tipo de cadena (se garantiza que termine dentro del rango de tamano del buffer)
 			case 2:
 				ASSERT(pIni->nDef <= (sizeof(szBuf)/sizeof(TCHAR)));
 				::GetPrivateProfileString(pszSection, pIni->pszKey, szDef, szBuf,
 										sizeof(szBuf)/sizeof(TCHAR), m_IniFile);
 
-				// デフォルト値にはバッファサイズを記入すること
+				// Rellena el tamano del buffer para el valor por defecto.
 				ASSERT(pIni->nDef > 0);
 				szBuf[pIni->nDef - 1] = _T('\0');
 				_tcscpy((LPTSTR)pIni->pBuf, szBuf);
 				break;
 
-			// その他
+			// Otros.
 			default:
 				ASSERT(FALSE);
 				break;
 		}
 
-		// 次へ
+		// Siguiente.
 		pIni++;
 	}
 }
@@ -475,28 +523,28 @@ void FASTCALL CConfig::SaveConfig() const
 
 	ASSERT(this);
 
-	// テーブルの先頭に合わせる
+	// Alinear con el inicio de ini
 	pIni = (const PINIKEY)&IniTable[0];
 	pszSection = NULL;
 
-	// テーブルループ
+	// bucle de ini
 	while (pIni->pBuf) {
-		// セクション設定
+		// configuracion de la seccion
 		if (pIni->pszSection) {
 			pszSection = pIni->pszSection;
 		}
 		ASSERT(pszSection);
 
-		// タイプチェック
+		// verificacion del tipo
 		switch (pIni->nType) {
-			// 整数型
+			// tipo entero
 			case 0:
 				string.Format(_T("%d"), *((int*)pIni->pBuf));
 				::WritePrivateProfileString(pszSection, pIni->pszKey,
 											string, m_IniFile);
 				break;
 
-			// 論理型
+			// tipo booleano
 			case 1:
 				if (*(BOOL*)pIni->pBuf) {
 					string = _T("1");
@@ -508,19 +556,19 @@ void FASTCALL CConfig::SaveConfig() const
 											string, m_IniFile);
 				break;
 
-			// 文字列型
+			// tipo cadena
 			case 2:
 				::WritePrivateProfileString(pszSection, pIni->pszKey,
 											(LPCTSTR)pIni->pBuf, m_IniFile);
 				break;
 
-			// その他
+			// otros
 			default:
 				ASSERT(FALSE);
 				break;
 		}
 
-		// 次へ
+		// siguiente
 		pIni++;
 	}
 }
@@ -788,6 +836,7 @@ void FASTCALL CConfig::LoadKey() const
 
 	// Adquisicion de entradas
 	pInput = m_pFrmWnd->GetInput();
+	
 	ASSERT(pInput);
 
 	// フラグOFF(有効データなし)、クリア
