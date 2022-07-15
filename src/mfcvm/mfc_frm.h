@@ -163,6 +163,10 @@ protected:
 	afx_msg void OnReset();
 										// リセット
 	afx_msg void OnResetUI(CCmdUI *pCmdUI);
+
+	afx_msg void OnScc();
+	// リセット
+	afx_msg void OnSccUI(CCmdUI* pCmdUI);
 										// リセット UI
 	afx_msg void OnInterrupt();
 										// インタラプト

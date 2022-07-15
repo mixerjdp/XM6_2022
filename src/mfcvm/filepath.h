@@ -58,7 +58,7 @@ public:
 										// ファイル設定(ユーザ)
 	void FASTCALL SetBaseDir();
 										// ベースディレクトリ設定
-	void FASTCALL SetBaseFile();
+	void FASTCALL SetBaseFile(CString Nombre);
 										// ベースディレクトリ＋ファイル名設定
 
 	BOOL FASTCALL IsClear() const;

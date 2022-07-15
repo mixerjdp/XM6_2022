@@ -70,21 +70,67 @@ BOOL FASTCALL CConfig::Init()
 
 	// Determinacion de la ruta del archivo INI
 	path.SetPath(_T("XM6.ini"));
-	path.SetBaseFile();
+
+
+
+
+
+
+	
+	char szAppPath[MAX_PATH] = "";
+	CString strAppDirectory;
+
+	GetModuleFileName(NULL, szAppPath, MAX_PATH);
+
+	// Extract directory
+	strAppDirectory = szAppPath;
+	strAppDirectory = strAppDirectory.Left(strAppDirectory.ReverseFind('\\'));
+	
+
+	CString sz; // Obtener nombre de archivo de ruta completa y Asignarla a NombreArchivoXM6
+	sz.Format(_T("%s"), m_pFrmWnd->RutaCompletaArchivoXM6);
+	m_pFrmWnd->NombreArchivoXM6 = sz.Mid(sz.ReverseFind('\\') + 1);
+
+	// Remover Extension de nombre de archivo
+	int nLen = m_pFrmWnd->NombreArchivoXM6.GetLength();	
+	TCHAR lpszBuf[MAX_PATH];
+	_tcscpy(lpszBuf, m_pFrmWnd->NombreArchivoXM6.GetBuffer(nLen));
+	PathRemoveExtensionA(lpszBuf);
+   //	OutputDebugString("\n\n NombreArchivoXm6:" + m_pFrmWnd->NombreArchivoXM6 + "\n\n");
+   //   MessageBox(NULL, m_pFrmWnd->NombreArchivoXM6, "Xm6", 2);
+
+
+	// Concatenar todo
+	CString ArchivoSinExtension = lpszBuf;
+	CString ArchivoAEncontrar = strAppDirectory + "\\" + ArchivoSinExtension + ".ini";
+
+    
+	
+	// Verifica si existe archivo de ruta completa
+	GetFileAttributes(ArchivoAEncontrar); // from winbase.h
+	if (INVALID_FILE_ATTRIBUTES == GetFileAttributes(ArchivoAEncontrar) && GetLastError() == ERROR_FILE_NOT_FOUND)
+	{
+		//MessageBox(NULL, "No se encontro " +  ArchivoAEncontrar, "Xm6", 2);
+		path.SetBaseFile("XM6");
+	}
+	else
+	{
+		//MessageBox(NULL, "SI se encontro " + ArchivoAEncontrar, "Xm6", 2);
+		path.SetBaseFile(ArchivoSinExtension);
+	}
+		
 	_tcscpy(m_IniFile, path.GetPath());
 
-	// Datos de configuracion
+	// Datos de configuracion -> Aqui se carga la configuración *-*
 	LoadConfig();
-
-
 
 		  
 
 
 
 
-	OutputDebugString("\n\n LoadConfig ejecutado *-*\n\n");	 
-	  //Aqui cargamos el parametro de linea de comandos si es HDF *-*	
+	
+	// Aqui cargamos el parametro de linea de comandos si es HDF *-*	
 
 	if (m_pFrmWnd->RutaCompletaArchivoXM6.GetLength() > 0) // Si RutaCompletaArchivoXM6 ya esta ocupado
 	{
@@ -145,6 +191,61 @@ BOOL FASTCALL CConfig::Init()
 
 	return TRUE;
 }
+
+
+
+
+
+
+BOOL FASTCALL CConfig::CustomInit()
+{
+	int i;
+	Filepath path;
+
+	ASSERT(this);
+
+	// Clase basica
+	if (!CComponent::Init()) {
+		return FALSE;
+	}
+
+	// Determinacion de la ruta del archivo INI
+	path.SetPath(_T("XM6.ini"));
+
+
+	int nLen = m_pFrmWnd->NombreArchivoXM6.GetLength();
+	TCHAR lpszBuf[MAX_PATH];
+	_tcscpy(lpszBuf, m_pFrmWnd->NombreArchivoXM6.GetBuffer(nLen));
+	PathRemoveExtensionA(lpszBuf);
+
+	//int msgboxID = MessageBox(NULL, lpszBuf, "Xm6", 2);
+
+	path.SetBaseFile(lpszBuf);
+	_tcscpy(m_IniFile, path.GetPath());
+
+
+
+   /* CString sz;
+	sz.Format(_T("\n\nRutaArchivoXM6: %s\n\n"), m_pFrmWnd->RutaCompletaArchivoXM6);
+	OutputDebugStringW(CT2W(sz)); */
+
+	
+
+
+	OutputDebugString("\n\nSe ejecutó CustomIni para guardar configuracion personalizada...\n\n");
+	//Aqui cargamos el parametro de linea de comandos si es HDF *-*	
+
+	
+
+
+	// Guardar y cargar
+	m_bApply = FALSE;
+
+	return TRUE;
+}
+
+
+
 
 //---------------------------------------------------------------------------
 //
@@ -508,6 +609,7 @@ void FASTCALL CConfig::LoadConfig()
 		// Siguiente.
 		pIni++;
 	}
+	OutputDebugString("\n\nSe ejecutó LoadConfig\n\n");
 }
 
 //---------------------------------------------------------------------------
@@ -522,7 +624,7 @@ void FASTCALL CConfig::SaveConfig() const
 	LPCTSTR pszSection;
 
 	ASSERT(this);
-
+	
 	// Alinear con el inicio de ini
 	pIni = (const PINIKEY)&IniTable[0];
 	pszSection = NULL;
@@ -571,6 +673,8 @@ void FASTCALL CConfig::SaveConfig() const
 		// siguiente
 		pIni++;
 	}
+
+	OutputDebugString("\n\nSe ejecutó SaveConfig...\n\n");
 }
 
 //---------------------------------------------------------------------------

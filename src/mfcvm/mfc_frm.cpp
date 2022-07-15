@@ -160,6 +160,8 @@ BEGIN_MESSAGE_MAP(CFrmWnd, CFrameWnd)
 	ON_UPDATE_COMMAND_UI(IDM_SAVEAS, OnSaveAsUI)
 	ON_COMMAND(IDM_RESET, OnReset)
 	ON_UPDATE_COMMAND_UI(IDM_RESET, OnResetUI)
+	ON_COMMAND(IDM_SAVECUSTOMCONFIG, OnScc)
+	ON_UPDATE_COMMAND_UI(IDM_SAVECUSTOMCONFIG, OnSccUI)
 	ON_COMMAND(IDM_INTERRUPT, OnInterrupt)
 	ON_UPDATE_COMMAND_UI(IDM_INTERRUPT, OnInterruptUI)
 	ON_COMMAND(IDM_POWER, OnPower)
@@ -1562,7 +1564,7 @@ void CFrmWnd::OnClose()
 	ASSERT(!m_bSaved);
 
 
-	//int msgboxID = MessageBox(c,"Buscar", 2 );	
+	//int msgboxID = MessageBox("cerrar", "Ventana a cerrar", 2);
 
 /*ACA  SE DESACTIVA DIALOGO CONFIRMACION GUARDADO*/
 	// Si hay un archivo de estado valido, pide que se guarde
@@ -1623,6 +1625,7 @@ void CFrmWnd::OnClose()
 		}
 	}
 
+	OutputDebugString("\n\nSe ejecutó OnClose...\n\n");
 	// Šî–{ƒNƒ‰ƒX
 	CFrameWnd::OnClose();
 }
@@ -1653,6 +1656,9 @@ void CFrmWnd::OnDestroy()
 	// Limpieza (comun con WM_ENDSESSION)
 	CleanSub();
 
+
+	OutputDebugString("\n\nSe ejecutó OnDestroy...\n\n");
+
 	// Šî–{ƒNƒ‰ƒX‚Ö
 	CFrameWnd::OnDestroy();
 }
@@ -1681,6 +1687,9 @@ void CFrmWnd::OnEndSession(BOOL bEnding)
 			CleanSub();
 		}
 	}
+
+
+	OutputDebugString("\n\nSe ejecutó OnEndSession...\n\n");
 
 	// Šî–{ƒNƒ‰ƒX
 	CFrameWnd::OnEndSession(bEnding);

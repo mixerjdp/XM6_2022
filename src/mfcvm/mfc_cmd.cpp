@@ -648,6 +648,7 @@ void CFrmWnd::OnReset()
 
 	// ƒŠƒZƒbƒg•Ä•`‰æ
 	::GetVM()->Reset();
+	//OutputDebugString("\n\nSe ejecuto GetVM->Reset\n\n");
 	GetView()->Refresh();
 	ResetCaption();
 
@@ -659,6 +660,7 @@ void CFrmWnd::OnReset()
 	}
 
 	::UnlockVM();
+	//OutputDebugString("\n\nSe ejecuto UnlockVm\n\n");
 
 	// ƒŠƒZƒbƒgƒƒbƒZ[ƒW‚ðƒ[ƒh
 	::GetMsg(IDS_RESET, strReset);
@@ -723,6 +725,7 @@ void CFrmWnd::OnReset()
 	strReset += _T(" (");
 	strReset += strSub;
 	SetInfo(strReset);
+	OutputDebugString("\n\nSe ejecuto OnReset...\n\n");
 }
 
 //---------------------------------------------------------------------------
@@ -733,6 +736,34 @@ void CFrmWnd::OnReset()
 void CFrmWnd::OnResetUI(CCmdUI *pCmdUI)
 {
 	// “dŒ¹ON‚È‚ç‘€ì‚Å‚«‚é
+	pCmdUI->Enable(::GetVM()->IsPower());
+}
+
+
+void CFrmWnd::OnScc()
+{
+	if (NombreArchivoXM6.GetLength() > 0)
+	{
+		m_pConfig->CustomInit();
+		m_pConfig->Cleanup();
+
+		CString sz;
+		sz.Format(_T("\n\nSe ha guardado la configuración para %s\n\n"), NombreArchivoXM6);
+		OutputDebugStringW(CT2W(sz));
+
+		MessageBox(sz, "Configuración", MB_OK);
+	}
+	else
+	{
+		MessageBox("No se ha guardado configuración ya que no se cargó juego", "Configuración", MB_OK);
+	}
+}
+
+
+
+void CFrmWnd::OnSccUI(CCmdUI* pCmdUI)
+{
+	// “dŒ¹ON‚Ìê‡‚Ì‚Ý
 	pCmdUI->Enable(::GetVM()->IsPower());
 }
 

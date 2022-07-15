@@ -378,17 +378,18 @@ END
 
 IDR_US_MENU MENU
 BEGIN
-    POPUP "&File"
+    POPUP "&Archivo"
     BEGIN
-        MENUITEM "&Open...",                    IDM_OPEN
+        MENUITEM "&Abrir...",                   IDM_OPEN
         MENUITEM "Carga rápida\tF7",            ID_FILE_CARGAR40006
-        MENUITEM "&Save",                       IDM_SAVE
+        MENUITEM "&Guardar",                    IDM_SAVE
         MENUITEM "Guardado rápido\tF5",         IDM_SAVEAS
         MENUITEM SEPARATOR
         MENUITEM "&Reset",                      IDM_RESET
+        MENUITEM "Guardar archivo de config. personalizada", IDM_SAVECUSTOMCONFIG
         MENUITEM SEPARATOR
-        MENUITEM "&Interrupt",                  IDM_INTERRUPT
-        MENUITEM "&Power Switch",               IDM_POWER
+        MENUITEM "&Interrupcion",               IDM_INTERRUPT
+        MENUITEM "&Encendido",                  IDM_POWER        
         MENUITEM SEPARATOR
         MENUITEM "E&xit\tAlt+F4",               IDM_EXIT
     END
@@ -399,7 +400,7 @@ BEGIN
         MENUITEM "&Write Protect",              IDM_D0WRITEP
         MENUITEM SEPARATOR
         MENUITEM "&Force Eject",                IDM_D0FORCE
-        MENUITEM "&Insertar inválido",             IDM_D0INVALID
+        MENUITEM "&Insertar inválido",          IDM_D0INVALID
     END
     POPUP "Floppy Disco #&1"
     BEGIN
@@ -408,7 +409,7 @@ BEGIN
         MENUITEM "&Write Protect",              IDM_D1WRITEP
         MENUITEM SEPARATOR
         MENUITEM "&Force Eject",                IDM_D1FORCE
-        MENUITEM "&Insertar inválido",             IDM_D1INVALID
+        MENUITEM "&Insertar inválido",          IDM_D1INVALID
     END
     POPUP "&MO Disco"
     BEGIN
@@ -425,15 +426,15 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "&Force Eject",                IDM_CDFORCE
     END
-    POPUP "&View"
+    POPUP "&Ver"
     BEGIN
-        POPUP "&System"
+        POPUP "&Sistema"
         BEGIN
             MENUITEM "&Log",                        IDM_LOG
             MENUITEM "&Scheduler",                  IDM_SCHEDULER
             MENUITEM "&Device",                     IDM_DEVICE
         END
-        POPUP "&Processor"
+        POPUP "&Procesador"
         BEGIN
             MENUITEM "&Register",                   IDM_CPUREG
             MENUITEM "&Interrupt",                  IDM_INT
@@ -441,7 +442,7 @@ BEGIN
             MENUITEM "&Memory",                     IDM_MEMORY
             MENUITEM "&Break Point",                IDM_BREAKP
         END
-        POPUP "&Device"
+        POPUP "&Dispositivos"
         BEGIN
             MENUITEM "Multi-Function &Peripheral",  IDM_MFP
             MENUITEM "&Direct Memory Access",       IDM_DMAC
@@ -476,7 +477,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "&Palette",                    IDM_PALET
         END
-        POPUP "&Renderer"
+        POPUP "&Renderizado"
         BEGIN
             MENUITEM "&Text Buffer",                IDM_REND_TEXT
             MENUITEM "Graphic Buffer&0",            IDM_REND_GP0
@@ -510,7 +511,7 @@ BEGIN
         MENUITEM "Stretch con &Aspect Ratio",  IDM_STRETCH
         MENUITEM "F&ull Screen\tAlt+Enter",     IDM_FULLSCREEN
     END
-    POPUP "&Debug"
+    POPUP "&Depurar"
     BEGIN
         MENUITEM "E&xecute",                    IDM_EXEC
         MENUITEM "&Break\tAlt+F12",             IDM_BREAK
@@ -518,7 +519,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "&Reset",                      IDM_RESET
     END
-    POPUP "&Tools"
+    POPUP "&Herramientas"
     BEGIN
         MENUITEM "&Mouse Mode\tF12",            IDM_MOUSEMODE
         MENUITEM "Software &Keyboard",          IDM_SOFTKEY
@@ -532,9 +533,9 @@ BEGIN
         MENUITEM "Make a new S&CSI Fixed Disk...", IDM_NEWSCSI
         MENUITEM "Make a new SCSI MO &Disk...", IDM_NEWMO
         MENUITEM SEPARATOR
-        MENUITEM "&Options...",                 IDM_OPTIONS
+        MENUITEM "&Opciones...",                 IDM_OPTIONS
     END
-    POPUP "&Window"
+    POPUP "&Ventana"
     BEGIN
         MENUITEM "&Cascade",                    IDM_CASCADE
         MENUITEM "&Tile",                       IDM_TILE
@@ -543,9 +544,9 @@ BEGIN
         MENUITEM "&Hide",                       IDM_HIDE
         MENUITEM "&Restore",                    IDM_RESTORE
     END
-    POPUP "&Help"
+    POPUP "&Ayuda"
     BEGIN
-        MENUITEM "&About...",                   IDM_ABOUT
+        MENUITEM "&Acerca de...",                   IDM_ABOUT
     END
 END
 
@@ -553,20 +554,21 @@ IDR_US_MENUPOPUP MENU
 BEGIN
     POPUP "POPUP"
     BEGIN
-        POPUP "&File"
+        POPUP "&Archivo"
         BEGIN
             MENUITEM "&Open...",                    IDM_OPEN
             MENUITEM "&Save",                       IDM_SAVE
-            MENUITEM "Save &As...",                 IDM_SAVEAS
+            MENUITEM "Guardado Rápido...",                 IDM_SAVEAS
             MENUITEM SEPARATOR
             MENUITEM "&Reset",                      IDM_RESET
+            MENUITEM "Guardar archivo de config. personalizada",        IDM_SAVECUSTOMCONFIG
             MENUITEM SEPARATOR
             MENUITEM "&Interrupt",                  IDM_INTERRUPT
-            MENUITEM "&Power Switch",               IDM_POWER
+            MENUITEM "&Power Switch",               IDM_POWER            
             MENUITEM SEPARATOR
             MENUITEM "E&xit\tAlt+F4",               IDM_EXIT
         END
-        POPUP "Floppy Drive #&0"
+        POPUP "Floppy Disco #&0"
         BEGIN
             MENUITEM "&Open...",                    IDM_D0OPEN
             MENUITEM "&Eject",                      IDM_D0EJECT
@@ -575,7 +577,7 @@ BEGIN
             MENUITEM "&Force Eject",                IDM_D0FORCE
             MENUITEM "&Invalid Insert",             IDM_D0INVALID
         END
-        POPUP "Floppy Drive #&1"
+        POPUP "Floppy Disco #&1"
         BEGIN
             MENUITEM "&Open...",                    IDM_D1OPEN
             MENUITEM "&Eject",                      IDM_D1EJECT
@@ -599,7 +601,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "&Force Eject",                IDM_CDFORCE
         END
-        POPUP "&View"
+        POPUP "&Vista"
         BEGIN
             POPUP "&System"
             BEGIN
@@ -607,7 +609,7 @@ BEGIN
                 MENUITEM "&Scheduler",                  IDM_SCHEDULER
                 MENUITEM "&Device",                     IDM_DEVICE
             END
-            POPUP "&Processor"
+            POPUP "&Procesador"
             BEGIN
                 MENUITEM "&Register",                   IDM_CPUREG
                 MENUITEM "&Interrupt",                  IDM_INT
@@ -615,7 +617,7 @@ BEGIN
                 MENUITEM "&Memory",                     IDM_MEMORY
                 MENUITEM "&Break Point",                IDM_BREAKP
             END
-            POPUP "&Device"
+            POPUP "&Dispositivos"
             BEGIN
                 MENUITEM "Multi-Function &Peripheral",  IDM_MFP
                 MENUITEM "&Direct Memory Access",       IDM_DMAC
@@ -651,7 +653,7 @@ BEGIN
                 MENUITEM SEPARATOR
                 MENUITEM "&Palette",                    IDM_PALET
             END
-            POPUP "&Renderer"
+            POPUP "&Renderizado"
             BEGIN
                 MENUITEM "&Text Buffer",                IDM_REND_TEXT
                 MENUITEM "Graphic Buffer&0",            IDM_REND_GP0
@@ -685,7 +687,7 @@ BEGIN
             MENUITEM "Stretch with &Aspect Ratio",  IDM_STRETCH
             MENUITEM "F&ull Screen\tAlt+Enter",     IDM_FULLSCREEN
         END
-        POPUP "&Debug"
+        POPUP "&Depurar"
         BEGIN
             MENUITEM "E&xecute",                    IDM_EXEC
             MENUITEM "&Break\tAlt+F12",             IDM_BREAK
@@ -693,7 +695,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "&Reset",                      IDM_RESET
         END
-        POPUP "&Tools"
+        POPUP "&Herramientas"
         BEGIN
             MENUITEM "&Mouse Mode\tF12",            IDM_MOUSEMODE
             MENUITEM "Software &Keyboard",          IDM_SOFTKEY
@@ -709,7 +711,7 @@ BEGIN
             MENUITEM SEPARATOR
             MENUITEM "&Options...",                 IDM_OPTIONS
         END
-        POPUP "&Window"
+        POPUP "&Ventana"
         BEGIN
             MENUITEM "&Cascade",                    IDM_CASCADE
             MENUITEM "&Tile",                       IDM_TILE
@@ -718,9 +720,9 @@ BEGIN
             MENUITEM "&Hide",                       IDM_HIDE
             MENUITEM "&Restore",                    IDM_RESTORE
         END
-        POPUP "&Help"
+        POPUP "&Ayuda"
         BEGIN
-            MENUITEM "&About...",                   IDM_ABOUT
+            MENUITEM "&Acerca de...",                   IDM_ABOUT
         END
     END
 END
@@ -2469,11 +2471,11 @@ BEGIN
         BLOCK "041104b0"
         BEGIN
             VALUE "FileDescription", "X68000 EMULATOR XM6"
-            VALUE "FileVersion", "2, 0, 5, 0"
+            VALUE "FileVersion", "2, 0, 5, 1"
             VALUE "InternalName", "XM6 "
-            VALUE "LegalCopyright", "Copyright (C) 2001-2006 ‚o‚hD"
+            VALUE "LegalCopyright", "Copyright (C) 2001-2022 ‚o‚hD"
             VALUE "OriginalFilename", "XM6.EXE"
-            VALUE "ProductName", "XM6 for Win32+DirectX5"
+            VALUE "ProductName", "XM6 for Win32+DirectX"
             VALUE "ProductVersion", "2, 0, 5, 1"
         END
     END
@@ -2648,164 +2650,164 @@ END
 
 STRINGTABLE
 BEGIN
-    IDM_OPEN                "‰¼‘zƒ}ƒVƒ“ƒXƒe[ƒgƒtƒ@ƒCƒ‹‚ðŠJ‚­"
-    IDM_SAVE                "‰¼‘zƒ}ƒVƒ“ƒXƒe[ƒgƒtƒ@ƒCƒ‹‚ð•Û‘¶"
-    IDM_RESET               "‰¼‘zƒ}ƒVƒ“‚ðƒŠƒZƒbƒg"
-    IDM_INTERRUPT           "NMIŠ„‚èž‚Ý‚ð‚©‚¯‚é"
-    IDM_POWER               "“dŒ¹ƒXƒCƒbƒ`‚Ì‘€ì"
-    IDM_EXIT                "XM6‚ÌI—¹"
+    IDM_OPEN                "1‰¼‘zƒ}ƒVƒ“ƒXƒe[ƒgƒtƒ@ƒCƒ‹‚ðŠJ‚­"
+    IDM_SAVE                "2‰¼‘zƒ}ƒVƒ“ƒXƒe[ƒgƒtƒ@ƒCƒ‹‚ð•Û‘¶"
+    IDM_RESET               "3‰¼‘zƒ}ƒVƒ“‚ðƒŠƒZƒbƒg"
+    IDM_INTERRUPT           "4NMIŠ„‚èž‚Ý‚ð‚©‚¯‚é"
+    IDM_POWER               "5“dŒ¹ƒXƒCƒbƒ`‚Ì‘€ì"
+    IDM_EXIT                "6XM6‚ÌI—¹"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_D0OPEN              "ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
-    IDM_D0EJECT             "ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
-    IDM_D0WRITEP            "ƒ‰ƒCƒgƒvƒƒeƒNƒgƒV[ƒ‹‚Ì‘€ì"
-    IDM_D0FORCE             "ƒfƒBƒXƒNƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
-    IDM_D0INVALID           "Œë‘}“ü‚ðƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“"
+    IDM_D0OPEN              "1ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
+    IDM_D0EJECT             "2ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
+    IDM_D0WRITEP            "3ƒ‰ƒCƒgƒvƒƒeƒNƒgƒV[ƒ‹‚Ì‘€ì"
+    IDM_D0FORCE             "4ƒfƒBƒXƒNƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
+    IDM_D0INVALID           "5Œë‘}“ü‚ðƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_D1OPEN              "ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
-    IDM_D1EJECT             "ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
-    IDM_D1WRITEP            "ƒ‰ƒCƒgƒvƒƒeƒNƒgƒV[ƒ‹‚Ì‘€ì"
-    IDM_D1FORCE             "ƒfƒBƒXƒNƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
-    IDM_D1INVALID           "Œë‘}“ü‚ðƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“"
+    IDM_D1OPEN              "1ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
+    IDM_D1EJECT             "2ƒfƒBƒXƒNƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
+    IDM_D1WRITEP            "3ƒ‰ƒCƒgƒvƒƒeƒNƒgƒV[ƒ‹‚Ì‘€ì"
+    IDM_D1FORCE             "4ƒfƒBƒXƒNƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
+    IDM_D1INVALID           "5Œë‘}“ü‚ðƒVƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_MOOPEN              "MOƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
-    IDM_MOEJECT             "MOƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
-    IDM_MOWRITEP            "‘‚«ž‚Ý‹ÖŽ~ƒ^ƒu‚Ì‘€ì"
-    IDM_MOFORCE             "MOƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
+    IDM_MOOPEN              "1MOƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
+    IDM_MOEJECT             "2MOƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
+    IDM_MOWRITEP            "3‘‚«ž‚Ý‹ÖŽ~ƒ^ƒu‚Ì‘€ì"
+    IDM_MOFORCE             "4MOƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_CDOPEN              "CD-ROMƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
-    IDM_CDEJECT             "CD-ROMƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
-    IDM_CDFORCE             "CD-ROMƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
+    IDM_CDOPEN              "1CD-ROMƒCƒ[ƒW‚ðƒ}ƒEƒ“ƒg"
+    IDM_CDEJECT             "2CD-ROMƒCƒ[ƒW‚ðƒCƒWƒFƒNƒg"
+    IDM_CDFORCE             "3CD-ROMƒCƒ[ƒW‚ð‹­§ƒCƒWƒFƒNƒg"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_LOG                 "“®ìƒƒOƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SCHEDULER           "ƒXƒPƒWƒ…[ƒ‰ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_DEVICE              "ƒfƒoƒCƒXƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_CPUREG              "MPUƒŒƒWƒXƒ^ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_INT                 "Š„‚èž‚ÝƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_DISASM              "‹tƒAƒZƒ“ƒuƒ‹ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_MEMORY              "ƒƒ‚ƒŠƒ_ƒ“ƒvƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_BREAKP              "ƒuƒŒ[ƒNƒ|ƒCƒ“ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_LOG                 "1“®ìƒƒOƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SCHEDULER           "2ƒXƒPƒWƒ…[ƒ‰ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_DEVICE              "3ƒfƒoƒCƒXƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_CPUREG              "4MPUƒŒƒWƒXƒ^ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_INT                 "5Š„‚èž‚ÝƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_DISASM              "6‹tƒAƒZƒ“ƒuƒ‹ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_MEMORY              "7ƒƒ‚ƒŠƒ_ƒ“ƒvƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_BREAKP              "8ƒ8uƒŒ[ƒNƒ|ƒCƒ“ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_MFP                 "MFPƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_DMAC                "DMACƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_CRTC                "CRTCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_VC                  "VCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_RTC                 "RTCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_OPM                 "OPMƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_KEYBOARD            "ƒL[ƒ{[ƒhƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_FDD                 "FDDƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_FDC                 "FDCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SCC                 "SCCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_CYNTHIA             "BG/ƒXƒvƒ‰ƒCƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SASI                "SASIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_MIDI                "MIDIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SCSI                "SCSIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_TVRAM               "ƒeƒLƒXƒg‰æ–ÊƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G1024               "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhE1024~1024)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_MFP                 "1MFPƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_DMAC                "2DMACƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_CRTC                "3CRTCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_VC                  "4VCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_RTC                 "5RTCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_OPM                 "6OPMƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_KEYBOARD            "7ƒL[ƒ{[ƒhƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_FDD                 "8FDDƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_FDC                 "9FDCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SCC                 "0SCCƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_CYNTHIA             "1BG/ƒXƒvƒ‰ƒCƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SASI                "2SASIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_MIDI                "3MIDIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SCSI                "4SCSIƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_TVRAM               "5ƒeƒLƒXƒg‰æ–ÊƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G1024               "6ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhE1024~1024)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_G16P0               "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G16P1               "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G16P2               "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW2)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G16P3               "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW3)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G256P0              "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G256P1              "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_G64K                "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(65536Fƒ‚[ƒh)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_PCG                 "PCGƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_BG0                 "BG‰æ–Ê(ƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_BG1                 "BG‰æ–Ê(ƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SPRITE              "ƒXƒvƒ‰ƒCƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_PALET               "ƒpƒŒƒbƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_TEXT           "ƒeƒLƒXƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_GP0            "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_GP1            "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_GP2            "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(2)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G16P0               "1ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G16P1               "2ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G16P2               "3ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW2)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G16P3               "4ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW3)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G256P0              "5ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G256P1              "6ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_G64K                "7ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(65536Fƒ‚[ƒh)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_PCG                 "8PCGƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_BG0                 "9BG‰æ–Ê(ƒy[ƒW0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_BG1                 "0BG‰æ–Ê(ƒy[ƒW1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SPRITE              "1ƒXƒvƒ‰ƒCƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_PALET               "2ƒpƒŒƒbƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_TEXT           "3ƒeƒLƒXƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_GP0            "4ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(0)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_GP1            "5ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(1)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_GP2            "6ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(2)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_REND_GP3            "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(3)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_PCG            "PCGƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_BGSPRITE       "BG/ƒXƒvƒ‰ƒCƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_PALET          "ƒpƒŒƒbƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_REND_MIX            "‡¬ƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_COMPONENT           "ƒRƒ“ƒ|[ƒlƒ“ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_OSINFO              "OSî•ñƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_SOUND               "ƒTƒEƒ“ƒhƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_INPUT               "ƒCƒ“ƒvƒbƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_PORT                "ƒ|[ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_BITMAP              "ƒrƒbƒgƒ}ƒbƒvƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
-    IDM_MIDIDRV             "MIDIƒhƒ‰ƒCƒoƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_GP3            "1ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(3)ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_PCG            "2PCGƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_BGSPRITE       "3BG/ƒXƒvƒ‰ƒCƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_PALET          "4ƒpƒŒƒbƒgƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_REND_MIX            "5‡¬ƒoƒbƒtƒ@ƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_COMPONENT           "6ƒRƒ“ƒ|[ƒlƒ“ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_OSINFO              "7OSî•ñƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_SOUND               "8ƒTƒEƒ“ƒhƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_INPUT               "9ƒCƒ“ƒvƒbƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_PORT                "0ƒ|[ƒgƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_BITMAP              "1ƒrƒbƒgƒ}ƒbƒvƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
+    IDM_MIDIDRV             "2MIDIƒhƒ‰ƒCƒoƒEƒBƒ“ƒhƒE‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_CAPTION             "ƒLƒƒƒvƒVƒ‡ƒ“‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
-    IDM_MENU                "ƒƒjƒ…[ƒo[‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
-    IDM_STATUS              "ƒXƒe[ƒ^ƒXƒo[‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
-    IDM_REFRESH             "‘S‚Ä‚ÌƒEƒBƒ“ƒhƒE‚ðÄ•`‰æ"
-    IDM_STRETCH             "768~512ˆÈŠO‚Ìƒ‚[ƒh‚ÅAƒAƒXƒyƒNƒg”ä‚ð5:4‚É’²®"
-    IDM_FULLSCREEN          "‘S‰æ–Êƒ‚[ƒh‚ÖØ‚è‘Ö‚¦"
-    IDM_EXEC                "‰¼‘zƒ}ƒVƒ“‚ÌŽÀs‚ðŠJŽn"
-    IDM_BREAK               "‰¼‘zƒ}ƒVƒ“‚ÌŽÀs‚ð’âŽ~"
-    IDM_TRACE               "1–½—ß‚¾‚¯ŽÀs"
-    IDM_MOUSEMODE           "ƒ}ƒEƒX“ü—Íƒ‚[ƒh‚ÌØ‚è‘Ö‚¦"
-    IDM_SOFTKEY             "ƒ\\ƒEƒgƒEƒFƒAƒL[ƒ{[ƒh‚ð•\\Ž¦"
+    IDM_CAPTION             "1ƒLƒƒƒvƒVƒ‡ƒ“‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
+    IDM_MENU                "2ƒƒjƒ…[ƒo[‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
+    IDM_STATUS              "3ƒXƒe[ƒ^ƒXƒo[‚Ì•\\Ž¦Ø‚è‘Ö‚¦"
+    IDM_REFRESH             "4‘S‚Ä‚ÌƒEƒBƒ“ƒhƒE‚ðÄ•`‰æ"
+    IDM_STRETCH             "5768~512ˆÈŠO‚Ìƒ‚[ƒh‚ÅAƒAƒXƒyƒNƒg”ä‚ð5:4‚É’²®"
+    IDM_FULLSCREEN          "6‘S‰æ–Êƒ‚[ƒh‚ÖØ‚è‘Ö‚¦"
+    IDM_EXEC                "7‰¼‘zƒ}ƒVƒ“‚ÌŽÀs‚ðŠJŽn"
+    IDM_BREAK               "8‰¼‘zƒ}ƒVƒ“‚ÌŽÀs‚ð’âŽ~"
+    IDM_TRACE               "91–½—ß‚¾‚¯ŽÀs"
+    IDM_MOUSEMODE           "0ƒ}ƒEƒX“ü—Íƒ‚[ƒh‚ÌØ‚è‘Ö‚¦"
+    IDM_SOFTKEY             "1ƒ\\ƒEƒgƒEƒFƒAƒL[ƒ{[ƒh‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_TIMEADJ             "ŽžŒv‚ðŒ»ÝŽž‚É•â³"
-    IDM_TRAP0               "d0‚ÉŽw’è’l‚ðƒZƒbƒg‚µAtrap#0–½—ß‚ðŽÀs"
-    IDM_SAVEWAV             "ƒTƒEƒ“ƒh‚ðWAVƒtƒ@ƒCƒ‹‚É‹L˜^"
-    IDM_NEWFD               "V‚µ‚¢ƒtƒƒbƒs[ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
-    IDM_NEWSASI             "V‚µ‚¢SASI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
-    IDM_NEWSCSI             "V‚µ‚¢SCSI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
-    IDM_NEWMO               "V‚µ‚¢SCSI MO(ŒõŽ¥‹C)ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
-    IDM_OPTIONS             "XM6‚Ì“®ìƒIƒvƒVƒ‡ƒ“"
+    IDM_TIMEADJ             "1ŽžŒv‚ðŒ»ÝŽž‚É•â³"
+    IDM_TRAP0               "2d0‚ÉŽw’è’l‚ðƒZƒbƒg‚µAtrap#0–½—ß‚ðŽÀs"
+    IDM_SAVEWAV             "3ƒTƒEƒ“ƒh‚ðWAVƒtƒ@ƒCƒ‹‚É‹L˜^"
+    IDM_NEWFD               "4V‚µ‚¢ƒtƒƒbƒs[ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
+    IDM_NEWSASI             "5V‚µ‚¢SASI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
+    IDM_NEWSCSI             "6V‚µ‚¢SCSI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
+    IDM_NEWMO               "7V‚µ‚¢SCSI MO(ŒõŽ¥‹C)ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬"
+    IDM_OPTIONS             "8XM6‚Ì“®ìƒIƒvƒVƒ‡ƒ“"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_CASCADE             "ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ(d‚Ë‚Ä•\\Ž¦)"
-    IDM_TILE                "ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ(•À‚×‚Ä•\\Ž¦)"
-    IDM_ICONIC              "‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ðÅ¬‰»"
-    IDM_ARRANGEICON         "ƒAƒCƒRƒ“‰»‚³‚ê‚½ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ"
+    IDM_CASCADE             "1ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ(d‚Ë‚Ä•\\Ž¦)"
+    IDM_TILE                "2ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ(•À‚×‚Ä•\\Ž¦)"
+    IDM_ICONIC              "3‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ðÅ¬‰»"
+    IDM_ARRANGEICON         "4ƒAƒCƒRƒ“‰»‚³‚ê‚½ƒTƒuƒEƒBƒ“ƒhƒE‚Ì®—ñ"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_HIDE                "‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ð‰B‚·"
-    IDM_RESTORE             "‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ð•œŒ³"
+    IDM_HIDE                "1‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ð‰B‚·"
+    IDM_RESTORE             "2‘S‚Ä‚ÌƒTƒuƒEƒBƒ“ƒhƒE‚ð•œŒ³"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_ABOUT               "XM6‚Ìƒo[ƒWƒ‡ƒ“î•ñ‚ð•\\Ž¦"
+    IDM_ABOUT               "1XM6‚Ìƒo[ƒWƒ‡ƒ“î•ñ‚ð•\\Ž¦"
 END
 
 STRINGTABLE
 BEGIN
-    IDM_STDWIN              "ƒƒCƒ“ƒEƒBƒ“ƒhƒE‚ðƒXƒNƒŠ[ƒ“’†‰›‚É”z’u"
+    IDM_STDWIN              "1ƒƒCƒ“ƒEƒBƒ“ƒhƒE‚ðƒXƒNƒŠ[ƒ“’†‰›‚É”z’u"
 END
 
 STRINGTABLE
@@ -2816,35 +2818,35 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_LOG            "ƒƒO"
-    IDS_SWND_LOG_NUMBER     "No."
-    IDS_SWND_LOG_TIME       "‰¼‘zŽžŠÔ"
-    IDS_SWND_LOG_PC         "PC"
-    IDS_SWND_LOG_LEVEL      "ƒŒƒxƒ‹"
-    IDS_SWND_LOG_DEVICE     "ƒfƒoƒCƒX"
-    IDS_SWND_LOG_MSG        "ƒƒbƒZ[ƒW"
-    IDS_SWND_LOG_DETAIL     "Ú×"
+    IDS_SWND_LOG            "1ƒƒO"
+    IDS_SWND_LOG_NUMBER     "2No."
+    IDS_SWND_LOG_TIME       "3‰¼‘zŽžŠÔ"
+    IDS_SWND_LOG_PC         "4PC"
+    IDS_SWND_LOG_LEVEL      "5ƒŒƒxƒ‹"
+    IDS_SWND_LOG_DEVICE     "6ƒfƒoƒCƒX"
+    IDS_SWND_LOG_MSG        "7ƒƒbƒZ[ƒW"
+    IDS_SWND_LOG_DETAIL     "8Ú×"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_LOG_NORMAL     "’Êí"
-    IDS_SWND_LOG_WARNING    "Œx"
-    IDS_SWND_SCHEDULER      "ƒXƒPƒWƒ…[ƒ‰"
-    IDS_SWND_DEVICE         "ƒfƒoƒCƒX"
+    IDS_SWND_LOG_NORMAL     "1’Êí"
+    IDS_SWND_LOG_WARNING    "2Œx"
+    IDS_SWND_SCHEDULER      "3ƒXƒPƒWƒ…[ƒ‰"
+    IDS_SWND_DEVICE         "4ƒfƒoƒCƒX"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_CPUREG         "MPUƒŒƒWƒXƒ^"
-    IDS_SWND_INT            "Š„‚èž‚Ý"
-    IDS_SWND_DISASM         "‹tƒAƒZƒ“ƒuƒ‹"
-    IDS_SWND_MEMORY         "ƒƒ‚ƒŠ"
+    IDS_SWND_CPUREG         "1MPUƒŒƒWƒXƒ^"
+    IDS_SWND_INT            "2Š„‚èž‚Ý"
+    IDS_SWND_DISASM         "3‹tƒAƒZƒ“ƒuƒ‹"
+    IDS_SWND_MEMORY         "4ƒƒ‚ƒŠ"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_BREAKP         "ƒuƒŒ[ƒNƒ|ƒCƒ“ƒg"
+    IDS_SWND_BREAKP         "1ƒuƒŒ[ƒNƒ|ƒCƒ“ƒg"
 END
 
 STRINGTABLE
@@ -2867,49 +2869,49 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_TVRAM          "ƒeƒLƒXƒg‰æ–Ê"
-    IDS_SWND_G1024          "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhE1024~1024)"
-    IDS_SWND_G16P0          "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW0)"
-    IDS_SWND_G16P1          "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW1)"
-    IDS_SWND_G16P2          "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW2)"
-    IDS_SWND_G16P3          "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW3)"
-    IDS_SWND_G256P0         "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW0)"
-    IDS_SWND_G256P1         "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW1)"
-    IDS_SWND_G64K           "ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(65536Fƒ‚[ƒh)"
-    IDS_SWND_PCG            "PCG"
-    IDS_SWND_BG0            "BG‰æ–Ê(ƒy[ƒW0)"
-    IDS_SWND_BG1            "BG‰æ–Ê(ƒy[ƒW1)"
+    IDS_SWND_TVRAM          "1ƒeƒLƒXƒg‰æ–Ê"
+    IDS_SWND_G1024          "2ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhE1024~1024)"
+    IDS_SWND_G16P0          "3ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW0)"
+    IDS_SWND_G16P1          "4ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW1)"
+    IDS_SWND_G16P2          "5ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW2)"
+    IDS_SWND_G16P3          "6ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(16Fƒ‚[ƒhEƒy[ƒW3)"
+    IDS_SWND_G256P0         "7ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW0)"
+    IDS_SWND_G256P1         "8ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(256Fƒ‚[ƒhEƒy[ƒW1)"
+    IDS_SWND_G64K           "9ƒOƒ‰ƒtƒBƒbƒN‰æ–Ê(65536Fƒ‚[ƒh)"
+    IDS_SWND_PCG            "0PCG"
+    IDS_SWND_BG0            "1BG‰æ–Ê(ƒy[ƒW0)"
+    IDS_SWND_BG1            "2BG‰æ–Ê(ƒy[ƒW1)"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_SPRITE         "ƒXƒvƒ‰ƒCƒg‰æ–Ê"
-    IDS_SWND_PALET          "ƒpƒŒƒbƒg"
+    IDS_SWND_SPRITE         "1ƒXƒvƒ‰ƒCƒg‰æ–Ê"
+    IDS_SWND_PALET          "2ƒpƒŒƒbƒg"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_REND_TEXT      "ƒeƒLƒXƒgƒoƒbƒtƒ@"
-    IDS_SWND_REND_GP0       "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(0)"
-    IDS_SWND_REND_GP1       "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(1)"
-    IDS_SWND_REND_GP2       "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(2)"
-    IDS_SWND_REND_GP3       "ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(3)"
-    IDS_SWND_REND_PCG       "PCGƒoƒbƒtƒ@"
+    IDS_SWND_REND_TEXT      "1ƒeƒLƒXƒgƒoƒbƒtƒ@"
+    IDS_SWND_REND_GP0       "2ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(0)"
+    IDS_SWND_REND_GP1       "3ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(1)"
+    IDS_SWND_REND_GP2       "4ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(2)"
+    IDS_SWND_REND_GP3       "5ƒOƒ‰ƒtƒBƒbƒNƒoƒbƒtƒ@(3)"
+    IDS_SWND_REND_PCG       "6PCGƒoƒbƒtƒ@"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_REND_BGSPRITE  "BG/ƒXƒvƒ‰ƒCƒgƒoƒbƒtƒ@"
-    IDS_SWND_REND_PALET     "ƒpƒŒƒbƒgƒoƒbƒtƒ@"
-    IDS_SWND_REND_MIX       "‡¬ƒoƒbƒtƒ@"
+    IDS_SWND_REND_BGSPRITE  "1BG/ƒXƒvƒ‰ƒCƒgƒoƒbƒtƒ@"
+    IDS_SWND_REND_PALET     "2ƒpƒŒƒbƒgƒoƒbƒtƒ@"
+    IDS_SWND_REND_MIX       "3‡¬ƒoƒbƒtƒ@"
 END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_COMPONENT      "ƒRƒ“ƒ|[ƒlƒ“ƒg"
-    IDS_SWND_OSINFO         "OSî•ñ"
-    IDS_SWND_SOUND          "ƒTƒEƒ“ƒh"
-    IDS_SWND_INPUT          "ƒCƒ“ƒvƒbƒg"
+    IDS_SWND_COMPONENT      "1ƒRƒ“ƒ|[ƒlƒ“ƒg"
+    IDS_SWND_OSINFO         "2OSî•ñ"
+    IDS_SWND_SOUND          "3ƒTƒEƒ“ƒh"
+    IDS_SWND_INPUT          "4ƒCƒ“ƒvƒbƒg"
 END
 
 STRINGTABLE
@@ -2921,17 +2923,17 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_SWND_SOFTKEY        "ƒ\\ƒtƒgƒEƒFƒAƒL[ƒ{[ƒh"
+    IDS_SWND_SOFTKEY        "1ƒ\\ƒtƒgƒEƒFƒAƒL[ƒ{[ƒh"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_BASIC_MEMORYC       "ƒƒCƒ“ƒƒ‚ƒŠ‚ð‘Ý‚µ‚Ü‚·B•ÏXŒãƒŠƒZƒbƒg‚É‚æ‚è”½‰f‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í2MB‚Å‚·"
-    IDC_BASIC_MEMORYL       "ƒƒCƒ“ƒƒ‚ƒŠ‚ð‘Ý‚µ‚Ü‚·B•ÏXŒãƒŠƒZƒbƒg‚É‚æ‚è”½‰f‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í2MB‚Å‚·"
-    IDC_BASIC_CLOCKL        "ƒVƒXƒeƒ€ƒNƒƒbƒN‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BSCC‚É‚Í•ÊŒn“ƒNƒƒbƒN‚ª‹Ÿ‹‹‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í10MHz‚Å‚·"
-    IDC_BASIC_CLOCKC        "ƒVƒXƒeƒ€ƒNƒƒbƒN‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BSCC‚É‚Í•ÊŒn“ƒNƒƒbƒN‚ª‹Ÿ‹‹‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í10MHz‚Å‚·"
-    IDC_BASIC_CPUFULLB      "CPUƒpƒ[‚É—]—T‚ª‚ ‚éê‡A—]—T•ª‚¾‚¯MPU‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_BASIC_ALLFULLB      "CPUƒpƒ[‚É—]—T‚ª‚ ‚éê‡A—]—T•ª‚¾‚¯‰¼‘zƒ}ƒVƒ“‘S‘Ì‚Ìis‚ð‘¬‚ß‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_BASIC_MEMORYC       "1ƒƒCƒ“ƒƒ‚ƒŠ‚ð‘Ý‚µ‚Ü‚·B•ÏXŒãƒŠƒZƒbƒg‚É‚æ‚è”½‰f‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í2MB‚Å‚·"
+    IDC_BASIC_MEMORYL       "2ƒƒCƒ“ƒƒ‚ƒŠ‚ð‘Ý‚µ‚Ü‚·B•ÏXŒãƒŠƒZƒbƒg‚É‚æ‚è”½‰f‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í2MB‚Å‚·"
+    IDC_BASIC_CLOCKL        "3ƒVƒXƒeƒ€ƒNƒƒbƒN‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BSCC‚É‚Í•ÊŒn“ƒNƒƒbƒN‚ª‹Ÿ‹‹‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í10MHz‚Å‚·"
+    IDC_BASIC_CLOCKC        "4ƒVƒXƒeƒ€ƒNƒƒbƒN‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BSCC‚É‚Í•ÊŒn“ƒNƒƒbƒN‚ª‹Ÿ‹‹‚³‚ê‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í10MHz‚Å‚·"
+    IDC_BASIC_CPUFULLB      "5CPUƒpƒ[‚É—]—T‚ª‚ ‚éê‡A—]—T•ª‚¾‚¯MPU‚ðƒNƒƒbƒNƒAƒbƒv‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_BASIC_ALLFULLB      "6CPUƒpƒ[‚É—]—T‚ª‚ ‚éê‡A—]—T•ª‚¾‚¯‰¼‘zƒ}ƒVƒ“‘S‘Ì‚Ìis‚ð‘¬‚ß‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
     IDS_BASIC_CLOCK0        "10MHz  (•W€)"
     IDS_BASIC_CLOCK1        "12MHz  (ACE‰ü)"
     IDS_BASIC_CLOCK2        "15MHz  (PRO‰ü)"
@@ -3013,40 +3015,40 @@ END
 
 STRINGTABLE
 BEGIN
-    IDC_MISC_OPTG           "‚»‚Ì‘¼‚ÌÝ’è‚ðs‚¢‚Ü‚·"
-    IDC_MISC_FDSPEED        "ƒtƒƒbƒs[ƒfƒBƒXƒN‚ÌƒAƒNƒZƒX‘¬“x‚ð‹[Ž—“I‚É‚‘¬‰»‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_MISC_FDLED          "ƒtƒƒbƒs[ƒfƒBƒXƒN‚Ìƒ‚[ƒ^‰ñ“]ó‹µ‚ðƒAƒNƒZƒXLED‚Æ‚µ‚Ä•\\Ž¦‚µ‚Ü‚·B‚±‚ê‚ÍŽÀ‹@‚Æ“¯‚¶“®ì‚Å‚·BƒfƒtƒHƒ‹ƒg‚ÍON‚Å‚·"
-    IDC_MISC_POPUP          "ƒTƒuƒEƒBƒ“ƒhƒE‚ðƒ|ƒbƒvƒAƒbƒvƒXƒ^ƒCƒ‹‚É‚µ‚Ü‚·Bƒ|ƒbƒvƒAƒbƒvƒEƒBƒ“ƒhƒE‚ðƒAƒNƒeƒBƒu‚É‚·‚é‚Æ‘¬“x‚ª’á‰º‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_MISC_AUTOMOUSE      "ƒXƒNƒŠ[ƒ“ƒ‚[ƒh•ÏX‚É˜A“®‚µ‚Äƒ}ƒEƒXƒ‚[ƒh‚ÌŽ©“®Ø‚è‘Ö‚¦‚ðs‚¢‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·B"
-    IDC_MISC_POWEROFF       "‘O–Ê“dŒ¹ƒXƒCƒbƒ`‚ªOFF‚Ìó‘Ô‚ÅXM6‚ð‹N“®‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MISC_OPTG           "1‚»‚Ì‘¼‚ÌÝ’è‚ðs‚¢‚Ü‚·"
+    IDC_MISC_FDSPEED        "2ƒtƒƒbƒs[ƒfƒBƒXƒN‚ÌƒAƒNƒZƒX‘¬“x‚ð‹[Ž—“I‚É‚‘¬‰»‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MISC_FDLED          "3ƒtƒƒbƒs[ƒfƒBƒXƒN‚Ìƒ‚[ƒ^‰ñ“]ó‹µ‚ðƒAƒNƒZƒXLED‚Æ‚µ‚Ä•\\Ž¦‚µ‚Ü‚·B‚±‚ê‚ÍŽÀ‹@‚Æ“¯‚¶“®ì‚Å‚·BƒfƒtƒHƒ‹ƒg‚ÍON‚Å‚·"
+    IDC_MISC_POPUP          "4ƒTƒuƒEƒBƒ“ƒhƒE‚ðƒ|ƒbƒvƒAƒbƒvƒXƒ^ƒCƒ‹‚É‚µ‚Ü‚·Bƒ|ƒbƒvƒAƒbƒvƒEƒBƒ“ƒhƒE‚ðƒAƒNƒeƒBƒu‚É‚·‚é‚Æ‘¬“x‚ª’á‰º‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MISC_AUTOMOUSE      "5ƒXƒNƒŠ[ƒ“ƒ‚[ƒh•ÏX‚É˜A“®‚µ‚Äƒ}ƒEƒXƒ‚[ƒh‚ÌŽ©“®Ø‚è‘Ö‚¦‚ðs‚¢‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·B"
+    IDC_MISC_POWEROFF       "6‘O–Ê“dŒ¹ƒXƒCƒbƒ`‚ªOFF‚Ìó‘Ô‚ÅXM6‚ð‹N“®‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_KBD_MAPG            "ƒL[ƒ{[ƒh•ÏŠ·•\\‚ðÝ’è‚µ‚Ü‚·"
-    IDC_KBD_MAPL            "Œ»Ý‚ÌƒL[ƒ{[ƒh•ÏŠ·•\\‚ð•\\Ž¦‚µ‚Ä‚¢‚Ü‚·BDirectXƒL[ID‚ª‹ó”’‚Å‚ ‚ê‚Î‘Î‰ž‚·‚éƒL[‚ÍŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚Ü‚¹‚ñ"
-    IDC_KBD_EDITB           "ƒL[ƒ{[ƒh•ÏŠ·•\\‚ð•ÒW‚µ‚Ü‚·"
+    IDC_KBD_MAPG            "1ƒL[ƒ{[ƒh•ÏŠ·•\\‚ðÝ’è‚µ‚Ü‚·"
+    IDC_KBD_MAPL            "2Œ»Ý‚ÌƒL[ƒ{[ƒh•ÏŠ·•\\‚ð•\\Ž¦‚µ‚Ä‚¢‚Ü‚·BDirectXƒL[ID‚ª‹ó”’‚Å‚ ‚ê‚Î‘Î‰ž‚·‚éƒL[‚ÍŠ„‚è“–‚Ä‚ç‚ê‚Ä‚¢‚Ü‚¹‚ñ"
+    IDC_KBD_EDITB           "3ƒL[ƒ{[ƒh•ÏŠ·•\\‚ð•ÒW‚µ‚Ü‚·"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_KBD_DEFB            "•ÒWŒ‹‰Ê‚ð”jŠü‚µAƒfƒtƒHƒ‹ƒg‚Ì•ÏŠ·•\\‚É–ß‚µ‚Ü‚·"
-    IDC_KBD_NOCONB          "ƒL[ƒ{[ƒh‚ð–{‘Ì‘O–ÊƒL[ƒ{[ƒhƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚¹‚ñBƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_KBD_DEFB            "1•ÒWŒ‹‰Ê‚ð”jŠü‚µAƒfƒtƒHƒ‹ƒg‚Ì•ÏŠ·•\\‚É–ß‚µ‚Ü‚·"
+    IDC_KBD_NOCONB          "2ƒL[ƒ{[ƒh‚ð–{‘Ì‘O–ÊƒL[ƒ{[ƒhƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚¹‚ñBƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
 END
 
 STRINGTABLE
 BEGIN
-    IDC_MOUSE_SPEEDG        "ƒ}ƒEƒX‚ÌˆÚ“®‘¬“x‚ðÝ’è‚µ‚Ü‚·"
-    IDC_MOUSE_SLIDER        "ƒ}ƒEƒX‘¬“x‚ðWindows‚Ìƒ}ƒEƒXˆÚ“®—Ê‚É‘Î‚·‚é”ä—¦‚ÅÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í80%‚Å‚·"
-    IDC_MOUSE_PARS          "ƒ}ƒEƒX‘¬“x‚ðWindows‚Ìƒ}ƒEƒXˆÚ“®—Ê‚É‘Î‚·‚é”ä—¦‚ÅÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í80%‚Å‚·"
-    IDC_MOUSE_PORTG         "ƒ}ƒEƒX‚ðÚ‘±‚·‚éƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í–{‘Ì‚Å‚·"
-    IDC_MOUSE_FPORT         "ƒ}ƒEƒX‚ð–{‘Ì‘O–Êƒ}ƒEƒXƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚·"
-    IDC_MOUSE_KPORT         "ƒ}ƒEƒX‚ðƒL[ƒ{[ƒh‘¤–Êƒ}ƒEƒXƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚·"
-    IDC_MOUSE_NPORT         "ƒ}ƒEƒX‚ðÚ‘±‚µ‚Ü‚¹‚ñ"
-    IDC_MOUSE_OPTG          "ƒ}ƒEƒX‚Ì“®ì‚ð’²®‚µ‚Ü‚·"
-    IDC_MOUSE_SWAPB         "¶ƒ{ƒ^ƒ“E‰Eƒ{ƒ^ƒ“‚ð“ü‚ê‘Ö‚¦‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_MOUSE_MIDB          "’†ƒ{ƒ^ƒ“‚É‚æ‚éƒ}ƒEƒXƒ‚[ƒhØ‚è‘Ö‚¦‚ðs‚¢‚Ü‚¹‚ñBƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_MOUSE_TBG           "ƒ}ƒEƒX— –ÊƒXƒCƒbƒ`‚ðƒ}ƒEƒX(M)‚©‚çƒgƒ‰ƒbƒNƒ{[ƒ‹(T)‚ÉØ‚è‘Ö‚¦‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MOUSE_SPEEDG        "1ƒ}ƒEƒX‚ÌˆÚ“®‘¬“x‚ðÝ’è‚µ‚Ü‚·"
+    IDC_MOUSE_SLIDER        "2ƒ}ƒEƒX‘¬“x‚ðWindows‚Ìƒ}ƒEƒXˆÚ“®—Ê‚É‘Î‚·‚é”ä—¦‚ÅÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í80%‚Å‚·"
+    IDC_MOUSE_PARS          "3ƒ}ƒEƒX‘¬“x‚ðWindows‚Ìƒ}ƒEƒXˆÚ“®—Ê‚É‘Î‚·‚é”ä—¦‚ÅÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í80%‚Å‚·"
+    IDC_MOUSE_PORTG         "4ƒ}ƒEƒX‚ðÚ‘±‚·‚éƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚Í–{‘Ì‚Å‚·"
+    IDC_MOUSE_FPORT         "5ƒ}ƒEƒX‚ð–{‘Ì‘O–Êƒ}ƒEƒXƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚·"
+    IDC_MOUSE_KPORT         "6ƒ}ƒEƒX‚ðƒL[ƒ{[ƒh‘¤–Êƒ}ƒEƒXƒRƒlƒNƒ^‚ÖÚ‘±‚µ‚Ü‚·"
+    IDC_MOUSE_NPORT         "7ƒ}ƒEƒX‚ðÚ‘±‚µ‚Ü‚¹‚ñ"
+    IDC_MOUSE_OPTG          "8ƒ}ƒEƒX‚Ì“®ì‚ð’²®‚µ‚Ü‚·"
+    IDC_MOUSE_SWAPB         "9¶ƒ{ƒ^ƒ“E‰Eƒ{ƒ^ƒ“‚ð“ü‚ê‘Ö‚¦‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MOUSE_MIDB          "0’†ƒ{ƒ^ƒ“‚É‚æ‚éƒ}ƒEƒXƒ‚[ƒhØ‚è‘Ö‚¦‚ðs‚¢‚Ü‚¹‚ñBƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_MOUSE_TBG           "1ƒ}ƒEƒX— –ÊƒXƒCƒbƒ`‚ðƒ}ƒEƒX(M)‚©‚çƒgƒ‰ƒbƒNƒ{[ƒ‹(T)‚ÉØ‚è‘Ö‚¦‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
 END
 
 STRINGTABLE
@@ -3062,10 +3064,10 @@ END
 
 STRINGTABLE
 BEGIN
-    IDC_PORT_LPTL           "ƒvƒŠƒ“ƒ^‚ÖŠ„‚è“–‚Ä‚éƒpƒ‰ƒŒƒ‹ƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BLPTƒ|[ƒg‚ðŽw’è‚·‚é‚Æƒ|[ƒŠƒ“ƒO•‰‰×‚ª‚©‚©‚è‚Ü‚·"
-    IDC_PORT_LPTC           "ƒvƒŠƒ“ƒ^‚ÖŠ„‚è“–‚Ä‚éƒpƒ‰ƒŒƒ‹ƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BLPTƒ|[ƒg‚ðŽw’è‚·‚é‚Æƒ|[ƒŠƒ“ƒO•‰‰×‚ª‚©‚©‚è‚Ü‚·"
-    IDC_PORT_SENDL          "ƒvƒŠƒ“ƒ^‚Ì‘—MƒƒOƒtƒ@ƒCƒ‹‚ðÝ’è‚µ‚Ü‚·B‹ó”’‚É‚·‚é‚Æƒtƒ@ƒCƒ‹‚Ö‚Ì‹L˜^‚ðs‚¢‚Ü‚¹‚ñ"
-    IDC_PORT_SENDE          "ƒvƒŠƒ“ƒ^‚Ì‘—MƒƒOƒtƒ@ƒCƒ‹‚ðÝ’è‚µ‚Ü‚·B‹ó”’‚É‚·‚é‚Æƒtƒ@ƒCƒ‹‚Ö‚Ì‹L˜^‚ðs‚¢‚Ü‚¹‚ñ"
+    IDC_PORT_LPTL           "1ƒvƒŠƒ“ƒ^‚ÖŠ„‚è“–‚Ä‚éƒpƒ‰ƒŒƒ‹ƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BLPTƒ|[ƒg‚ðŽw’è‚·‚é‚Æƒ|[ƒŠƒ“ƒO•‰‰×‚ª‚©‚©‚è‚Ü‚·"
+    IDC_PORT_LPTC           "2ƒvƒŠƒ“ƒ^‚ÖŠ„‚è“–‚Ä‚éƒpƒ‰ƒŒƒ‹ƒ|[ƒg‚ðÝ’è‚µ‚Ü‚·BLPTƒ|[ƒg‚ðŽw’è‚·‚é‚Æƒ|[ƒŠƒ“ƒO•‰‰×‚ª‚©‚©‚è‚Ü‚·"
+    IDC_PORT_SENDL          "3ƒvƒŠƒ“ƒ^‚Ì‘—MƒƒOƒtƒ@ƒCƒ‹‚ðÝ’è‚µ‚Ü‚·B‹ó”’‚É‚·‚é‚Æƒtƒ@ƒCƒ‹‚Ö‚Ì‹L˜^‚ðs‚¢‚Ü‚¹‚ñ"
+    IDC_PORT_SENDE          "4ƒvƒŠƒ“ƒ^‚Ì‘—MƒƒOƒtƒ@ƒCƒ‹‚ðÝ’è‚µ‚Ü‚·B‹ó”’‚É‚·‚é‚Æƒtƒ@ƒCƒ‹‚Ö‚Ì‹L˜^‚ðs‚¢‚Ü‚¹‚ñ"
 END
 
 STRINGTABLE
@@ -3198,14 +3200,14 @@ END
 
 STRINGTABLE
 BEGIN
-    IDC_RESUME_DISKG        "ƒtƒƒbƒs[ƒfƒBƒXƒN(—¼ƒhƒ‰ƒCƒu)EMOƒfƒBƒXƒNECD-ROM‚ÉŠÖ‚·‚é•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
-    IDC_RESUME_FDC          "XM6I—¹Žž‚Éƒtƒƒbƒs[ƒfƒBƒXƒN‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_RESUME_MOC          "XM6I—¹Žž‚ÉMOƒfƒBƒXƒN‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_RESUME_CDC          "XM6I—¹Žž‚ÉCD-ROM‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_RESUME_STATEG       "ƒXƒe[ƒgƒf[ƒ^‚ÉŠÖ‚·‚é•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
-    IDC_RESUME_XM6C         "XM6I—¹Žž‚ÉƒXƒe[ƒgƒf[ƒ^‚ª•Û‘¶‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚É“Ç‚Ýž‚ÝAÄŠJ‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
-    IDC_RESUME_MISCG        "‚»‚Ì‘¼‚Ì•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
-    IDC_RESUME_SCREENC      "XM6I—¹Žž‚Éƒtƒ‹ƒXƒNƒŠ[ƒ“ó‘ÔEƒEƒBƒ“ƒhƒEˆÊ’uEƒRƒ“ƒgƒ[ƒ‹ƒo[‚Ì—L–³‚ð•Û‘¶‚µAŽŸ‰ñ‹N“®Žž‚É•œŒ³‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_RESUME_DISKG        "1ƒtƒƒbƒs[ƒfƒBƒXƒN(—¼ƒhƒ‰ƒCƒu)EMOƒfƒBƒXƒNECD-ROM‚ÉŠÖ‚·‚é•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
+    IDC_RESUME_FDC          "2XM6I—¹Žž‚Éƒtƒƒbƒs[ƒfƒBƒXƒN‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_RESUME_MOC          "3XM6I—¹Žž‚ÉMOƒfƒBƒXƒN‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_RESUME_CDC          "4XM6I—¹Žž‚ÉCD-ROM‚ª‘}“ü‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚ÉŽ©“®‘}“ü‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_RESUME_STATEG       "5ƒXƒe[ƒgƒf[ƒ^‚ÉŠÖ‚·‚é•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
+    IDC_RESUME_XM6C         "6XM6I—¹Žž‚ÉƒXƒe[ƒgƒf[ƒ^‚ª•Û‘¶‚³‚ê‚Ä‚¢‚ê‚ÎAŽŸ‰ñ‹N“®Žž‚É“Ç‚Ýž‚ÝAÄŠJ‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
+    IDC_RESUME_MISCG        "7‚»‚Ì‘¼‚Ì•Û‘¶ƒIƒvƒVƒ‡ƒ“‚ðÝ’è‚µ‚Ü‚·"
+    IDC_RESUME_SCREENC      "8XM6I—¹Žž‚Éƒtƒ‹ƒXƒNƒŠ[ƒ“ó‘ÔEƒEƒBƒ“ƒhƒEˆÊ’uEƒRƒ“ƒgƒ[ƒ‹ƒo[‚Ì—L–³‚ð•Û‘¶‚µAŽŸ‰ñ‹N“®Žž‚É•œŒ³‚µ‚Ü‚·BƒfƒtƒHƒ‹ƒg‚ÍOFF‚Å‚·"
 END
 
 STRINGTABLE
@@ -3215,22 +3217,22 @@ END
 
 STRINGTABLE
 BEGIN
-    IDS_CAPTION_RUN         "XM6 [ŽÀs]"
-    IDS_CAPTION_STOP        "XM6 [’âŽ~]"
-    IDS_INIT_VMERR          "‰¼‘zƒ}ƒVƒ“‚ð‰Šú‰»‚Å‚«‚Ü‚¹‚ñ"
-    IDS_INIT_COMERR         "DirectXƒRƒ“ƒ|[ƒlƒ“ƒg‚ð‰Šú‰»‚Å‚«‚Ü‚¹‚ñ"
-    IDS_INIT_IPLERR         "IPLƒo[ƒWƒ‡ƒ“‚ªVersion1.00(87/05/07)‚Å‚Í‚ ‚è‚Ü‚¹‚ñB\n‘±‚¯‚Ü‚·‚©H"
-    IDS_INIT_CGERR          "CGROM‚Ì“à—e‚ªX680x0‚ÆˆÙ‚È‚Á‚Ä‚¢‚Ü‚·B\n‘±‚¯‚Ü‚·‚©H"
-    IDS_FDOPEN              "‘Î‰ž‚µ‚Ä‚¢‚é‚·‚×‚Ä‚ÌƒfƒBƒXƒNƒCƒ[ƒW|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG;*.DIM;*.D68;*.D88;*.2DD;*.2HQ|1.25MBƒfƒBƒXƒNƒCƒ[ƒW (XDF;HDM;2HD;DUP;IMG)|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG|DIMƒfƒBƒXƒNƒCƒ[ƒW (DIM)|*.DIM|D68ƒfƒBƒXƒNƒCƒ[ƒW (D68;D88)|*.D68;*.D88|720KBƒfƒBƒXƒNƒCƒ[ƒW (2DD)|*.2DD|1.44MBƒfƒBƒXƒNƒCƒ[ƒW (2HQ)|*.2HQ|‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
-    IDS_FDERR               "ƒfƒBƒXƒNƒCƒ[ƒWƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚ç‚È‚¢‚©AƒTƒ|[ƒg‚µ‚Ä‚¢‚È‚¢Œ`Ž®‚Å‚·"
-    IDS_NEWFD               "V‚µ‚¢ƒtƒƒbƒs[ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬‚µ‚Ü‚µ‚½"
-    IDS_SASIOPEN            "SASIƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW (*.HDF)|*.HDF|‘S‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
-    IDS_NEWSASI             "V‚µ‚¢SASI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬‚µ‚Ü‚µ‚½"
-    IDS_CREATEERR           "ƒtƒ@ƒCƒ‹ì¬‚ÉŽ¸”s‚µ‚Ü‚µ‚½"
-    IDS_OPTIONS             "XM6‚Ì“®ìÝ’è"
-    IDS_MOUSE_X68K          "ƒ}ƒEƒXƒGƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚ð—LŒø‚É‚µ‚Ü‚µ‚½"
-    IDS_MOUSE_WIN           "ƒ}ƒEƒXƒGƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚ð–³Œø‚É‚µ‚Ü‚µ‚½"
-    IDS_WAVOPEN             "WAVƒI[ƒfƒBƒI (*.WAV)|*.WAV|‘S‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
+    IDS_CAPTION_RUN         "1XM6 [ŽÀs]"
+    IDS_CAPTION_STOP        "2XM6 [’âŽ~]"
+    IDS_INIT_VMERR          "3‰¼‘zƒ}ƒVƒ“‚ð‰Šú‰»‚Å‚«‚Ü‚¹‚ñ"
+    IDS_INIT_COMERR         "4DirectXƒRƒ“ƒ|[ƒlƒ“ƒg‚ð‰Šú‰»‚Å‚«‚Ü‚¹‚ñ"
+    IDS_INIT_IPLERR         "5IPLƒo[ƒWƒ‡ƒ“‚ªVersion1.00(87/05/07)‚Å‚Í‚ ‚è‚Ü‚¹‚ñB\n‘±‚¯‚Ü‚·‚©H"
+    IDS_INIT_CGERR          "6CGROM‚Ì“à—e‚ªX680x0‚ÆˆÙ‚È‚Á‚Ä‚¢‚Ü‚·B\n‘±‚¯‚Ü‚·‚©H"
+    IDS_FDOPEN              "7‘Î‰ž‚µ‚Ä‚¢‚é‚·‚×‚Ä‚ÌƒfƒBƒXƒNƒCƒ[ƒW|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG;*.DIM;*.D68;*.D88;*.2DD;*.2HQ|1.25MBƒfƒBƒXƒNƒCƒ[ƒW (XDF;HDM;2HD;DUP;IMG)|*.XDF;*.HDM;*.2HD;*.DUP;*.IMG|DIMƒfƒBƒXƒNƒCƒ[ƒW (DIM)|*.DIM|D68ƒfƒBƒXƒNƒCƒ[ƒW (D68;D88)|*.D68;*.D88|720KBƒfƒBƒXƒNƒCƒ[ƒW (2DD)|*.2DD|1.44MBƒfƒBƒXƒNƒCƒ[ƒW (2HQ)|*.2HQ|‚·‚×‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
+    IDS_FDERR               "8ƒfƒBƒXƒNƒCƒ[ƒWƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚ç‚È‚¢‚©AƒTƒ|[ƒg‚µ‚Ä‚¢‚È‚¢Œ`Ž®‚Å‚·"
+    IDS_NEWFD               "9V‚µ‚¢ƒtƒƒbƒs[ƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬‚µ‚Ü‚µ‚½"
+    IDS_SASIOPEN            "0SASIƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW (*.HDF)|*.HDF|‘S‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
+    IDS_NEWSASI             "1V‚µ‚¢SASI ƒn[ƒhƒfƒBƒXƒNƒCƒ[ƒW‚ðì¬‚µ‚Ü‚µ‚½"
+    IDS_CREATEERR           "2ƒtƒ@ƒCƒ‹ì¬‚ÉŽ¸”s‚µ‚Ü‚µ‚½"
+    IDS_OPTIONS             "3XM6‚Ì“®ìÝ’è"
+    IDS_MOUSE_X68K          "4ƒ}ƒEƒXƒGƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚ð—LŒø‚É‚µ‚Ü‚µ‚½"
+    IDS_MOUSE_WIN           "5ƒ}ƒEƒXƒGƒ~ƒ…ƒŒ[ƒVƒ‡ƒ“‚ð–³Œø‚É‚µ‚Ü‚µ‚½"
+    IDS_WAVOPEN             "6WAVƒI[ƒfƒBƒI (*.WAV)|*.WAV|‘S‚Ä‚Ìƒtƒ@ƒCƒ‹ (*.*)|*.*||"
 END
 
 STRINGTABLE
@@ -3935,11 +3937,11 @@ BEGIN
     IDS_US_XM6SAVEOK        "Saving data has been completed."
     IDS_US_XM6SAVEERR       "Write error!"
     IDS_US_EXIT             "E&xit\tAlt+F4"
-    IDS_US_XM6LOADFILE      "File not found"
+    IDS_US_XM6LOADFILE      "Archivo no encontrado"
     IDS_US_XM6LOADHDR       "Invalid file!"
     IDS_US_XM6LOADVER       "Unrecognized version\n\n[Now]  version%1X.%02X\n[File] version%1X.%02X"
     IDS_US_FILEUPDATE       "The file is updated after saving\n\n[F i l e]  %s\n[Recorded] %d/%d/%d\n[Current]  %d/%d/%d"
-    IDS_US_SCSI_CAPACITY    "Status"
+    IDS_US_SCSI_CAPACITY    "Status" 
     IDS_US_SCSI_FILENAME    "SCSI-HD Image File"
     IDS_US_SCSI_MO          "(SCSI MO Drive)"
     IDS_US_SCSI_CD          "(SCSI CD-ROM Drive)"

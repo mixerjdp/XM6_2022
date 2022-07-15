@@ -17,73 +17,74 @@
 
 //===========================================================================
 //
-//	コンフィグ
+//	configurar.
 //
 //===========================================================================
 class CConfig : public CComponent
 {
 public:
-	// 基本ファンクション
+	//  funciones basica
 	CConfig(CFrmWnd *pWnd);
-										// コンストラクタ
+										// constructor
 	BOOL FASTCALL Init();
-										// 初期化
+	BOOL FASTCALL CustomInit();   // mi personalizacion
+										// inicializacion
 	void FASTCALL Cleanup();
-										// クリーンアップ
+										// limpieza (especialmente en el beisbol)
 
-	// 設定データ(全体)
+	// Datos de configuracion (global)
 	void FASTCALL GetConfig(Config *pConfigBuf) const;
-										// 設定データ取得
+										// Ajuste de la adquisicion de datos
 	void FASTCALL SetConfig(Config *pConfigBuf);
-										// 設定データ設定
+										// Ajuste de los datos de configuracion
 
-	// 設定データ(個別)
+	// Datos de configuracion (individuales)
 	void FASTCALL SetStretch(BOOL bStretch);
-										// 画面拡大設定
+										// Ajuste de la ampliacion de la pantalla
 	void FASTCALL SetMIDIDevice(int nDevice, BOOL bIn);
-										// MIDIデバイス設定
+										// Configuracion del dispositivo MIDI
 
 	// MRU
 	void FASTCALL SetMRUFile(int nType, LPCTSTR pszFile);
-										// MRUファイル設定(最も新しい)
+										// Configuracion del archivo MRU (mas reciente)
 	void FASTCALL GetMRUFile(int nType, int nIndex, LPTSTR pszFile) const;
-										// MRUファイル取得
+										// Adquisicion de archivos MRU
 	int FASTCALL GetMRUNum(int nType) const;
-										// MRUファイル個数取得
+										// Obtencion del numero de archivos MRU
 
-	// セーブ・ロード
+	// guardar y cargar
 	BOOL FASTCALL Save(Fileio *pFio, int nVer);
-										// セーブ
+										// guardar
 	BOOL FASTCALL Load(Fileio *pFio, int nVer);
-										// ロード
+										// Cargar
 	BOOL FASTCALL IsApply();
-										// 適用するか
+										// Solicite o
 
 private:
-	// 設定データ
+	// Datos de configuracion
 	typedef struct _INIKEY {
-		void *pBuf;						// ポインタ
-		LPCTSTR pszSection;				// セクション名
-		LPCTSTR pszKey;					// キー名
-		int nType;						// 型
-		int nDef;						// デフォルト値
-		int nMin;						// 最小値(一部タイプのみ)
-		int nMax;						// 最大値(一部のみ)
+		void *pBuf;						// puntero 
+		LPCTSTR pszSection;				// nombre de la seccion
+		LPCTSTR pszKey;					// nombre clave
+		int nType;						// tipo (por ejemplo, de maquina, de mercancia, etc.)
+		int nDef;						// valor por defecto
+		int nMin;						// Valor minimo (solo en algunos tipos)
+		int nMax;						// Valor maximo
 	} INIKEY, *PINIKEY;
 
-	// INIファイル
+	// Archivo INI
 	TCHAR m_IniFile[FILEPATH_MAX];
 										// INIファイル名
 
-	// 設定データ
+	// Datos de configuracion
 	void FASTCALL LoadConfig();
-										// 設定データロード
+										// Carga de datos de configuracion
 	void FASTCALL SaveConfig() const;
-										// 設定データセーブ
+										// Ajuste de los datos guardados
 	static const INIKEY IniTable[];
-										// 設定データINIテーブル
+										// Ajuste de los datos de la tabla INI
 	static Config m_Config;
-										// 設定データ
+										// Datos de configuracion
 
 	// バージョン互換
 	void FASTCALL ResetSASI();
