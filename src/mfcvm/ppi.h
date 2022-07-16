@@ -23,7 +23,7 @@ public:
 	// 定数定義
 	enum {
 		PortMax = 2,					// ポート最大数
-		AxisMax = 4,					// 軸最大数
+		AxisMax = 9,					// 軸最大数
 		ButtonMax = 8					// ボタン最大数
 	};
 

@@ -2119,13 +2119,13 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 			}
 #else
 			// Omitir si el eje no es valido.
-			if (m_lJoyAxisMin[i][nAxis] == m_lJoyAxisMax[i][nAxis]) {
-				continue;
-			}
-			dmy++;
-			if (dmy >= 4) {
-				break;
-			}
+			//if (m_lJoyAxisMin[i][nAxis] == m_lJoyAxisMax[i][nAxis]) {
+			//	continue;
+			//}
+			dmy++; // dmy = naxis
+			// if (dmy >= 4) {
+			//	break;
+			// }
 #endif
 
 			// adquisicion de punteros
@@ -2136,12 +2136,14 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 			// adquisicion de datos
 			lAxis = *pAxis;
 
-			//  El cero se ignora (ya que se borra primero).
-			if (lAxis == 0) {
+			//  El cero se ignora  ya que se repite, excepcion es el Pad direccion (POV).
+			//  Se hace comparacion con el primer Axis para comprobar que sea entrada nula para el continue
+			if ((lAxis == 0 && nAxis != 8)  || (lAxis == 0 && ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] == 0))
+			{							
 				continue;
 			}
-
-			// inversion
+			
+			// inversiÛn
 			if (m_JoyCfg[i].bAxis[nAxis]) {
 				// 7FFÅ®-800 -800Å®7FF
 				lAxis = -1 - lAxis;
@@ -2157,19 +2159,66 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 				 = (DWORD)lAxis;
 #else
 			ji[HIWORD(m_JoyCfg[i].dwAxis[nAxis])].axis[dmy] = (DWORD)lAxis;
-
-
-
-
-
-
-
-			
-				/*CString sz;
-				sz.Format(_T("\nAxis: %d  laxis: %d \n"), nAxis, lAxis);
-				OutputDebugStringW(CT2W(sz));*/
 			
 
+
+			/*
+			PAD a Axis
+			
+			Arriba = 0
+			Arriba-Derecha = 4500
+			Derecha = 9000
+			Abajo-Derecha = 13500
+			Abajo = 18000
+			Abajo-Izq = 22500
+			Izq = 27000
+			Izq-Arriba = 31500
+
+			Axis 1 Arriba = -2048
+			Arriba-Derecha = 1 -2048 / 0 2047
+			Axis 0 Derecha = 2047
+			Abajo-Derecha = 1 2047 / 0 2047
+			Axis 1 Abajo = 2047
+			Axis 0 Izq = -2048
+			
+			*/
+	    				 
+			
+			if (nAxis == 8) // Movimientos de PAD direccional se mapean a Axis 0 y 1 *-*
+			{
+				//CString sz;
+				//sz.Format(_T("\nAxis: %d  lAxis: %d \n"), nAxis, lAxis);
+				//OutputDebugStringW(CT2W(sz));
+
+				if (lAxis == 0) // Arriba
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)-2048;
+				if (lAxis == 4500) // Arriba-Derecha
+				{
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)-2048;
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)2047;
+				}
+				if (lAxis == 9000) // Derecha
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)2047;
+				if (lAxis == 13500) // Abajo-Derecha
+				{
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)2047;
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)2047;
+				}
+				if (lAxis == 18000) // Abajo
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)2047;
+				if (lAxis == 22500) // Abajo-Izquierda
+				{
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)2047;
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)-2048;
+				}
+				if (lAxis == 27000) // Izquierda
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)-2048;
+				if (lAxis == 31500) // Arriba-Izquierda
+				{
+					ji[HIWORD(m_JoyCfg[i].dwAxis[0])].axis[0] = (DWORD)-2048;
+					ji[HIWORD(m_JoyCfg[i].dwAxis[1])].axis[1] = (DWORD)-2048;
+				}
+			}
 
 
 
