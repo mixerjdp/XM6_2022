@@ -685,7 +685,7 @@ void FASTCALL CInputWnd::SetupJoy(int x, int y, int nJoy)
 	y++;
 
 	// Ž²
-	for (i=0; i<8; i++) {
+	for (i=0; i<9; i++) {
 		SetString(x, y, strJoy);
 		strText.Format(_T("Axis%d"), i + 1);
 		SetString(x + 6, y, strText);

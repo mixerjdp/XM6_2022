@@ -24,7 +24,7 @@ public:
 	enum {
 		JoyDeviceMax = 16,				// サポートデバイス最大数
 		JoyDevices = 2,					// 使用デバイス最大数
-		JoyAxes = 8,					// 軸最大数
+		JoyAxes = 9,					// 軸最大数
 		JoyButtons = 12,				// ボタン最大数
 		JoyRapids = 10,					// 連射レベル数
 	};

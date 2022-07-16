@@ -547,7 +547,7 @@ void FASTCALL PPI::SetPortC(DWORD data)
 
 //---------------------------------------------------------------------------
 //
-//	内部データ取得
+//	Adquisicion de datos internos
 //
 //---------------------------------------------------------------------------
 void FASTCALL PPI::GetPPI(ppi_t *buffer)
@@ -556,13 +556,13 @@ void FASTCALL PPI::GetPPI(ppi_t *buffer)
 	ASSERT(buffer);
 	ASSERT_DIAG();
 
-	// 内部ワークをコピー
+	// Copiar el trabajo interno
 	*buffer = ppi;
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック情報設定
+//	Configuracion de la informacion del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL PPI::SetJoyInfo(int port, const joyinfo_t *info)
@@ -573,22 +573,22 @@ void FASTCALL PPI::SetJoyInfo(int port, const joyinfo_t *info)
 	ASSERT(PortMax >= 2);
 	ASSERT_DIAG();
 
-	// 比較して、一致していれば何もしない
+	// Compara y si coinciden, no hagas nada.
 	if (memcmp(&ppi.info[port], info, sizeof(joyinfo_t)) == 0) {
 		return;
 	}
 
-	// 保存
+	// almacenamiento 
 	memcpy(&ppi.info[port], info, sizeof(joyinfo_t));
 
-	// そのポートに対応するジョイスティックデバイスへ、通知
+	// Notificacion al dispositivo de joystick correspondiente a ese puerto.
 	ASSERT(joy[port]);
 	joy[port]->Notify();
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック情報取得
+//	Adquisicion de informacion del joystick
 //
 //---------------------------------------------------------------------------
 const PPI::joyinfo_t* FASTCALL PPI::GetJoyInfo(int port) const
@@ -603,7 +603,7 @@ const PPI::joyinfo_t* FASTCALL PPI::GetJoyInfo(int port) const
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティックデバイス作成
+//	Creacion de dispositivos de joystick
 //
 //---------------------------------------------------------------------------
 JoyDevice* FASTCALL PPI::CreateJoy(int port, int type)
@@ -613,7 +613,7 @@ JoyDevice* FASTCALL PPI::CreateJoy(int port, int type)
 	ASSERT((port >= 0) && (port < PortMax));
 	ASSERT(PortMax >= 2);
 
-	// タイプ別
+	// Por tipo
 	switch (type) {
 		// 接続なし
 		case 0:
@@ -651,7 +651,7 @@ JoyDevice* FASTCALL PPI::CreateJoy(int port, int type)
 		case 8:
 			return new JoyCpsfMd(this, port);
 
-		// マジカルパッド
+		// cojin magico
 		case 9:
 			return new JoyMagical(this, port);
 
@@ -659,7 +659,7 @@ JoyDevice* FASTCALL PPI::CreateJoy(int port, int type)
 		case 10:
 			return new JoyLR(this, port);
 
-		// パックランド専用パッド
+		// Almohadilla dedicada Pacland
 		case 11:
 			return new JoyPacl(this, port);
 
@@ -679,52 +679,52 @@ JoyDevice* FASTCALL PPI::CreateJoy(int port, int type)
 
 //===========================================================================
 //
-//	ジョイスティックデバイス
+//	Dispositivo de palanca de mando
 //
 //===========================================================================
 
 //---------------------------------------------------------------------------
 //
-//	コンストラクタ
+//	constructor
 //
 //---------------------------------------------------------------------------
 JoyDevice::JoyDevice(PPI *parent, int no)
 {
 	ASSERT((no >= 0) || (no < PPI::PortMax));
 
-	// タイプNULL
+	// tipo NULL
 	id = MAKEID('N', 'U', 'L', 'L');
 	type = 0;
 
-	// 親デバイス(PPI)を記憶、ポート番号設定
+	// Memorizar el dispositivo principal (PPI), establecer el numero de puerto
 	ppi = parent;
 	port = no;
 
-	// 軸・ボタンなし、デジタル、データ数0
+	// Sin ejes ni botones, digital, 0 datos
 	axes = 0;
 	buttons = 0;
 	analog = FALSE;
 	datas = 0;
 
-	// 表示
+	// mostrar
 	axis_desc = NULL;
 	button_desc = NULL;
 
-	// データバッファはNULL
+	// El buffer de datos es NULL.
 	data = NULL;
 
-	// 更新チェック要
+	// comprobacion de actualizacion requerida
 	changed = TRUE;
 }
 
 //---------------------------------------------------------------------------
 //
-//	デストラクタ
+//	destructor
 //
 //---------------------------------------------------------------------------
 JoyDevice::~JoyDevice()
 {
-	// データバッファがあれば解放
+	// 	Buffer de datos liberado si esta disponible.
 	if (data) {
 		delete[] data;
 		data = NULL;
@@ -733,7 +733,7 @@ JoyDevice::~JoyDevice()
 
 //---------------------------------------------------------------------------
 //
-//	リセット
+//	restablecer
 //
 //---------------------------------------------------------------------------
 void FASTCALL JoyDevice::Reset()
@@ -743,7 +743,7 @@ void FASTCALL JoyDevice::Reset()
 
 //---------------------------------------------------------------------------
 //
-//	セーブ
+//	Guardar
 //
 //---------------------------------------------------------------------------
 BOOL FASTCALL JoyDevice::Save(Fileio *fio, int /*ver*/)
@@ -751,13 +751,13 @@ BOOL FASTCALL JoyDevice::Save(Fileio *fio, int /*ver*/)
 	ASSERT(this);
 	ASSERT(fio);
 
-	// データ数が0ならセーブしない
+	// Si el numero de datos es cero, no se guarda.
 	if (datas <= 0) {
 		ASSERT(datas == 0);
 		return TRUE;
 	}
 
-	// データ数だけ保存
+	// Guarda todos los datos que puedas.
 	if (!fio->Write(data, sizeof(DWORD) * datas)) {
 		return FALSE;
 	}
@@ -767,7 +767,7 @@ BOOL FASTCALL JoyDevice::Save(Fileio *fio, int /*ver*/)
 
 //---------------------------------------------------------------------------
 //
-//	ロード
+//  Cargar
 //
 //---------------------------------------------------------------------------
 BOOL FASTCALL JoyDevice::Load(Fileio *fio, int /*ver*/)
@@ -775,16 +775,16 @@ BOOL FASTCALL JoyDevice::Load(Fileio *fio, int /*ver*/)
 	ASSERT(this);
 	ASSERT(fio);
 
-	// データ数が0ならロードしない
+	// Si el numero de datos es cero, no se cargara.
 	if (datas <= 0) {
 		ASSERT(datas == 0);
 		return TRUE;
 	}
 
-	// 更新あり
+	// Hay una actualizacion
 	changed = TRUE;
 
-	// データ実体をロード
+	// Carga de entidades de datos.
 	if (!fio->Read(data, sizeof(DWORD) * datas)) {
 		return FALSE;
 	}
@@ -794,7 +794,7 @@ BOOL FASTCALL JoyDevice::Load(Fileio *fio, int /*ver*/)
 
 //---------------------------------------------------------------------------
 //
-//	ポート読み取り
+//	lectura del puerto
 //
 //---------------------------------------------------------------------------
 DWORD FASTCALL JoyDevice::ReadPort(DWORD ctl)
@@ -804,29 +804,29 @@ DWORD FASTCALL JoyDevice::ReadPort(DWORD ctl)
 	ASSERT(ppi);
 	ASSERT(ctl < 0x100);
 
-	// 変更フラグをチェック
+	// Comprobar la bandera de cambio.
 	if (changed) {
-		// フラグ落とす
+		// dejar caer la bandera
 		changed = FALSE;
 
-		// データ作成
+		// preparacion de los datos
 		MakeData();
 	}
 
-	// ReadOnlyと同じデータを返す
+	// Devuelve los mismos datos que ReadOnly.
 	return ReadOnly(ctl);
 }
 
 //---------------------------------------------------------------------------
 //
-//	ポート読み取り(Read Only)
+//	Puerto de lectura (Read Only)
 //
 //---------------------------------------------------------------------------
 DWORD FASTCALL JoyDevice::ReadOnly(DWORD /*ctl*/) const
 {
 	ASSERT(this);
 
-	// 未接続
+	// sin conexion
 	return 0xff;
 }
 

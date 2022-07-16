@@ -32,7 +32,7 @@
 
 //---------------------------------------------------------------------------
 //
-//	コンストラクタ
+//	constructor
 //
 //---------------------------------------------------------------------------
 CInput::CInput(CFrmWnd *pWnd) : CComponent(pWnd)
@@ -41,11 +41,11 @@ CInput::CInput(CFrmWnd *pWnd) : CComponent(pWnd)
 	int nAxis;
 	int nButton;
 
-	// コンポーネントパラメータ
+	// parametro del componente
 	m_dwID = MAKEID('I', 'N', 'P', ' ');
 	m_strDesc = _T("Input Manager");
 
-	// 共通ワーク初期化
+	// Inicializacion del trabajo comun
 	m_lpDI = NULL;
 	m_bActive = TRUE;
 	m_bMenu = FALSE;
@@ -53,19 +53,19 @@ CInput::CInput(CFrmWnd *pWnd) : CComponent(pWnd)
 	m_dwDispCount = 0;
 	m_dwProcessCount = 0;
 
-	// キーボードワーク初期化
+	// inicializacion del trabajo del teclado
 	m_pKeyboard = NULL;
 	m_lpDIKey = NULL;
 	m_dwKeyAcquire = 0;
 	m_bKeyEnable = TRUE;
 
-	// キーバッファクリア
+	// borrado del bufer de llaves
 	for (i=0; i<0x100; i++) {
 		m_KeyBuf[i] = FALSE;
 		m_KeyMap[i] = 0;
 	}	
 
-	// マウスワーク初期化
+	// Inicializacion de Mousework
 	m_pMouse = NULL;
 	m_lpDIMouse = NULL;
 	m_dwMouseAcquire = 0;
@@ -77,53 +77,53 @@ CInput::CInput(CFrmWnd *pWnd) : CComponent(pWnd)
 	m_dwMouseMid = 0;
 	m_bMouseMid = TRUE;
 
-	// ジョイスティックワーク初期化
+	// Inicializacion del trabajo del joystick
 	m_pPPI = NULL;
 	m_dwJoyDevs = 0;
 	m_bJoyEnable = TRUE;
 	for (i=0; i<JoyDevices; i++) {
-		// デバイス
+		// dispositivo
 		m_lpDIJoy[i] = NULL;
 		m_lpDIDev2[i] = NULL;
 
-		// コンフィグ
+		// configurar.
 		memset(&m_JoyCfg[i], 0, sizeof(JOYCFG));
-		// nDeviceの設定:
-		// 割り当てデバイス+1 (0は未割り当て)
+		// nConfiguracion del dispositivo :
+		// Dispositivo asignado +1 (0 sin asignar)
 		m_JoyCfg[i].nDevice = i + 1;
 		for (nAxis=0; nAxis<JoyAxes; nAxis++) {
 			if (nAxis < 4) {
-				// dwAxisの設定:
-				// 上位ワード 割り当てポート (0x00000 or 0x10000)
-				// 下位ワード 割り当て軸+1 (1～4、0は未割り当て)
+				// Configuracion de dwAxis :
+				// Palabra superior Puerto asignado (0x00000 o 0x10000)
+				// Palabra inferior Eje asignado +1 (1-4, 0 sin asignar)
 				m_JoyCfg[i].dwAxis[nAxis] = (DWORD)((i << 16) | (nAxis + 1));
 			}
 			m_JoyCfg[i].bAxis[nAxis] = FALSE;
 		}
 		for (nButton=0; nButton<JoyButtons; nButton++) {
 			if (nButton < 8) {
-				// dwButtonの設定:
-				// 上位ワード 割り当てポート (0x00000 or 0x10000)
-				// 下位ワード 割り当てボタン+1 (1～8、0は未割り当て)
+				// Configuracion de dwButton :
+				// Palabra superior Puerto asignado (0x00000 o 0x10000)
+				// Palabra inferior Boton asignado +1 (1-8, 0 no asignado)
 				m_JoyCfg[i].dwButton[nButton] = (DWORD)((i << 16) | (nButton + 1));
 			}
-			// 連射なし、カウンタ初期化
+			// No hay disparo continuo, contador inicializado
 			m_JoyCfg[i].dwRapid[nButton] = 0;
 			m_JoyCfg[i].dwCount[nButton] = 0;
 		}
 
-		// 軸レンジ
+		// Inicializar Gama de ejes
 		memset(m_lJoyAxisMin[i], 0, sizeof(m_lJoyAxisMin[i]));
 		memset(m_lJoyAxisMax[i], 0, sizeof(m_lJoyAxisMax[i]));
 
-		// 獲得カウンタ
+		// contador de adquisiciones
 		m_dwJoyAcquire[i] = 0;
 
-		// 入力データ
+		// datos de entrada
 		memset(&m_JoyState[i], 0, sizeof(DIJOYSTATE));
 	}
 
-	// キーマップを初期化(Config Managerとの連携を考えた措置)
+	// Inicializar el mapa de teclas (una medida disenada para trabajar con el Config Manager).
 	SetDefaultKeyMap(m_KeyMap);
 }
 
@@ -191,8 +191,6 @@ BOOL FASTCALL CInput::Init()
 void FASTCALL CInput::Cleanup()
 {
 	int i;
-	int Chepito;
-	Chepito = 0;
 
 	ASSERT(this);
 	ASSERT_VALID(this);
@@ -1734,13 +1732,13 @@ void FASTCALL CInput::GetMouseInfo(int *pPos, BOOL *pBtn) const
 
 //===========================================================================
 //
-//	ジョイスティック
+//	Seccion de Joystick
 //
 //===========================================================================
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック列挙
+//	Enumeracion del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::EnumJoy()
@@ -1748,17 +1746,17 @@ void FASTCALL CInput::EnumJoy()
 	ASSERT(this);
 	ASSERT(m_lpDI);
 
-	// ジョイスティック数をクリア
+	// Borra el numero de joysticks.
 	m_dwJoyDevs = 0;
 
-	// 列挙開始
+	// inicio de la enumeracion
 	m_lpDI->EnumDevices(DIDEVTYPE_JOYSTICK, (LPDIENUMDEVICESCALLBACK)EnumCb,
 							this, DIEDFL_ATTACHEDONLY);
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティックコールバック
+//	Llamada de retorno del joystick
 //
 //---------------------------------------------------------------------------
 BOOL CALLBACK CInput::EnumCb(LPDIDEVICEINSTANCE pDevInst, LPVOID pvRef)
@@ -1768,16 +1766,16 @@ BOOL CALLBACK CInput::EnumCb(LPDIDEVICEINSTANCE pDevInst, LPVOID pvRef)
 	ASSERT(pDevInst);
 	ASSERT(pvRef);
 
-	// CInputに変換
+	// Convertido a CInput.
 	pInput = (CInput*)pvRef;
 
-	// 呼び出し
+	// ujier que dice los nombres de los luchadores, barre el ring, etc.
 	return pInput->EnumDev(pDevInst);
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック追加
+//	Joystick anadido.
 //
 //---------------------------------------------------------------------------
 BOOL FASTCALL CInput::EnumDev(LPDIDEVICEINSTANCE pDevInst)
@@ -1788,16 +1786,16 @@ BOOL FASTCALL CInput::EnumDev(LPDIDEVICEINSTANCE pDevInst)
 	ASSERT(pDevInst);
 	ASSERT(m_lpDI);
 
-	// 最大数チェック。最大JoyDeviceMaxデバイスのみサポートする
+	// Comprobacion del numero maximo. Solo admite el maximo de dispositivos JoyDeviceMax.
 	if (m_dwJoyDevs >= JoyDeviceMax) {
 		ASSERT(m_dwJoyDevs == JoyDeviceMax);
 		return DIENUM_STOP;
 	}
 
-	// インスタンスを確保
+	// Instancia segura.
 	memcpy(&m_JoyDevInst[m_dwJoyDevs], pDevInst, sizeof(DIDEVICEINSTANCE));
 
-	// デバイス作成
+	// Creacion de dispositivos
 	pInputDev = NULL;
 	if (FAILED(m_lpDI->CreateDevice(pDevInst->guidInstance,
 									&pInputDev,
@@ -1806,37 +1804,37 @@ BOOL FASTCALL CInput::EnumDev(LPDIDEVICEINSTANCE pDevInst)
 	}
 	ASSERT(pInputDev);
 
-	// データフォーマット指定
+	// especificacion del formato de datos
 	if (FAILED(pInputDev->SetDataFormat(&c_dfDIJoystick))) {
-		// デバイス解放
+		// liberacion del dispositivo
 		pInputDev->Unacquire();
 		pInputDev->Release();
 		return DIENUM_CONTINUE;
 	}
 
-	// Caps取得
+	// Adquisicion de Caps
 	memset(&m_JoyDevCaps[m_dwJoyDevs], 0, sizeof(DIDEVCAPS));
 	m_JoyDevCaps[m_dwJoyDevs].dwSize = sizeof(DIDEVCAPS);
 	if (FAILED(pInputDev->GetCapabilities(&m_JoyDevCaps[m_dwJoyDevs]))) {
-		// デバイス解放
+		// liberacion del dispositivo
 		pInputDev->Unacquire();
 		pInputDev->Release();
 		return DIENUM_CONTINUE;
 	}
 
-	// デバイスを一旦解放
+	// Suelte el dispositivo una vez
 	pInputDev->Unacquire();
 	pInputDev->Release();
 
-	// 追加と継続
+	// Ampliaciones y continuaciones
 	m_dwJoyDevs++;
 	return DIENUM_CONTINUE;
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック初期化
-//	※ApplyCfgから呼び出す場合、dwDeviceが違っていた場合のみにすること
+//	Inicializacion del joystick
+//	*Cuando se llama desde ApplyCfg, solo se hace si dwDevice es diferente.
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::InitJoy()
@@ -1851,7 +1849,7 @@ void FASTCALL CInput::InitJoy()
 	ASSERT(this);
 	ASSERT(m_lpDI);
 
-	// デバイスを一旦解放
+	// Suelte el dispositivo una vez
 	for (i=0; i<JoyDevices; i++) {
 		if (m_lpDIDev2[i]) {
 			m_lpDIDev2[i]->Release();
@@ -1865,22 +1863,22 @@ void FASTCALL CInput::InitJoy()
 		}
 	}
 
-	// 入力データをクリア
+	// Borrar datos de entrada.
 	for (i=0; i<JoyDevices; i++) {
 		memset(&m_JoyState[i], 0, sizeof(DIJOYSTATE));
 	}
 
-	// 初期化ループ
+	// bucle de inicializacion
 	for (i=0; i<JoyDevices; i++) {
-		// エラーフラグOFF
+		// Indicador de error OFF
 		bError[i] = FALSE;
 
-		// 未使用なら、何もしない
+		// Si no se usa, nada.
 		if (m_JoyCfg[i].nDevice == 0) {
 			continue;
 		}
 
-		// デバイス作成
+		// Creacion de dispositivos
 		nDevice = m_JoyCfg[i].nDevice - 1;
 		if (FAILED(m_lpDI->CreateDevice(m_JoyDevInst[nDevice].guidInstance,
 										&m_lpDIJoy[i],
@@ -1888,21 +1886,21 @@ void FASTCALL CInput::InitJoy()
 			continue;
 		}
 
-		// エラーフラグON
+		// Indicador de error ON
 		bError[i] = TRUE;
 
-		// データフォーマット指定
+		// especificacion del formato de datos
 		if (FAILED(m_lpDIJoy[i]->SetDataFormat(&c_dfDIJoystick))) {
 			continue;
 		}
 
-		// 協調レベル設定
+		// Ajuste del nivel de coordinacion
 		if (FAILED(m_lpDIJoy[i]->SetCooperativeLevel(m_pFrmWnd->m_hWnd,
 							DISCL_BACKGROUND | DISCL_NONEXCLUSIVE))) {
 			continue;
 		}
 
-		// 値モード設定(絶対値)
+		// Ajuste del modo de valor (valor absoluto)
 		memset(&dpd, 0, sizeof(dpd));
 		dpd.diph.dwSize = sizeof(DIPROPDWORD); 
 		dpd.diph.dwHeaderSize = sizeof(DIPROPHEADER);
@@ -1912,7 +1910,7 @@ void FASTCALL CInput::InitJoy()
 			continue;
 		}
 
-		// デッドゾーン指定(デッドゾーンなし)
+		// Designacion de la zona muerta (no hay zona muerta)
 		memset(&dpd, 0, sizeof(dpd));
 		dpd.diph.dwSize = sizeof(DIPROPDWORD);
 		dpd.diph.dwHeaderSize = sizeof(DIPROPHEADER);
@@ -1922,9 +1920,9 @@ void FASTCALL CInput::InitJoy()
 			continue;
 		}
 
-		// 軸ごとのレンジを取得(すべての軸について取得を試みる)
+		//  Obtenga el rango por eje (intente obtenerlo para todos los ejes).
 		for (nAxis=0; nAxis<JoyAxes; nAxis++) {
-			// 取得(エラーでもよい)
+			//Adquisicion (o error).
 			memset(&dpr, 0, sizeof(dpr));
 			dpr.diph.dwSize = sizeof(DIPROPRANGE);
 			dpr.diph.dwHeaderSize = sizeof(DIPROPHEADER);
@@ -1932,23 +1930,23 @@ void FASTCALL CInput::InitJoy()
 			dpr.diph.dwObj = JoyAxisOffsetTable[nAxis];
 			m_lpDIJoy[i]->GetProperty(DIPROP_RANGE, (LPDIPROPHEADER)&dpr);
 
-			// 確保
+			// asegurar
 			m_lJoyAxisMin[i][nAxis] = dpr.lMin;
 			m_lJoyAxisMax[i][nAxis] = dpr.lMax;
 		}
 
-		// IDirectInputDevice2を取得
+		// Obtener IDirectInputDevice2.
 		if (FAILED(m_lpDIJoy[i]->QueryInterface(IID_IDirectInputDevice2,
 										(LPVOID*)&m_lpDIDev2[i]))) {
-			// IDirectInputDevice2が取得できない場合
+			// Si no se puede obtener IDirectInputDevice2
 			m_lpDIDev2[i] = NULL;
 		}
 
-		// エラーフラグOFF(成功)
+		// Bandera de error OFF (exito)
 		bError[i] = FALSE;
 	}
 
-	// エラーが起きたデバイスについて、解放
+	// Para los dispositivos con errores, libere
 	for (i=0; i<JoyDevices; i++) {
 		if (bError[i]) {
 			ASSERT(m_lpDIJoy[i]);
@@ -1961,7 +1959,7 @@ void FASTCALL CInput::InitJoy()
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック入力
+//	Entrada del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::InputJoy(BOOL bEnable)
@@ -1975,75 +1973,105 @@ void FASTCALL CInput::InputJoy(BOOL bEnable)
 
 	ASSERT(this);
 
-	// bEnable=FALSEで、かつm_bJoyEnable=TRUE(VM側)の場合、入力データクリア
+	// Si bEnable=FALSE y m_bJoyEnable=TRUE (lado VM), los datos de entrada se borran
 	if (!bEnable && m_bJoyEnable) {
 		for (i=0; i<JoyDevices; i++) {
-			// 入力データクリア
+			// datos de entrada en ceros
 			memset(&m_JoyState[i], 0, sizeof(DIJOYSTATE));
 		}
 		return;
 	}
 
-	// デバイスループ
+	// bucle del dispositivo
 	for (i=0; i<JoyDevices; i++) {
-		// デバイスがなければスキップ
+		// Omitir si no hay dispositivo
 		if (!m_lpDIJoy[i]) {
 			continue;
 		}
 
-		// ポーリング
+		// sondeo
 		if (m_lpDIDev2[i]) {
 			if (FAILED(m_lpDIDev2[i]->Poll())) {
-				// Acquireを試みる
+				// Intento de adquisicion.
 				m_lpDIJoy[i]->Acquire();
 				m_dwJoyAcquire[i]++;
 				continue;
 			}
 		}
 
-		// データ取得
+		// adquisicion de datos
 		if (FAILED(m_lpDIJoy[i]->GetDeviceState(sizeof(DIJOYSTATE),
 												&m_JoyState[i]))) {
-			// Acquireを試みる
+			// Intento de adquisicion.
 			m_lpDIJoy[i]->Acquire();
 			m_dwJoyAcquire[i]++;
 			continue;
 		}
 
-		// 軸変換(-800 ～ 7FFに変換)
+		// Conversion de ejes (conversion de -800 a 7FF)
 		for (nAxis=0; nAxis<JoyAxes; nAxis++) {
-			// ポインタ取得
+			// adquisicion de punteros
 			pOffset = (BYTE*)&m_JoyState[i];
 			pOffset += JoyAxisOffsetTable[nAxis];
 			pAxis = (LONG*)pOffset;
 
-			// 無効な軸ならスキップ
+
+
+
+
+
+
+
+			/*
+			CString sz;
+			sz.Format(_T("\nValor rgdwPOV0: %d\n"), m_JoyState[i].rgdwPOV[0]);
+			OutputDebugStringW(CT2W(sz));
+
+			*/
+
+
+
+
+
+
+
+
+
+			// Omitir si el eje no es valido.
 			if (m_lJoyAxisMin[i][nAxis] == m_lJoyAxisMax[i][nAxis]) {
 				continue;
 			}
 
-			// -lMinだけ底上げ(端点を0に揃える)
+			// De abajo hacia arriba solo por -lMin (puntos finales alineados a 0).
 			lAxis = *pAxis - m_lJoyAxisMin[i][nAxis];
 
-			// 範囲を出し、オーバーフロー防止変換
+			// Conversion de rango y prevencion de desbordamiento.
 			lRange = m_lJoyAxisMax[i][nAxis] - m_lJoyAxisMin[i][nAxis] + 1;
 			if (lRange >= 0x100000) {
 				lRange >>= 12;
 				lAxis >>= 12;
 			}
 
-			// 変換
+			// transformacion
 			lAxis <<= 12;
 			lAxis /= lRange;
 			lAxis -= 0x800;
 			*pAxis = lAxis;
+
+			/*
+			CString sz;
+			sz.Format(_T("\nValor laxis: %d\n"), lAxis);
+			OutputDebugStringW(CT2W(sz));
+			*/
+
+
 		}
 	}
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック合成
+//	Sintesis del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::MakeJoy(BOOL bEnable)
@@ -2061,16 +2089,16 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 	ASSERT(this);
 	ASSERT(m_pPPI);
 
-	// 全てクリア
+	// Despejar todo
 	memset(ji, 0, sizeof(ji));
 
-	// ディセーブルなら
+	// Desactivar seria una buena opcion.
 	if (!bEnable) {
 		for (i=0; i<PPI::PortMax; i++) {
-			// 入力なしデータを送信
+			// Enviar datos sin entrada.
 			m_pPPI->SetJoyInfo(i, &ji[i]);
 
-			// ボタン連射をクリア
+			// Borrar la secuencia de botones.
 			for (nButton=0; nButton<JoyButtons; nButton++) {
 				m_JoyCfg[i].dwCount[nButton] = 0;
 			}
@@ -2078,19 +2106,19 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 		return;
 	}
 
-	// 入力データを解釈
+	// Interpretar los datos de entrada.
 	for (i=0; i<JoyDevices; i++) {
 		dmy = -1;
 
-		// 軸
+		// eje
 		for (nAxis=0; nAxis<JoyAxes; nAxis++) {
 #if 0
-			// 無効か
+			// anulacion
 			if (LOWORD(m_JoyCfg[i].dwAxis[nAxis]) == 0) {
-				continue;
+				//continue;
 			}
 #else
-			// 無効な軸ならスキップ
+			// Omitir si el eje no es valido.
 			if (m_lJoyAxisMin[i][nAxis] == m_lJoyAxisMax[i][nAxis]) {
 				continue;
 			}
@@ -2100,27 +2128,27 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 			}
 #endif
 
-			// ポインタ取得
+			// adquisicion de punteros
 			pOffset = (BYTE*)&m_JoyState[i];
 			pOffset += JoyAxisOffsetTable[nAxis];
 			pAxis = (LONG*)pOffset;
 
-			// データ取得
+			// adquisicion de datos
 			lAxis = *pAxis;
 
-			// ゼロは無視(最初にクリアしているため)
+			//  El cero se ignora (ya que se borra primero).
 			if (lAxis == 0) {
 				continue;
 			}
 
-			// 反転
+			// inversion
 			if (m_JoyCfg[i].bAxis[nAxis]) {
 				// 7FF→-800 -800→7FF
 				lAxis = -1 - lAxis;
 			}
 
 #if 0
-			// 目的位置に格納
+			// Almacenado en la posicion de destino
 			ASSERT(HIWORD(m_JoyCfg[i].dwAxis[nAxis]) >= 0);
 			ASSERT(HIWORD(m_JoyCfg[i].dwAxis[nAxis]) < 2);
 			ASSERT(LOWORD(m_JoyCfg[i].dwAxis[nAxis]) > 0);
@@ -2129,19 +2157,38 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 				 = (DWORD)lAxis;
 #else
 			ji[HIWORD(m_JoyCfg[i].dwAxis[nAxis])].axis[dmy] = (DWORD)lAxis;
+
+
+
+
+
+
+
+			
+				/*CString sz;
+				sz.Format(_T("\nAxis: %d  laxis: %d \n"), nAxis, lAxis);
+				OutputDebugStringW(CT2W(sz));*/
+			
+
+
+
+
+
+
+
 #endif
 		}
 
-		// ボタン
+		// boton
 		for (nButton=0; nButton<JoyButtons; nButton++) {
-			// 無効か
+			// anulacion
 			if (LOWORD(m_JoyCfg[i].dwButton[nButton]) == 0) {
 				continue;
 			}
 
-			// オフか
+			// apagar
 			if ((m_JoyState[i].rgbButtons[nButton] & 0x80) == 0) {
-				// 連射カウンタクリアのみ(ボタン押下情報は、最初でクリアしている)
+				// Solo se borra el contador de disparo continuo (la informacion de la pulsacion del boton se borra al principio).
 				m_JoyCfg[i].dwCount[nButton] = 0;
 				continue;
 			}
@@ -2151,24 +2198,24 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 			ASSERT(LOWORD(m_JoyCfg[i].dwButton[nButton]) > 0);
 			ASSERT(LOWORD(m_JoyCfg[i].dwButton[nButton]) <= PPI::ButtonMax);
 
-			// 連射0か
+			// Disparo cero.
 			if (m_JoyCfg[i].dwRapid[nButton] == 0) {
-				// 目的位置に格納
+				// Almacenado en la posicion de destino
 				ji[HIWORD(m_JoyCfg[i].dwButton[nButton])].button[LOWORD(m_JoyCfg[i].dwButton[nButton]) - 1]
 					= TRUE;
 				continue;
 			}
 
-			// 連射あり
+			// Hay un disparo continuo
 			if (m_JoyCfg[i].dwCount[nButton] == 0) {
-				// 初回なので、ONとカウンタリロード
+				// ON y recarga del contador como si fuera la primera vez
 				ji[HIWORD(m_JoyCfg[i].dwButton[nButton])].button[LOWORD(m_JoyCfg[i].dwButton[nButton]) - 1]
 					= TRUE;
 				m_JoyCfg[i].dwCount[nButton] = JoyRapidTable[m_JoyCfg[i].dwRapid[nButton]];
 				continue;
 			}
 
-			// 連射カウントダウン。0ならONとカウンタリロード
+			// Cuenta atras de fuego continuo; si es 0, ON y recarga del contador.
 			m_JoyCfg[i].dwCount[nButton]--;
 			if (m_JoyCfg[i].dwCount[nButton] == 0) {
 				ji[HIWORD(m_JoyCfg[i].dwButton[nButton])].button[LOWORD(m_JoyCfg[i].dwButton[nButton]) - 1]
@@ -2177,7 +2224,7 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 				continue;
 			}
 
-			// カウンタの前半・後半で、ON/OFFに分ける
+			// Separe ON/OFF en la primera y segunda mitad del contador.
 			if (m_JoyCfg[i].dwCount[nButton] > (JoyRapidTable[m_JoyCfg[i].dwRapid[nButton]] >> 1)) {
 				ji[HIWORD(m_JoyCfg[i].dwButton[nButton])].button[LOWORD(m_JoyCfg[i].dwButton[nButton]) - 1]
 					= TRUE;
@@ -2189,10 +2236,10 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 		}
 	}
 
-	// キーボードとの合成
+	// Compuesto con teclado
 
 
-	// PPIへ送信
+	// Transmision a PPI
 	for (i=0; i<PPI::PortMax; i++) {
 		m_pPPI->SetJoyInfo(i, &ji[i]);
 	}
@@ -2200,7 +2247,7 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック有効化・無効化
+//	Activacion/desactivacion del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::EnableJoy(BOOL bEnable)
@@ -2209,15 +2256,15 @@ void FASTCALL CInput::EnableJoy(BOOL bEnable)
 
 	ASSERT(this);
 
-	// 同じなら必要なし
+	// No es necesario si es lo mismo.
 	if (m_bJoyEnable == bEnable) {
 		return;
 	}
 
-	// 変更
+	// cambiar
 	m_bJoyEnable = bEnable;
 
-	// FALSEに変更する場合、PPIに対してヌル情報送信
+	// Si se cambia a FALSE, se envia informacion nula al PPI
 	if (!bEnable) {
 		memset(&ji, 0, sizeof(ji));
 		m_pPPI->SetJoyInfo(0, &ji);
@@ -2227,7 +2274,7 @@ void FASTCALL CInput::EnableJoy(BOOL bEnable)
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティックデバイス取得
+//	Adquisicion de dispositivos de joystick
 //
 //---------------------------------------------------------------------------
 int FASTCALL CInput::GetJoyDevice(int nJoy) const
@@ -2235,23 +2282,23 @@ int FASTCALL CInput::GetJoyDevice(int nJoy) const
 	ASSERT(this);
 	ASSERT((nJoy >= 0) && (nJoy < JoyDevices));
 
-	// 0は割り当てなし
+	// El 0 no esta asignado
 	if (m_JoyCfg[nJoy].nDevice == 0) {
 		return 0;
 	}
 
-	// デバイスポインタを持っていなければ、初期化エラーとして-1
+	// Si no tiene un puntero de dispositivo, -1 como error de inicializacion
 	if (!m_lpDIJoy[nJoy]) {
 		return -1;
 	}
 
-	// 初期化成功しているので、デバイス番号
+	// Inicializacion exitosa, por lo que el dispositivo no.
 	return m_JoyCfg[nJoy].nDevice;
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック軸取得
+//	Adquisicion del eje del joystick
 //
 //---------------------------------------------------------------------------
 LONG FASTCALL CInput::GetJoyAxis(int nJoy, int nAxis) const
@@ -2263,22 +2310,22 @@ LONG FASTCALL CInput::GetJoyAxis(int nJoy, int nAxis) const
 	ASSERT((nJoy >= 0) && (nJoy < JoyDevices));
 	ASSERT((nAxis >= 0) && (nAxis < JoyAxes));
 
-	// 0は割り当てなし
+	// El 0 no esta asignado
 	if (m_JoyCfg[nJoy].nDevice == 0) {
 		return 0x10000;
 	}
 
-	// デバイスポインタを持っていなければ、初期化エラー
+	// Error de inicializacion si no tiene un puntero de dispositivo
 	if (!m_lpDIJoy[nJoy]) {
 		return 0x10000;
 	}
 
-	// 軸が存在しなければ、指定エラー
+	// Si el eje no existe, error de especificacion
 	if (m_lJoyAxisMin[nJoy][nAxis] == m_lJoyAxisMax[nJoy][nAxis]) {
-		return 0x10000;
+		//return 0x10000;
 	}
 
-	// 値を返す
+	// Valor de retorno
 	pOffset = (BYTE*)&m_JoyState[nJoy];
 	pOffset += JoyAxisOffsetTable[nAxis];
 	pAxis = (LONG*)pOffset;
@@ -2287,7 +2334,7 @@ LONG FASTCALL CInput::GetJoyAxis(int nJoy, int nAxis) const
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティックボタン取得
+//	Adquisicion del boton del joystick
 //
 //---------------------------------------------------------------------------
 DWORD FASTCALL CInput::GetJoyButton(int nJoy, int nButton) const
@@ -2296,29 +2343,29 @@ DWORD FASTCALL CInput::GetJoyButton(int nJoy, int nButton) const
 	ASSERT((nJoy >= 0) && (nJoy < JoyDevices));
 	ASSERT((nButton >= 0) && (nButton < JoyButtons));
 
-	// 0は割り当てなし
+	// El 0 no esta asignado
 	if (m_JoyCfg[nJoy].nDevice == 0) {
 		return 0x10000;
 	}
 
-	// デバイスポインタを持っていなければ、初期化エラー
+	// Error de inicializacion si no tiene un puntero de dispositivo
 	if (!m_lpDIJoy[nJoy]) {
 		return 0x10000;
 	}
 
-	// ボタン数が合わなければ、指定エラー
+	// Si el numero de botones no coincide, error de especificacion
 	if (nButton >= (int)m_JoyDevCaps[m_JoyCfg[nJoy].nDevice - 1].dwButtons) {
 		return 0x10000;
 	}
 		
 
-	// 値を返す
+	// Valor de retorno
 	return (DWORD)m_JoyState[nJoy].rgbButtons[nButton];
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティックCaps取得
+//	Adquisicion de tapas de joystick
 //
 //---------------------------------------------------------------------------
 BOOL FASTCALL CInput::GetJoyCaps(int nDevice, CString& strDesc, DIDEVCAPS *pCaps) const
@@ -2327,13 +2374,13 @@ BOOL FASTCALL CInput::GetJoyCaps(int nDevice, CString& strDesc, DIDEVCAPS *pCaps
 	ASSERT(nDevice >= 0);
 	ASSERT(pCaps);
 
-	// ジョイスティックデバイス数と比較
+	// Numero de dispositivos de joystick y comparacion
 	if (nDevice >= (int)m_dwJoyDevs) {
-		// 指定インデックスのデバイスは存在しない
+		// El dispositivo en el indice especificado no existe.
 		return FALSE;
 	}
 
-	// Desc設定
+	// Ajuste de la descripcion
 	ASSERT(nDevice < JoyDeviceMax);
 	strDesc = m_JoyDevInst[nDevice].tszInstanceName;
 
@@ -2346,7 +2393,7 @@ BOOL FASTCALL CInput::GetJoyCaps(int nDevice, CString& strDesc, DIDEVCAPS *pCaps
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック設定取得
+//	Adquisicion de la configuracion del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::GetJoyCfg(int nJoy, LPJOYCFG lpJoyCfg) const
@@ -2354,13 +2401,13 @@ void FASTCALL CInput::GetJoyCfg(int nJoy, LPJOYCFG lpJoyCfg) const
 	ASSERT(this);
 	ASSERT((nJoy >= 0) && (nJoy < JoyDevices));
 
-	// 設定をコピー
+	// Copiar la configuracion
 	*lpJoyCfg = m_JoyCfg[nJoy];
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック設定セット
+//	Ajuste del joystick
 //
 //---------------------------------------------------------------------------
 void FASTCALL CInput::SetJoyCfg(int nJoy, const LPJOYCFG lpJoyCfg)
@@ -2368,13 +2415,13 @@ void FASTCALL CInput::SetJoyCfg(int nJoy, const LPJOYCFG lpJoyCfg)
 	ASSERT(this);
 	ASSERT((nJoy >= 0) && (nJoy < JoyDevices));
 
-	// 設定をコピー
+	// Copiar la configuracion
 	m_JoyCfg[nJoy] = *lpJoyCfg;
 }
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック軸テーブル
+//	Tabla de ejes del joystick
 //
 //---------------------------------------------------------------------------
 const DWORD CInput::JoyAxisOffsetTable[JoyAxes] = {
@@ -2385,13 +2432,14 @@ const DWORD CInput::JoyAxisOffsetTable[JoyAxes] = {
 	DIJOFS_RY,
 	DIJOFS_RZ,
 	DIJOFS_SLIDER(0),
-	DIJOFS_SLIDER(1)
+	DIJOFS_SLIDER(1),
+	DIJOFS_POV(0)
 };
 
 //---------------------------------------------------------------------------
 //
-//	ジョイスティック連射テーブル
-//	※連射速度は60フレーム/secと仮定した場合の値
+//	Mesa de fuego continuo con joystick
+//	*La velocidad de disparo continuo supone 60 fotogramas/seg.
 //
 //---------------------------------------------------------------------------
 const DWORD CInput::JoyRapidTable[JoyRapids + 1] = {
