@@ -197,7 +197,7 @@ BOOL FASTCALL CConfig::Init()
 
 
 
-BOOL FASTCALL CConfig::CustomInit()
+BOOL FASTCALL CConfig::CustomInit(BOOL ArchivoDefault)
 {
 	int i;
 	Filepath path;
@@ -212,13 +212,19 @@ BOOL FASTCALL CConfig::CustomInit()
 	// Determinacion de la ruta del archivo INI
 	path.SetPath(_T("XM6.ini"));
 
-
+	// Obtener nombre archivo de juego actual y remover extensiÛn
 	int nLen = m_pFrmWnd->NombreArchivoXM6.GetLength();
-	TCHAR lpszBuf[MAX_PATH];
+	TCHAR lpszBuf[MAX_PATH], xm6Default[MAX_PATH];
 	_tcscpy(lpszBuf, m_pFrmWnd->NombreArchivoXM6.GetBuffer(nLen));
 	PathRemoveExtensionA(lpszBuf);
 
-	//int msgboxID = MessageBox(NULL, lpszBuf, "Xm6", 2);
+	//int msgboxID = MessageBox(NULL, lpszBuf, "Xm6", 2);	 
+	
+	// Si elige archivo default guardara XM6 aunque haya juego cargado
+	if (ArchivoDefault) 
+	{	
+		_tcscpy(lpszBuf, "XM6");
+	}
 
 	path.SetBaseFile(lpszBuf);
 	_tcscpy(m_IniFile, path.GetPath());
@@ -227,16 +233,9 @@ BOOL FASTCALL CConfig::CustomInit()
 
    /* CString sz;
 	sz.Format(_T("\n\nRutaArchivoXM6: %s\n\n"), m_pFrmWnd->RutaCompletaArchivoXM6);
-	OutputDebugStringW(CT2W(sz)); */
+	OutputDebugStringW(CT2W(sz)); */	
 
-	
-
-
-	OutputDebugString("\n\nSe ejecutÛ CustomIni para guardar configuracion personalizada...\n\n");
-	//Aqui cargamos el parametro de linea de comandos si es HDF *-*	
-
-	
-
+	OutputDebugString("\n\nSe ejecutÛ CustomInit para guardar configuracion...\n\n");	
 
 	// Guardar y cargar
 	m_bApply = FALSE;
@@ -254,6 +253,32 @@ BOOL FASTCALL CConfig::CustomInit()
 //---------------------------------------------------------------------------
 void FASTCALL CConfig::Cleanup()
 {
+	//int i;
+
+	ASSERT(this);
+
+	// ê›íËÉfÅ[É^
+	//SaveConfig();
+
+	// MRU
+	//for (i=0; i<MruTypes; i++) {
+	//		SaveMRU(i);
+	//}
+
+	// ÉLÅ[
+	//SaveKey();
+
+	// TrueKey
+	//SaveTKey();
+
+	// äÓñ{ÉNÉâÉX
+	CComponent::Cleanup();
+}
+
+
+// Igual que cleanup pero guardando todo
+void FASTCALL CConfig::Cleanup2()
+{
 	int i;
 
 	ASSERT(this);
@@ -262,7 +287,7 @@ void FASTCALL CConfig::Cleanup()
 	SaveConfig();
 
 	// MRU
-	for (i=0; i<MruTypes; i++) {
+	for (i = 0; i < MruTypes; i++) {
 		SaveMRU(i);
 	}
 
@@ -273,7 +298,7 @@ void FASTCALL CConfig::Cleanup()
 	SaveTKey();
 
 	// äÓñ{ÉNÉâÉX
-	CComponent::Cleanup();
+	//CComponent::Cleanup();
 }
 
 //---------------------------------------------------------------------------

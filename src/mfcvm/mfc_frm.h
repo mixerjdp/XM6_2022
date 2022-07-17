@@ -164,9 +164,14 @@ protected:
 										// リセット
 	afx_msg void OnResetUI(CCmdUI *pCmdUI);
 
-	afx_msg void OnScc();
-	// リセット
+	afx_msg void OnScc(); // Configuracion personalizada
+	
 	afx_msg void OnSccUI(CCmdUI* pCmdUI);
+
+	afx_msg void OnSgc(); // Configuracion global
+	
+	afx_msg void OnSgcUI(CCmdUI* pCmdUI);
+
 										// リセット UI
 	afx_msg void OnInterrupt();
 										// インタラプト

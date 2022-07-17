@@ -385,8 +385,7 @@ BEGIN
         MENUITEM "&Guardar",                    IDM_SAVE
         MENUITEM "Guardado rápido\tF5",         IDM_SAVEAS
         MENUITEM SEPARATOR
-        MENUITEM "&Reset",                      IDM_RESET
-        MENUITEM "Guardar archivo de config. personalizada", IDM_SAVECUSTOMCONFIG
+        MENUITEM "&Reset",                      IDM_RESET        
         MENUITEM SEPARATOR
         MENUITEM "&Interrupcion",               IDM_INTERRUPT
         MENUITEM "&Encendido",                  IDM_POWER        
@@ -534,6 +533,8 @@ BEGIN
         MENUITEM "Make a new SCSI MO &Disk...", IDM_NEWMO
         MENUITEM SEPARATOR
         MENUITEM "&Opciones...",                 IDM_OPTIONS
+        MENUITEM "Guardar archivo de config. personalizada", IDM_SAVECUSTOMCONFIG
+        MENUITEM "Guardar archivo de config. global", IDM_SAVEGLOBALCONFIG
     END
     POPUP "&Ventana"
     BEGIN
@@ -560,8 +561,7 @@ BEGIN
             MENUITEM "&Save",                       IDM_SAVE
             MENUITEM "Guardado Rápido...",                 IDM_SAVEAS
             MENUITEM SEPARATOR
-            MENUITEM "&Reset",                      IDM_RESET
-            MENUITEM "Guardar archivo de config. personalizada",        IDM_SAVECUSTOMCONFIG
+            MENUITEM "&Reset",                      IDM_RESET            
             MENUITEM SEPARATOR
             MENUITEM "&Interrupt",                  IDM_INTERRUPT
             MENUITEM "&Power Switch",               IDM_POWER            
@@ -709,7 +709,9 @@ BEGIN
             MENUITEM "Make a new S&CSI Fixed Disk...", IDM_NEWSCSI
             MENUITEM "Make a new SCSI MO &Disk...", IDM_NEWMO
             MENUITEM SEPARATOR
-            MENUITEM "&Options...",                 IDM_OPTIONS
+            MENUITEM "&Opciones...",                 IDM_OPTIONS
+            MENUITEM "Guardar archivo de config. personalizada", IDM_SAVECUSTOMCONFIG
+            MENUITEM "Guardar archivo de config. global", IDM_SAVEGLOBALCONFIG
         END
         POPUP "&Ventana"
         BEGIN

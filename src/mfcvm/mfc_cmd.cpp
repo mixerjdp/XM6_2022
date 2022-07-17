@@ -744,8 +744,8 @@ void CFrmWnd::OnScc()
 {
 	if (NombreArchivoXM6.GetLength() > 0)
 	{
-		m_pConfig->CustomInit();
-		m_pConfig->Cleanup();
+		m_pConfig->CustomInit(FALSE);
+		m_pConfig->Cleanup2();
 
 		CString sz;
 		sz.Format(_T("\n\nSe ha guardado la configuración para %s\n\n"), NombreArchivoXM6);
@@ -766,6 +766,29 @@ void CFrmWnd::OnSccUI(CCmdUI* pCmdUI)
 	// “dŒ¹ON‚Ìê‡‚Ì‚Ý
 	pCmdUI->Enable(::GetVM()->IsPower());
 }
+
+
+
+void CFrmWnd::OnSgc()
+{		
+		m_pConfig->CustomInit(TRUE);
+		m_pConfig->Cleanup2();
+
+		CString sz;
+		sz.Format(_T("\n\nSe ha guardado la configuración global\n\n"), NombreArchivoXM6);
+		OutputDebugStringW(CT2W(sz));
+
+		MessageBox(sz, "Configuración", MB_OK);	
+}
+
+
+
+void CFrmWnd::OnSgcUI(CCmdUI* pCmdUI)
+{
+	// “dŒ¹ON‚Ìê‡‚Ì‚Ý
+	pCmdUI->Enable(::GetVM()->IsPower());
+}
+
 
 //---------------------------------------------------------------------------
 //

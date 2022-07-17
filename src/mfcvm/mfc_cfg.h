@@ -27,9 +27,10 @@ public:
 	CConfig(CFrmWnd *pWnd);
 										// constructor
 	BOOL FASTCALL Init();
-	BOOL FASTCALL CustomInit();   // mi personalizacion
+	BOOL FASTCALL CustomInit(BOOL ArchivoDefault);   // mi personalizacion
 										// inicializacion
 	void FASTCALL Cleanup();
+	void FASTCALL Cleanup2();
 										// limpieza (especialmente en el beisbol)
 
 	// Datos de configuracion (global)

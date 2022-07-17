@@ -753,6 +753,7 @@
 #define IDM_XM6_MRU8					40014
 #define IDM_EXIT						40015
 #define IDM_SAVECUSTOMCONFIG			40016
+#define IDM_SAVEGLOBALCONFIG			40017
 
 // フロッピー0メニュー
 #define IDM_D0OPEN						40020
