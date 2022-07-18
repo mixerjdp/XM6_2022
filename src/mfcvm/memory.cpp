@@ -677,7 +677,7 @@ void FASTCALL Memory::ApplyCfg(const Config *config)
 
 	// RAMサイズ(メモリ確保は次回リセット時)
 	mem.config = config->ram_size;
-	ASSERT((mem.config >= 0) && (mem.config <= 5));
+	ASSERT((mem.config >= 0) && (mem.config <= 6));
 
 	// メモリスイッチ自動更新
 	mem.memsw = config->ram_sramsync;

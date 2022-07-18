@@ -2230,14 +2230,33 @@ void FASTCALL CInput::MakeJoy(BOOL bEnable)
 
 		// boton
 		for (nButton=0; nButton<JoyButtons; nButton++) {
+
+			if (nButton == 9) // 9 = Botón Start
+			{				
+				// Aqui se detecta pulsacion de boton 9 (Start) y Se bindea a tecla F1 *-*
+				if (m_JoyState[i].rgbButtons[nButton] == 0x80)
+				{
+					/*CString sz;
+					sz.Format(_T("\nNo. Boton: %d  Status:%d \n"), nButton, m_JoyState[i].rgbButtons[nButton]);
+					OutputDebugStringW(CT2W(sz));*/
+					m_pKeyboard->MakeKey(99);
+					m_pKeyboard->BreakKey(99);
+				}
+			}
+
+
+
 			// anulacion
 			if (LOWORD(m_JoyCfg[i].dwButton[nButton]) == 0) {
 				continue;
 			}
 
-			// apagar
-			if ((m_JoyState[i].rgbButtons[nButton] & 0x80) == 0) {
+		
+			// apagado
+			if ((m_JoyState[i].rgbButtons[nButton] & 0x80) == 0) 
+			{
 				// Solo se borra el contador de disparo continuo (la informacion de la pulsacion del boton se borra al principio).
+							
 				m_JoyCfg[i].dwCount[nButton] = 0;
 				continue;
 			}

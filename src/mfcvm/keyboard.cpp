@@ -328,7 +328,7 @@ BOOL FASTCALL Keyboard::Callback(Event *ev)
 
 //---------------------------------------------------------------------------
 //
-//	メイク
+//	hacer
 //
 //---------------------------------------------------------------------------
 void FASTCALL Keyboard::MakeKey(DWORD code)
@@ -336,12 +336,12 @@ void FASTCALL Keyboard::MakeKey(DWORD code)
 	ASSERT(this);
 	ASSERT((code >= 0x01) && (code <= 0x73));
 
-	// キーボードが抜かれていれば届かない
+	// No se puede acceder si el teclado esta desenchufado.
 	if (!keyboard.connect) {
 		return;
 	}
 
-	// 既にメイクなら、何もしない
+	// Si ya esta inventado, pues nada.
 	if (keyboard.status[code]) {
 		return;
 	}
@@ -350,23 +350,41 @@ void FASTCALL Keyboard::MakeKey(DWORD code)
 	LOG1(Log::Normal, "メイク $%02X", code);
 #endif	// KEYBOARD_LOG
 
-	// ステータス設定
+	// Configuracion del estado
 	keyboard.status[code] = TRUE;
 
-	// リピートを開始
+	// Empieza a repetir.
 	keyboard.rep_code = code;
 	keyboard.rep_count = 0;
 	event.SetTime(keyboard.rep_start);
 
-	// MFPへMakeデータ送信
+	// Enviar los datos de la marca a la MFP
 	if (keyboard.send_en && !keyboard.send_wait) {
 		mfp->KeyData(keyboard.rep_code);
 	}
+
+
+
+
+
+
+
+	/*
+	CString sz;
+	sz.Format(_T("\n\nTecla presionada: %d\n\n"), code);
+	OutputDebugStringW(CT2W(sz));
+	*/
+	
+
+
+
+
+
 }
 
 //---------------------------------------------------------------------------
 //
-//	ブレーク
+//	romper (por ejemplo, pedir que se separen dos boxeadores)
 //
 //---------------------------------------------------------------------------
 void FASTCALL Keyboard::BreakKey(DWORD code)
@@ -374,12 +392,12 @@ void FASTCALL Keyboard::BreakKey(DWORD code)
 	ASSERT(this);
 	ASSERT((code >= 0x01) && (code <= 0x73));
 
-	// キーボードが抜かれていれば届かない
+	// No se puede acceder si el teclado esta desenchufado.
 	if (!keyboard.connect) {
 		return;
 	}
 
-	// メイク状態であることが必要。既にブレークなら何もしない
+	// Debe estar en condiciones de hacer un corte. Si ya esta roto, entonces nada.
 	if (!keyboard.status[code]) {
 		return;
 	}
@@ -388,16 +406,16 @@ void FASTCALL Keyboard::BreakKey(DWORD code)
 	LOG1(Log::Normal, "ブレーク $%02X", code);
 #endif	// KEYBOARD_LOG
 
-	// ステータス設定
+	// Configuracion del estado
 	keyboard.status[code] = FALSE;
 
-	// リピート中のキーなら、リピート取り下げ
+	// Si la tecla se repite, se retira la repeticion.
 	if (keyboard.rep_code == (DWORD)code) {
 		keyboard.rep_code = 0;
 		event.SetTime(0);
 	}
 
-	// MFPへデータ送信
+	// Transmision de datos a las MFP
 	code |= 0x80;
 	if (keyboard.send_en && !keyboard.send_wait) {
 		mfp->KeyData(code);
